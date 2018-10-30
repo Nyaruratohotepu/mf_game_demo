@@ -56,7 +56,7 @@ public class PlayerMove : MonoBehaviour
         {
             ac.SetBool("isRunning", true);
 
-            Vector3 movement = transform.forward * v + transform.right * h;
+            Vector3 movement = transform. forward * v +transform. right * h;
             if (movement.magnitude > 1) movement.Normalize();   //保证人物速度不超过上限
             cc.SimpleMove(movement * speed * Time.deltaTime);
 
