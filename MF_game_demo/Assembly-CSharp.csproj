@@ -61,6 +61,9 @@
      <Compile Include="Assets\Scripts\MFglobe.cs" />
      <Compile Include="Assets\Scripts\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\Scripts\xuan\Monsterbase.cs" />
+     <Compile Include="Assets\Scripts\xuan\monstermanager.cs" />
+     <Compile Include="Assets\Scripts\xuan\NormalMonster.cs" />
      <Compile Include="Assets\SD_Project\Scripts\controller.cs" />
      <Compile Include="Assets\SD_Project\Scripts\MecanimButton.cs" />
      <Compile Include="Assets\SD_Project\Scripts\ThirdPersonCamera.cs" />
