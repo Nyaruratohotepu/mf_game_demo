@@ -32,8 +32,25 @@ public static class GunEnum
         ssr,
         ur
     }
-}
 
+}
+public static class MonsterEnum
+{
+    public enum MonsterType 
+    {
+        slime   //史莱姆
+    }//怪物种类
+    public enum MonsterState//状态，平静，追逐玩家，濒死，致盲，减速，麻痹，混乱
+    {
+        idle,
+        chasing,
+        dying,
+        blind,
+        slowed,
+        cantmove,
+        crazy
+    }
+}
 public static class IOTool
 {
     public static bool GetMousePosition(out RaycastHit mousePoint)
