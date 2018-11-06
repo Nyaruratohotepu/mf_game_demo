@@ -21,6 +21,7 @@ public abstract class Monster
     public abstract float HuntRange { set; get; }//发现玩家的极限距离
     public abstract Manager GameManager { set; get; }
     public abstract CharacterController CC { set; get; }
+    public abstract Animator AC { set; get; }
 
 
 

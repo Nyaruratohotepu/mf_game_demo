@@ -22,6 +22,7 @@ public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此�
     public override GameObject Player { get; set; }
     public override GameObject Self { get; set; }
     public override CharacterController CC { get; set; }
+    public override Animator AC { get; set; }
 
     //以下为近战怪物的特有属性
     //攻击范围
@@ -31,12 +32,13 @@ public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此�
     {
         GameManager.GetDamageManager().TryAttackPlayer(Atk);
         AtkBetweenLeft = AtkBetween;
-        //恢复cd
+        //恢复cd        这里伤害计算考虑到怪物的攻击前摇要不要放在动画事件里
+        AC.SetTrigger("attack");//变化动画
     }
 
     public override void Die()
     {
-
+        AC.SetTrigger("die");
     }
 
     public override void OnFixedUpdateCallback()
