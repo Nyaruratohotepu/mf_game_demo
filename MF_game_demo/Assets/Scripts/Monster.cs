@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 public abstract class Monster
 {
@@ -22,11 +22,14 @@ public abstract class Monster
     public abstract Manager GameManager { set; get; }
     public abstract CharacterController CC { set; get; }
     public abstract Animator AC { set; get; }
+    public abstract bool IsDying { set; get; }//是否濒死
+    public abstract NavMeshAgent nav { set; get; }
 
 
 
 
     public abstract void Attack();  //攻击
+    
     public abstract void Die(); //死亡
     //由脚本在Update中调用
     public abstract void OnUpdateCallback();

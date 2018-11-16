@@ -7,6 +7,7 @@ using UnityEngine;
 public class DamageManager
 {
     public PlayerHP Player { set; get; }
+    public GameObject Player_;
     
     //返回是否攻击成功
     public bool TryAttackPlayer(int damage)
@@ -16,5 +17,10 @@ public class DamageManager
         return true;
 
     }
+    public int DamageToMonster()
+    {
+        return Player_.GetComponent<PlayerFire>().gun.Damage;
+    }
+    
 }
 
