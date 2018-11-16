@@ -35,6 +35,7 @@ public class Manager : MonoBehaviour
     public void Awake()
     {
         damageManager.Player= GameObject.Find("maruko").GetComponent<PlayerHP>();
+        damageManager.Player_ = GameObject.Find("maruko");
     }
     // Use this for initialization
     void Start()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此层处理数值、移动等近战怪物共有逻辑
 {
     public override int Id { get; set; }
@@ -23,6 +23,10 @@ public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此�
     public override GameObject Self { get; set; }
     public override CharacterController CC { get; set; }
     public override Animator AC { get; set; }
+    public override bool IsDying { get; set; }
+    public override NavMeshAgent nav { set; get; }
+    
+    
 
     //以下为近战怪物的特有属性
     //攻击范围
@@ -32,13 +36,19 @@ public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此�
     {
         GameManager.GetDamageManager().TryAttackPlayer(Atk);
         AtkBetweenLeft = AtkBetween;
-        //恢复cd        这里伤害计算考虑到怪物的攻击前摇要不要放在动画事件里
+        //恢复cd        
         AC.SetTrigger("attack");//变化动画
     }
 
     public override void Die()
     {
-        AC.SetTrigger("die");
+        if (IsDying == false)
+        {
+            AC.SetTrigger("die");
+            nav.Stop();
+            IsDying = true;//濒死时禁用碰撞体且停止一切行为
+            CC.enabled = false;
+        }
     }
 
     public override void OnFixedUpdateCallback()
@@ -48,27 +58,41 @@ public class MeleeMonster : Monster  //近战怪物拥有相同的逻辑，此�
 
     public override void OnUpdateCallback()
     {
-        //攻击读秒
-        if (AtkBetweenLeft > 0) AtkBetweenLeft -= Time.deltaTime;
-
-        Vector3 playerPosition = Player.transform.position;
-        if (Vector3.Distance(Self.transform.position, playerPosition) < HuntRange)
+        if (IsDying == false)
         {
-            if (Vector3.Distance(Self.transform.position, playerPosition) < AtkRange)
+            //攻击读秒
+
+            if (AtkBetweenLeft > 0) AtkBetweenLeft -= Time.deltaTime;
+
+            Vector3 playerPosition = Player.transform.position;
+            if (Vector3.Distance(Self.transform.position, playerPosition) < HuntRange)
             {
-                //玩家在攻击范围内
-                //攻击冷却完成，攻击玩家
-                if (AtkBetweenLeft <= 0) Attack();
+                if (Vector3.Distance(Self.transform.position, playerPosition) < AtkRange)
+                {
+                    //玩家在攻击范围内
+                    //攻击冷却完成，攻击玩家
+                    AC.SetBool("move", false);
+                    nav.Stop();
+                    if (AtkBetweenLeft <= 0) Attack();
+                }
+                else
+                {
+                    //玩家不在攻击范围内，追逐玩家
+                    
+                    playerPosition.y = 0;
+                    //Self.transform.LookAt(playerPosition);
+                    nav.SetDestination(Player.transform.position);
+                    nav.Resume();
+                    //CC.SimpleMove(MoveSpeed * Self.transform.forward);
+                    AC.SetBool("move", true);
+                }
+
             }
             else
             {
-                //玩家不在攻击范围内，追逐玩家
-                //此处要用寻路算法重写
-                playerPosition.y = 0;
-                Self.transform.LookAt(playerPosition);
-                CC.SimpleMove(MoveSpeed * Self.transform.forward);
+                AC.SetBool("move", false);
+                nav.Stop();
             }
-
         }
     }
 
