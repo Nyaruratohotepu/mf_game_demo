@@ -32,7 +32,13 @@ public static class GunEnum
         ssr,
         ur
     }
-
+    //枪械状态图对应状态
+    public enum GunState
+    {
+        Idling,
+        Aiming,
+        Reloading
+    }
 }
 public static class MonsterEnum
 {

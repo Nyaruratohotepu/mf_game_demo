@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.Scripts.AKM">
+    <Position X="3" Y="3" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>JQAEAwCAAAgBFCJBSiCBIAAUAAAEQA5AEAAAEABAAAA=</HashCode>
+      <FileName>Assets\Scripts\AKM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet_AKM" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAAIAAAAAACAAAAABAAAAAAAIAAACAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Bullet_AKM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraAction" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAACAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CameraAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageManager" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAgAAACAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DamageManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gun">
+    <Position X="7" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>BQAEAwCAAAABFCJBSiCBIAAEAAAEQA5AEAAAEABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manager" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIQAACAAAAAAAACAAAAAAAAAAAAAAAIAQAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MapManager" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAACAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MapManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeleeMonster" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACgAAAAAAAABBwACCRACQAAISAIAAAQAACAQBEQAA=</HashCode>
+      <FileName>Assets\Scripts\MeleeMonster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeshCom" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MeshCom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GunEnum" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MFglobe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterEnum" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MFglobe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IOTool" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MFglobe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACgAAAAAAAABBwACCRACQAAISAIAAAAAACAQBEQAA=</HashCode>
+      <FileName>Assets\Scripts\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterFactory" Collapsed="true">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MonsterFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterManager" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQCAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\monstermanager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFire" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAiAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerFire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHP" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerHP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMove" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAUAAAACAQAAAAEAAAAAAAAAAAAQAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PlayerMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Slime" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Slime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SlimeScript" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\SlimeScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="controller" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABJAAjACAAAEGAAAIQKEAABAQABDAUSAAAAAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Scripts\controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MecanimButton" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAAAAAAAAAAABAAAABAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Scripts\MecanimButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThirdPersonCamera" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEACAAAiAAAAAAAIEAAAAgAAAAQBAAEAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Scripts\ThirdPersonCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlurEffect" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABIAAAGAAAAAAAgAAAAABAAAAAAEIEAAAAABAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ContrastStretchEffect" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GBAAABAAgCoAACAAIAAAACggAgBAAGEIAIAAAAAACAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\ContrastStretchEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GlowEffect" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAIgAAmAAAAAAAAEAAAAFAACAAQEJEAAEBAAAEAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\GlowEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ImageEffects" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoiseEffect" Collapsed="true">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBEAAAACAAAABAAAACCAAIAwJQwAEIAACAAQhAIAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\NoiseEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SSAOEffect" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAigIAAAEAAAAAAAAAAAIICGIAAAABAAACAQ=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\SSAOEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActivateTrigger" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAgIAIAAAAAAgAAAAAAAARAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SD_Project\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="destroyMe" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\scripts\destroyMe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="instantiateEffectCaller" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQABAAACCAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\scripts\instantiateEffectCaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="particleColorChanger" Collapsed="true">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAABAAAAAE=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\scripts\particleColorChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraShake" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\WebDemo\scripts\CameraShake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExplodingProjectile" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAiiAABBAQIAAAAAgAAABAQBiIAAAABIAABAA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\WebDemo\scripts\ExplodingProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile" Collapsed="true">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAFAAAAKAAIRQAAAAAABkAAAAEAAAIAAAAAAQAABA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\WebDemo\scripts\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="projectileActor" Collapsed="true">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAQAAgIAACBAAICBBASgCgIAABAEABgAEAEAAYAiAQA=</HashCode>
+      <FileName>Assets\StylizedProjectilePack1\WebDemo\scripts\projectileActor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

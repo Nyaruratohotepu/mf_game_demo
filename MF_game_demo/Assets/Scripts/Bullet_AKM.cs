@@ -5,30 +5,31 @@ using UnityEngine;
 public class Bullet_AKM : MonoBehaviour
 {
     public float Speed { set; get; }
-    public Vector3 Target { set; get; }
     //在AKM中指定
-    public string ImpactPath { set; get; }
+    private string ImpactPath;
     public bool Fired { set; get; }
-    public Vector3 direction { set; get; }
+    private Vector3 Direction;
     public Bullet_AKM()
     {
-        Speed = 50;
+        Speed = 15;
         ImpactPath = "Prefabs/Bullets/Bullet_AKM_Impact";
         Fired = false;
     }
-    // Use this for initialization
-    void Start()
+    public void Init(Vector3 muzzlePosition, Vector3 TargetPosition)
     {
-
+        gameObject.transform.position = muzzlePosition;
+        gameObject.transform.LookAt(TargetPosition);
+        Direction = TargetPosition - muzzlePosition;
     }
+
+
+    // Use this for initialization
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Target);
-
         if (Fired)
-            transform.position = transform.position + direction * Time.deltaTime * Speed;
+            transform.position = transform.position + Direction * Time.deltaTime * Speed;
     }
     private void OnCollisionStay(Collision collision)
     {
