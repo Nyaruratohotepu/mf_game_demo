@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class PlayerFire : MonoBehaviour
     public GameObject gunObj;
     public Gun gun;
 
-    private Vector3 direction;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +24,10 @@ public class PlayerFire : MonoBehaviour
     private void OnAnimatorIK(int layerIndex)
     {
         gun.OnAnimatorIKCallback();
+    }
+    private void FixedUpdate()
+    {
+        gun.OnFixedUpdateCallback();
     }
 
 }
