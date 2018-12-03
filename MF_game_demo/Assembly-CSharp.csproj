@@ -79,6 +79,8 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Slime.cs" />
     <Compile Include="Assets\Scripts\SlimeScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IWeaponAction.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\SD_Project\Scripts\controller.cs" />
     <Compile Include="Assets\SD_Project\Scripts\MecanimButton.cs" />
     <Compile Include="Assets\SD_Project\Scripts\ThirdPersonCamera.cs" />
@@ -188,7 +190,6 @@
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\Resources\3D_model\Maruko\Extra\ReadMe_KawaiiNeko28.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
-    <None Include="ClassDiagram1.cd" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Code/GitRepository/mf_game_demo/MF_game_demo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
