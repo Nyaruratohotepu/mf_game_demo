@@ -2,122 +2,174 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
-    //此接口定义模型和动画相关行为，对应单手、双手等动作相关的区别
-    public interface IWeaponAnimation
+    public interface IWeaponAction
     {
-        //绑定IK
-        void HandIKHandler();
-
-        //武器瞄准（枪口对准鼠标）
-        void GunAim(Vector3 target);
-
-        //武器开火时的动画响应
-        void GunFire();
-
-        //枪械状态转换时的动画响应
-        void AnimatorTo(GunEnum.GunState state);
-        void UpdateHandler();
-        void FixedUpdateHandler();
+        //指定武器击发方式，调用弹幕模块
+        void OnUpdateHandler();
+        void OnFixedupdateHandler();
+        void OnAnimatorIKHandler();
     }
 
-    //双手武器动作类
-    public class TwoHandGunAction : IWeaponAnimation
+    public class ARAction : IWeaponAction
     {
-        private GameObject gunObj;
+        //控制的枪械
+        private Weapon weapon;
+        //下一发时间
+        private float nextFire;
+        private float reloadTimeLeft;
+        //枪械状态机状态
+        private GunEnum.GunState state;
+        //扳机是否被扣动
+        private bool isTrigger;
+        Vector3 target;
+        Transform muzzle;
 
-        private Transform leftHandIK;
-        private Animator ownerAnimator;
-
-        //处理枪口闪光的变量
-        private ParticleSystem muzzleFlare;
-        private Light muzzleLight;
-        private float muzzleLightTime;
-        private float muzzleLightTimeLeft;
-
-        //默认对应的动画控制器存储位置
-        private string defaultAnimatorPath = "Animation/player.controller";
-
-        //构造函数依赖注入
-        TwoHandGunAction(GameObject gunObject, Animator ownerAnimator)
+        public ARAction(Weapon host)
         {
-            gunObj = gunObject;
-            leftHandIK = gunObj.transform.Find("LeftHandIK");
-            this.ownerAnimator = ownerAnimator;
-            //将动画设定为双手武器的动画控制器
-            ownerAnimator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load(defaultAnimatorPath);
-
-            Transform muzzle = gunObj.transform.Find("Muzzle");
-            muzzleFlare = muzzle.Find("MuzzleFlare").gameObject.GetComponent<ParticleSystem>();
-            muzzleLight = muzzle.Find("MuzzleLight").gameObject.GetComponent<Light>();
-            //枪口火焰闪光时间
-            muzzleLightTime = muzzleLightTimeLeft = 0.03f;
+            this.weapon = host;
+            nextFire = host.Data.AimTime;
+            reloadTimeLeft = weapon.Data.ReloadTime;
+            state = GunEnum.GunState.Idling;
+            isTrigger = false;
+            muzzle = weapon.WeaponObj.transform.Find("Muzzle");
         }
 
-        void IWeaponAnimation.GunAim(Vector3 target)
+        void IWeaponAction.OnFixedupdateHandler()
         {
-            gunObj.transform.LookAt(target);
-        }
+            weapon.Animation.FixedUpdateHandler();
 
-        void IWeaponAnimation.GunFire()
-        {
-            ownerAnimator.Play("Fire", 1, 0);
-            muzzleFlare.Play();
-            muzzleLight.intensity = 5;
-            muzzleLightTimeLeft = muzzleLightTime;
-        }
+            isTrigger = Input.GetMouseButton(0);
 
-        void IWeaponAnimation.HandIKHandler()
-        {
-            //除非换弹，左手握护木
-            if (!ownerAnimator.GetCurrentAnimatorStateInfo(1).IsName("Reload"))
-            {
-                ownerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-                ownerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIK.position);
-                ownerAnimator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandIK.rotation);
-            }
-        }
+            if (Input.GetButtonDown("Reload"))
+                state = GunEnum.GunState.Reloading;
 
-        void IWeaponAnimation.AnimatorTo(GunEnum.GunState state)
-        {
             switch (state)
             {
-                case GunEnum.GunState.Aiming:
-                    ownerAnimator.SetBool("isFiring", true);
-                    ownerAnimator.SetBool("isReloading", false);
-                    break;
                 case GunEnum.GunState.Idling:
-                    ownerAnimator.SetBool("isFiring", false);
-                    ownerAnimator.SetBool("isReloading", false);
+                    Idling();
+                    break;
+                case GunEnum.GunState.Aiming:
+                    Aiming();
                     break;
                 case GunEnum.GunState.Reloading:
-                    ownerAnimator.SetBool("isReloading", true);
-                    ownerAnimator.SetBool("isFiring", false);
-                    break;
-                default:
+                    Reloading();
                     break;
             }
 
-        }
 
-        //动画处理放在update中
-        void IWeaponAnimation.UpdateHandler()
+        }
+        private void Idling()
         {
-            if (muzzleLightTimeLeft > 0)
+            if (isTrigger)
+                nextFire -= Time.deltaTime;
+
+            if (nextFire <= 0)
+                StateToAiming();
+            //瞄准完毕下一帧调用Aiming()
+        }
+        private void Aiming()
+        {
+            //松扳机
+            if (!isTrigger)
             {
-                muzzleLightTimeLeft -= Time.deltaTime;
-                if (muzzleLightTimeLeft <= 0)
-                    muzzleLight.intensity = 0;
+                StateToIdling();
+                return;
+            }
+
+
+
+            RaycastHit hit = new RaycastHit();
+            if (IOTool.GetMousePosition(out hit))
+            {
+                target = hit.point;
+                target.y = muzzle.position.y;
+                weapon.Animation.GunAim(target);
+            }
+            if (weapon.Data.MagazineLeft <= 0)
+            {
+                if (weapon.Data.BulletLeft <= 0)
+                {
+                    //子弹打光
+                    //播放空膛音效
+                    return;
+                }
+                else
+                {
+                    //装弹
+                    StateToReloading();
+                    return;
+                }
+            }
+            else
+            {
+                nextFire -= Time.deltaTime;
+                if (nextFire <= 0)
+                {
+                    //弹幕发射成功
+                    if (weapon.Barrage.FireBarrage(muzzle.position, target))
+                    {
+                        weapon.Data.MagazineLeft--;
+                        weapon.Animation.GunFire();
+                        StateToAiming();
+                    }
+
+                }
+            }
+
+        }
+        private void Reloading()
+        {
+            reloadTimeLeft -= Time.deltaTime;
+            if (reloadTimeLeft <= 0)
+            {
+                int magazineNeed = weapon.Data.MagazineCapacity - weapon.Data.MagazineLeft;
+                //尽量多上弹
+                int bulletCount = magazineNeed > weapon.Data.BulletLeft ? weapon.Data.BulletLeft : magazineNeed;
+                weapon.Data.MagazineLeft += bulletCount;
+                weapon.Data.BulletLeft -= bulletCount;
+
+                //状态转移
+                if (isTrigger) StateToAiming();
+                else StateToIdling();
             }
         }
 
-        void IWeaponAnimation.FixedUpdateHandler()
-        {
 
+
+        private void StateToIdling()
+        {
+            state = GunEnum.GunState.Idling;
+            nextFire = weapon.Data.AimTime;
+            weapon.Animation.AnimatorTo(state);
+        }
+
+
+
+        private void StateToAiming()
+        {
+            state = GunEnum.GunState.Aiming;
+            nextFire = weapon.Data.FireCd;
+            weapon.Animation.AnimatorTo(state);
+        }
+        private void StateToReloading()
+        {
+            state = GunEnum.GunState.Reloading;
+            reloadTimeLeft = weapon.Data.ReloadTime;
+            weapon.Animation.AnimatorTo(state);
+        }
+
+        void IWeaponAction.OnUpdateHandler()
+        {
+            weapon.Animation.UpdateHandler();
+        }
+
+        void IWeaponAction.OnAnimatorIKHandler()
+        {
+            weapon.Animation.HandIKHandler();
         }
     }
 }

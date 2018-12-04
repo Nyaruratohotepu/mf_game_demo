@@ -39,10 +39,11 @@ public static class GunEnum
         Aiming,
         Reloading
     }
+
 }
 public static class MonsterEnum
 {
-    public enum MonsterType 
+    public enum MonsterType
     {
         slime   //史莱姆
     }//怪物种类
