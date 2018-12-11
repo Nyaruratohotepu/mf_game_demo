@@ -25,7 +25,7 @@ namespace Assets.Scripts.Weapons
             Data = new WeaponData();
             Data.AimTime = 0.1f;
             Data.BulletCapacity = 360;
-            Data.BulletLeft = 360;
+            Data.BulletLeft = Data.BulletCapacity;
             Data.BulletSpeed = 30;
             Data.Damage = 20;
             Data.FireCd = 0.1f;
@@ -37,7 +37,7 @@ namespace Assets.Scripts.Weapons
             Data.Type = GunEnum.GunType.assault_rifle;
 
 
-            SpearAngleMax = 0;
+            SpearAngleMax = 5;
             BulletPath = "Prefabs/Bullets/Bullet_AKM";
             BulletImpactPath = "Prefabs/Bullets/Bullet_AKM_Impact";
 
@@ -45,9 +45,9 @@ namespace Assets.Scripts.Weapons
 
             Animation = new TwoHandGunAnimation(weaponObject, owner.GetComponent<Animator>());
 
-            Barrage = new RifleBarrageFast(Data.Damage, Data.BulletSpeed, SpearAngleMax, BulletPath, BulletImpactPath, owner);
+            Barrage = new RifleBarrageFast(Data, SpearAngleMax, BulletPath, BulletImpactPath, owner);
 
-            Action = new ARAction(this);
+            Action = new FullAutoRifileAction(this);
         }
 
         public override void OnAnimatorIK()

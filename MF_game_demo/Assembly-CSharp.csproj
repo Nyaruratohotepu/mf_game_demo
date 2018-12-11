@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Weapons\IWeaponAnimation.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeaponBarrage.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WinchesterM1897.cs" />
     <Compile Include="Assets\SD_Project\Scripts\controller.cs" />
     <Compile Include="Assets\SD_Project\Scripts\MecanimButton.cs" />
     <Compile Include="Assets\SD_Project\Scripts\ThirdPersonCamera.cs" />

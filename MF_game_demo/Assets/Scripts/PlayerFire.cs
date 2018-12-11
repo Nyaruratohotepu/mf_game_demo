@@ -13,7 +13,8 @@ public class PlayerFire : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        gun = new AK47(gunObj, gameObject);
+
+        gun = new WinchesterM1897(gunObj, gameObject);
     }
 
     // Update is called once per frame
