@@ -79,6 +79,8 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Slime.cs" />
     <Compile Include="Assets\Scripts\SlimeScript.cs" />
+    <Compile Include="Assets\Scripts\Story\DataAccess.cs" />
+    <Compile Include="Assets\Scripts\Story\StorySection.cs" />
     <Compile Include="Assets\Scripts\Weapons\AK47.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeaponAction.cs" />
@@ -118,6 +120,7 @@
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
     <None Include="Assets\StylizedProjectilePack1\shader\Mobile-Particle-AlphaBlended-ZTestAlways.shader" />
+    <None Include="Assets\AurynSky\ArenaPacks\Forest Pack\READ ME.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
@@ -153,6 +156,7 @@
     <None Include="Assets\StylizedProjectilePack1\Tips &amp; Documentations.txt" />
     <None Include="Assets\SD_Project\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+    <None Include="Assets\Resources\Story\demoStorySection.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
     <None Include="Assets\SD_Project\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
