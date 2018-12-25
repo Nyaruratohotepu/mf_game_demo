@@ -8,11 +8,11 @@ namespace Assets.Scripts.Story
     public static class DataAccess
     {
         public static string storyFolderPath = "";
-        public static StorySection GetStorySection(string storyName)
+        public static Queue<string> GetStorySectionLines(string storySectionName)
         {
 
 
-            return new StorySection();
+            return new Queue<string>();
         }
     }
 }
