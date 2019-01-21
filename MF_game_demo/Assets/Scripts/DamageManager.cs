@@ -8,7 +8,7 @@ public class DamageManager
 {
     public PlayerHP Player { set; get; }
     public GameObject PlayerObject;
-    
+
     //返回是否攻击成功
     public bool TryAttackPlayer(int damage)
     {
@@ -19,8 +19,8 @@ public class DamageManager
     }
     public int DamageToMonster()
     {
-        return PlayerObject.GetComponent<PlayerFire>().gun.Damage;
+        return 0;
     }
-    
+
 }
 

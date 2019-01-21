@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,27 +8,28 @@ public class PlayerFire : MonoBehaviour
 {
 
     public GameObject gunObj;
-    public Gun gun;
+    public Weapon gun;
 
     // Use this for initialization
     void Start()
     {
-        gun = new AKM(gunObj, gameObject);
+
+        gun = new WinchesterM1897(gunObj, gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        gun.OnUpdateCallback();
+        gun.OnUpdate();
     }
 
     private void OnAnimatorIK(int layerIndex)
     {
-        gun.OnAnimatorIKCallback();
+        gun.OnAnimatorIK();
     }
     private void FixedUpdate()
     {
-        gun.OnFixedUpdateCallback();
+        gun.OnFixedUpdate();
     }
 
 }

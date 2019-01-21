@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Story;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,12 @@ public class Manager : MonoBehaviour
     {
         return monsterManager;
     }
+    //故事和对话管理器，只读
+    public StoryManager storyManager;
+    public StoryManager GetStoryManager()
+    {
+        return storyManager;
+    }
 
     //在timeLeft秒后摧毁该物体
     public void Destory(GameObject obj, float timeLeft)
@@ -31,11 +38,16 @@ public class Manager : MonoBehaviour
     {
         damageManager = new DamageManager();
         monsterManager = new MonsterManager();
+        storyManager = new StoryManager();
     }
     public void Awake()
     {
-        damageManager.Player= GameObject.Find("maruko").GetComponent<PlayerHP>();
+        //初始化后填参数
+        damageManager.Player = GameObject.Find("maruko").GetComponent<PlayerHP>();
         damageManager.PlayerObject = GameObject.Find("maruko");
+
+        storyManager.StorySectionPlayer = GameObject.Find("StoryUI").GetComponent<StoryPlayer>();
+
     }
     // Use this for initialization
     void Start()

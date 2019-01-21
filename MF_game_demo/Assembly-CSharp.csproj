@@ -79,6 +79,18 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Slime.cs" />
     <Compile Include="Assets\Scripts\SlimeScript.cs" />
+    <Compile Include="Assets\Scripts\Story\DataAccess.cs" />
+    <Compile Include="Assets\Scripts\Story\StoryManager.cs" />
+    <Compile Include="Assets\Scripts\Story\StoryPlayer.cs" />
+    <Compile Include="Assets\Scripts\Story\StorySection.cs" />
+    <Compile Include="Assets\Scripts\Story\StorySectionTrigger.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AK47.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IWeaponAction.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IWeaponAnimation.cs" />
+    <Compile Include="Assets\Scripts\Weapons\IWeaponBarrage.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WinchesterM1897.cs" />
     <Compile Include="Assets\SD_Project\Scripts\controller.cs" />
     <Compile Include="Assets\SD_Project\Scripts\MecanimButton.cs" />
     <Compile Include="Assets\SD_Project\Scripts\ThirdPersonCamera.cs" />
@@ -111,6 +123,7 @@
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
     <None Include="Assets\StylizedProjectilePack1\shader\Mobile-Particle-AlphaBlended-ZTestAlways.shader" />
+    <None Include="Assets\AurynSky\ArenaPacks\Forest Pack\READ ME.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
@@ -146,6 +159,7 @@
     <None Include="Assets\StylizedProjectilePack1\Tips &amp; Documentations.txt" />
     <None Include="Assets\SD_Project\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+    <None Include="Assets\Resources\Story\demoStorySection.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
     <None Include="Assets\SD_Project\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
@@ -188,7 +202,6 @@
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\Resources\3D_model\Maruko\Extra\ReadMe_KawaiiNeko28.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
-    <None Include="ClassDiagram1.cd" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Code/GitRepository/mf_game_demo/MF_game_demo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
