@@ -7,7 +7,7 @@ public class StorySectionTrigger : MonoBehaviour
 {
     private StoryManager storyManager;
     private Manager gameManager;
-    public string StoryName { get; set; }
+    public string StoryName;
     private StorySection storySection;
     //准备好后，出现操作提示触发剧情
     public bool isReady { get; set; }
@@ -16,6 +16,7 @@ public class StorySectionTrigger : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<Manager>();
         storyManager = gameManager.GetStoryManager();
+
         storySection = storyManager.GetStorySection(StoryName);
         isReady = false;
     }
@@ -25,16 +26,24 @@ public class StorySectionTrigger : MonoBehaviour
     {
         //触发剧情
         if (isReady && Input.GetButtonDown("Interact"))
+        {
+            MonoBehaviour.print("对话!" + StoryName+storySection);
             storyManager.StartStory(storySection);
+            
+        }
+
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
             isReady = true;
+        MonoBehaviour.print("colli");
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
             isReady = false;
     }
+
 }

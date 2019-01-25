@@ -46,7 +46,7 @@ public class Manager : MonoBehaviour
         damageManager.Player = GameObject.Find("maruko").GetComponent<PlayerHP>();
         damageManager.PlayerObject = GameObject.Find("maruko");
 
-        storyManager.StorySectionPlayer = GameObject.Find("StoryUI").GetComponent<StoryPlayer>();
+        storyManager.StorySectionPlayer = GameObject.Find("SotryPlayer").GetComponent<StoryPlayer>();
 
     }
     // Use this for initialization

@@ -39,11 +39,19 @@ namespace Assets.Scripts.Story
 
         }
 
-        //调用UI组件播放对话
+        //触发剧情对话时候被调用（如碰撞npc时被npc调用），调用UI组件播放对话
         public void StartStory(StorySection storySection)
         {
             StorySectionPlayer.Play(storySection);
         }
+
+        //处理剧情指令
+        public bool AddItemHandle(int itemId, int count)
+        {
+            return false;
+        }
+
+
     }
 
 }

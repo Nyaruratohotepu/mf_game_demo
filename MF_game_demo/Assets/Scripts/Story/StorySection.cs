@@ -5,77 +5,85 @@ using System.Text;
 
 namespace Assets.Scripts.Story
 {
-    //封装一个StoryCMD的序列字典
+    //StorySection封装一个StoryCMD的序列字典，记录一段对话包含的指令，由StoryPlayer显示
     public class StorySection
     {
         //默认参数分割符号是制表符和空格
         private char[] separators = { '\t', ' ' };
-        //指令(包含对话和操作)
+
+        //指令(包含对话和操作)，从0开始计算序号
         private Dictionary<int, StoryCMD> storyCMDs;
 
+
+        //构造过程是字符串队列中的每一行转成一个故事指令
         public StorySection(string storySectionName)
         {
             Queue<string> storyLines = DataAccess.GetStorySectionLines(storySectionName);
             storyCMDs = new Dictionary<int, StoryCMD>();
 
-            //解析错误的行号
+
             List<int> errorLinesNum = new List<int>();
 
             for (int i = 0; i < storyLines.Count; i++)
             {
-                //解析命令
+                //解析命令，记录错误行号
                 if (!AddStoryCMD(storyLines.Dequeue()))
                     errorLinesNum.Add(i);
             }
-            
+
         }
 
         //对外访问接口
+
+        //由行号获取故事指令，找不到返回null
         public StoryCMD GetStoryCMD(int lineNum)
         {
-            return storyCMDs[lineNum];
+            if (storyCMDs.ContainsKey(lineNum))
+                return storyCMDs[lineNum];
+            else return null;
         }
 
+        //字符串转故事指令
         private bool AddStoryCMD(string cmdString)
         {
             if (cmdString[0] != '@') return false;
             string[] values = cmdString.Split(separators);
-            switch (values[0])
+            switch (values[0].ToUpper())
             {
                 //玩家背包加物品
-                case "ADDITEM":
+                case "@ADDITEM":
                     return addADDITEM(values);
                 //玩家背包扣物品
-                case "RMVITEM":
+                case "@RMVITEM":
                 //检查玩家背包有无某物品
-                case "CHKITEM":
+                case "@CHKITEM":
                 //检查玩家背包有无某物体（符合数量）
-                case "CHKITEMRAG":
+                case "@CHKITEMRAG":
                 //检查某FLAG值是否在范围内
-                case "CHKFLAG":
+                case "@CHKFLAG":
                 //设定某FLAG值
-                case "SETGLAG":
+                case "@SETGLAG":
                 //某FLAG值++
-                case "INCFLAG":
+                case "@INCFLAG":
                 //某FLAG值--
-                case "DECFLAG":
+                case "@DECFLAG":
                 //给正在对话的NPC背包加入某物体
-                case "ADDITEMNPC":
+                case "@ADDITEMNPC":
                 //给正在对话的NPC背包减去某物体
-                case "RMVITEMNPC":
+                case "@RMVITEMNPC":
                 //对话框显示文字
-                case "SAY":
+                case "@SAY":
                     return addSAY(values);
                 //改变人物立绘
-                case "CHGCHAIMG":
+                case "@CHGCHAIMG":
                 //改变背景图片
-                case "CHGBGIMG":
+                case "@CHGBGIMG":
                 //分支开始
-                case "OPTBEG":
+                case "@OPTBEG":
                 //分支项
-                case "OPTITEM":
+                case "@OPTITEM":
                 //分支结束
-                case "OPTEND":
+                case "@OPTEND":
 
                 //无法解析的命令
                 default:
@@ -83,6 +91,7 @@ namespace Assets.Scripts.Story
             }
         }
 
+        //以下若干函数均用来从字符串中获取对应故事指令参数列表
         private bool addADDITEM(string[] values)
         {
             //至少包含3个项（含命令+2个必要参数）
@@ -148,6 +157,7 @@ namespace Assets.Scripts.Story
                 default:
                     if (!int.TryParse(values[2], out left)) return false;
                     if (!int.TryParse(values[3], out jumpToLineOffset)) return false;
+                    //非0转true
                     isFromLeft = Convert.ToBoolean(left);
                     storyCMDs.Add(lineNum, new SayCMD(lineNum, values[1], isFromLeft, jumpToLineOffset));
                     return true;
@@ -235,7 +245,7 @@ namespace Assets.Scripts.Story
         public int JumpToLine { get; set; }
         public SayCMD(int lineNum, string text, bool isFromLeft = true, int jumpOffset = 1)
         {
-
+            Type = StoryItemType.SAY;
             Text = text;
             IsFromLeft = isFromLeft;
             JumpToLine = jumpOffset + lineNum;
