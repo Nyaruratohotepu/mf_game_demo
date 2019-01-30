@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Story\StoryPlayer.cs" />
     <Compile Include="Assets\Scripts\Story\StorySection.cs" />
     <Compile Include="Assets\Scripts\Story\StorySectionTrigger.cs" />
+    <Compile Include="Assets\Scripts\Story\StoryTextBox.cs" />
     <Compile Include="Assets\Scripts\Weapons\AK47.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
     <Compile Include="Assets\Scripts\Weapons\IWeaponAction.cs" />
