@@ -77,7 +77,7 @@ public class StoryPlayer : MonoBehaviour
                 case StoryItemType.SAY:
                     nextCMDNum = Say(cmd as SayCMD);
                     break;
-                case StoryItemType.SETGLAG:
+                case StoryItemType.SETFLAG:
                 default:
                     break;
             }

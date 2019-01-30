@@ -21,14 +21,10 @@ namespace Assets.Scripts.Story
             Queue<string> storyLines = DataAccess.GetStorySectionLines(storySectionName);
             storyCMDs = new Dictionary<int, StoryCMD>();
 
-
-            List<int> errorLinesNum = new List<int>();
-
-            for (int i = 0; i < storyLines.Count; i++)
+            while (storyLines.Count > 0)
             {
-                //解析命令，记录错误行号
-                if (!AddStoryCMD(storyLines.Dequeue()))
-                    errorLinesNum.Add(i);
+                //解析命令
+                AddStoryCMD(storyLines.Dequeue());
             }
 
         }
@@ -187,7 +183,7 @@ namespace Assets.Scripts.Story
         //检查某FLAG值是否在范围内
         CHKFLAG,
         //设定某FLAG值
-        SETGLAG,
+        SETFLAG,
         //某FLAG值++
         INCFLAG,
         //某FLAG值--

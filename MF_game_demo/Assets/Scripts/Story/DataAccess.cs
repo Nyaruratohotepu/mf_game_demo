@@ -17,7 +17,8 @@ namespace Assets.Scripts.Story
             Queue<string> storyLines = new Queue<string>();
             try
             {
-                StreamReader sr = new StreamReader(storyFolderPath + storySectionName + suffix);
+                //若不指定Encoding.Default会乱码
+                StreamReader sr = new StreamReader(storyFolderPath + storySectionName + suffix,Encoding.Default);
                 string storyLine;
                 while ((storyLine = sr.ReadLine()) != null)
                 {
