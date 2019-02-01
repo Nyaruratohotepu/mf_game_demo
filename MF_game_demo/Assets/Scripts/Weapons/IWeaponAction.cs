@@ -10,7 +10,7 @@ namespace Assets.Scripts.Weapons
     {
         //指定武器击发方式，调用弹幕模块
         void OnUpdateHandler();
-        void OnFixedupdateHandler();
+        void OnFixedupdateHandler(float shootHeight);
         void OnAnimatorIKHandler();
     }
 
@@ -39,7 +39,7 @@ namespace Assets.Scripts.Weapons
             muzzle = weapon.WeaponObj.transform.Find("Muzzle");
         }
 
-        void IWeaponAction.OnFixedupdateHandler()
+        void IWeaponAction.OnFixedupdateHandler(float shootHeight)
         {
             weapon.Animation.FixedUpdateHandler();
 
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Weapons
                     Idling();
                     break;
                 case GunEnum.GunState.Aiming:
-                    Aiming();
+                    Aiming(shootHeight);
                     break;
                 case GunEnum.GunState.Reloading:
                     Reloading();
@@ -70,7 +70,7 @@ namespace Assets.Scripts.Weapons
                 StateToAiming();
             //瞄准完毕下一帧调用Aiming()
         }
-        private void Aiming()
+        private void Aiming(float shootHeight)
         {
             //松扳机
             if (!isTrigger)
@@ -85,7 +85,7 @@ namespace Assets.Scripts.Weapons
             if (IOTool.GetMousePosition(out hit))
             {
                 target = hit.point;
-                target.y = muzzle.position.y;
+                target.y = shootHeight;
                 weapon.Animation.GunAim(target);
             }
             if (weapon.Data.MagazineLeft <= 0)
@@ -108,8 +108,12 @@ namespace Assets.Scripts.Weapons
                 nextFire -= Time.deltaTime;
                 if (nextFire <= 0)
                 {
+                    //以固定高度发射弹幕避免碰撞失效
+                    Vector3 muzzleFixHeight = muzzle.position;
+                    muzzleFixHeight.y = shootHeight;
+                    target.y = shootHeight;
                     //弹幕发射成功
-                    if (weapon.Barrage.FireBarrage(muzzle.position, target))
+                    if (weapon.Barrage.FireBarrage(muzzleFixHeight, target))
                     {
                         weapon.Data.MagazineLeft--;
                         weapon.Animation.GunFire();
@@ -190,7 +194,7 @@ namespace Assets.Scripts.Weapons
             muzzle = weapon.WeaponObj.transform.Find("Muzzle");
         }
 
-        void IWeaponAction.OnFixedupdateHandler()
+        void IWeaponAction.OnFixedupdateHandler(float shootHeight)
         {
             weapon.Animation.FixedUpdateHandler();
 
@@ -206,7 +210,7 @@ namespace Assets.Scripts.Weapons
                     Idling();
                     break;
                 case GunEnum.GunState.Aiming:
-                    Aiming();
+                    Aiming(shootHeight);
                     break;
                 case GunEnum.GunState.Reloading:
                     Reloading();
@@ -220,13 +224,13 @@ namespace Assets.Scripts.Weapons
             else if (isTrigger)
                 StateToAiming();
         }
-        private void Aiming()
+        private void Aiming(float shootHeight)
         {
             RaycastHit hit = new RaycastHit();
             if (IOTool.GetMousePosition(out hit))
             {
                 target = hit.point;
-                target.y = muzzle.position.y;
+                target.y = shootHeight;
                 weapon.Animation.GunAim(target);
             }
             if (weapon.Data.MagazineLeft <= 0)
@@ -246,13 +250,22 @@ namespace Assets.Scripts.Weapons
             }
             else
             {
+                //以固定高度发射弹幕避免碰撞失效
+                Vector3 muzzleFixHeight = muzzle.position;
+                muzzleFixHeight.y = shootHeight;
+                target.y = shootHeight;
                 //弹幕发射成功
-                if (weapon.Barrage.FireBarrage(muzzle.position, target))
+                if (weapon.Barrage.FireBarrage(muzzleFixHeight, target))
                 {
                     weapon.Data.MagazineLeft--;
                     weapon.Animation.GunFire();
                     //重置cd
                     nextFire = weapon.Data.FireCd;
+                    
+                }
+                else
+                {
+                    MonoBehaviour.print("发射失败");
                 }
                 StateToIdling();
             }

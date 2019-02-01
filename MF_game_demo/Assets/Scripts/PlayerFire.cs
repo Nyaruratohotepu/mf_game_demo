@@ -9,12 +9,13 @@ public class PlayerFire : MonoBehaviour
 
     public GameObject gunObj;
     public Weapon gun;
+    public Transform muzzleFixed;
 
     // Use this for initialization
     void Start()
     {
 
-        gun = new WinchesterM1897(gunObj, gameObject);
+        gun = new WinchesterM1897(gunObj, gameObject,muzzleFixed);
     }
 
     // Update is called once per frame

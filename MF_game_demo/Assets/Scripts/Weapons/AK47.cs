@@ -19,8 +19,9 @@ namespace Assets.Scripts.Weapons
         public float SpearAngleMax { set; get; }
         public string BulletPath { set; get; }
         public string BulletImpactPath { set; get; }
+        private Transform muzzleFixed;
 
-        public AK47(GameObject weaponObject, GameObject owner)
+        public AK47(GameObject weaponObject, GameObject owner,Transform muzzleFixedPosition)
         {
             Data = new WeaponData();
             Data.AimTime = 0.1f;
@@ -42,6 +43,7 @@ namespace Assets.Scripts.Weapons
             BulletImpactPath = "Prefabs/Bullets/Bullet_AKM_Impact";
 
             WeaponObj = weaponObject;
+            muzzleFixed = muzzleFixedPosition;
 
             Animation = new TwoHandGunAnimation(weaponObject, owner.GetComponent<Animator>());
 
@@ -57,7 +59,7 @@ namespace Assets.Scripts.Weapons
 
         public override void OnFixedUpdate()
         {
-            Action.OnFixedupdateHandler();
+            Action.OnFixedupdateHandler(muzzleFixed.position.y);
         }
 
         public override void OnUpdate()
