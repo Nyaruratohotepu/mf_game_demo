@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n3_ppu7" name="playerheadbg" src="ppu7e" fileName="任务面板详情.png" xy="24,807" size="180,180" group="n11_ppu7" alpha="0.55"/>
+    <image id="n5_ppu7" name="playerlv" src="ppu7e" fileName="任务面板详情.png" xy="24,1005" size="180,51" group="n11_ppu7" alpha="0.55"/>
+    <image id="n8_ppu7" name="n8" src="ppu77" fileName="人物姓名文字背景.png" xy="260,806" size="263,75" group="n11_ppu7" alpha="0.55"/>
+    <text id="n9_ppu7" name="name" xy="307,816" size="195,45" group="n11_ppu7" fontSize="40" autoSize="none" text="MARUKO"/>
+    <image id="n10_ppu7" name="hpbg" src="ppu7e" fileName="任务面板详情.png" xy="257,878" size="271,58" group="n11_ppu7" alpha="0.55"/>
+    <component id="n7_ppu7" name="playerhpbar" src="ppu7o" fileName="ProgressBar1.xml" xy="261,882" group="n11_ppu7">
+      <ProgressBar value="100" max="100"/>
+    </component>
+    <text id="n12_ppu7" name="hp" xy="319,883" size="146,49" group="n11_ppu7" fontSize="40" text="100/100"/>
+    <group id="n11_ppu7" name="playerinformation" xy="24,805" size="504,250" advanced="true" collapsed="true"/>
+    <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="215,947" size="119,60" group="n26_ppu7"/>
+    <text id="n20_ppu7" name="n20" xy="233,953" size="84,49" group="n26_ppu7" fontSize="40" text="中毒"/>
+    <group id="n26_ppu7" name="poisoned" xy="215,947" size="119,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <component id="n14_ppu7" name="powered" src="ppu7m" fileName="powered.xml" xy="342,947" size="120,60" group="n27_ppu7"/>
+    <text id="n21_ppu7" name="n21" xy="355,947" size="84,49" group="n27_ppu7" fontSize="40" text="暴击"/>
+    <group id="n27_ppu7" name="powered" xy="342,947" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <component id="n15_ppu7" name="slowed" src="ppu7j" fileName="slowed.xml" xy="469,947" size="120,60" group="n28_ppu7"/>
+    <text id="n22_ppu7" name="n22" xy="482,948" size="84,49" group="n28_ppu7" fontSize="40" text="减速"/>
+    <group id="n28_ppu7" name="slowed" xy="468,947" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <component id="n16_ppu7" name="bleeding" src="ppu7f" fileName="bleeding.xml" xy="215,1014" size="113,60" group="n29_ppu7"/>
+    <text id="n23_ppu7" name="n23" xy="227,1013" size="84,49" group="n29_ppu7" fontSize="40" text="流血"/>
+    <group id="n29_ppu7" name="bleeding" xy="215,1013" size="113,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <component id="n17_ppu7" name="diziness" src="ppu7n" fileName="diziness.xml" xy="342,1013" size="120,60" group="n30_ppu7"/>
+    <text id="n24_ppu7" name="n24" xy="361,1015" size="84,49" group="n30_ppu7" fontSize="40" text="眩晕"/>
+    <group id="n30_ppu7" name="dizness" xy="342,1013" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <component id="n18_ppu7" name="speedup" src="ppu7k" fileName="speedup.xml" xy="468,1013" size="120,60" group="n31_ppu7"/>
+    <text id="n25_ppu7" name="n25" xy="483,1015" size="84,49" group="n31_ppu7" fontSize="40" text="加速"/>
+    <group id="n31_ppu7" name="speedup" xy="468,1013" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
+    <group id="n19_ppu7" name="playerstate" xy="215,947" size="373,126" advanced="true" collapsed="true"/>
+    <image id="n32_ppu7" name="n32" src="ppu7e" fileName="任务面板详情.png" xy="696,806" size="318,61" group="n34_ppu7" alpha="0.55"/>
+    <text id="n33_ppu7" name="n33" xy="818,808" size="84,49" group="n34_ppu7" fontSize="40" text="武器"/>
+    <image id="n35_ppu7" name="n35" src="ppu7e" fileName="任务面板详情.png" xy="700,884" size="131,125" group="n34_ppu7"/>
+    <image id="n36_ppu7" name="n36" src="ppu7e" fileName="任务面板详情.png" xy="882,883" size="131,125" group="n34_ppu7"/>
+    <group id="n34_ppu7" name="n34" xy="696,806" size="319,203"/>
+  </displayList>
+</component>
