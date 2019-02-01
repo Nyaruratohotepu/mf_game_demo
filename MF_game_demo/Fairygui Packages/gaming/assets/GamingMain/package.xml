@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="dopftjtc" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="ppu70" name="Main.xml" path="/"/>
+    <image id="ppu71" name="状态暴击.png" path="/"/>
+    <image id="ppu72" name="状态加速.png" path="/"/>
+    <image id="ppu73" name="状态减速.png" path="/"/>
+    <image id="ppu74" name="状态-流血.png" path="/"/>
+    <image id="ppu75" name="状态-眩晕.png" path="/"/>
+    <image id="ppu76" name="状态-中毒.png" path="/"/>
+    <image id="ppu77" name="人物姓名文字背景.png" path="/"/>
+    <image id="ppu78" name="主动技案件文字背景.png" path="/"/>
+    <image id="ppu79" name="主技能.png" path="/"/>
+    <image id="ppu7a" name="血条.png" path="/"/>
+    <image id="ppu7b" name="血条背景.png" path="/"/>
+    <image id="ppu7e" name="任务面板详情.png" path="/"/>
+    <component id="ppu7f" name="bleeding.xml" path="/"/>
+    <component id="ppu7g" name="poisoned.xml" path="/"/>
+    <component id="ppu7j" name="slowed.xml" path="/"/>
+    <component id="ppu7k" name="speedup.xml" path="/"/>
+    <component id="ppu7m" name="powered.xml" path="/"/>
+    <component id="ppu7n" name="diziness.xml" path="/"/>
+    <component id="ppu7o" name="ProgressBar1.xml" path="/"/>
+    <image id="ppu7p" name="遮罩.png" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
