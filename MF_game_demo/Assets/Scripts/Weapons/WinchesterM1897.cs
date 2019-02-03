@@ -24,7 +24,9 @@ namespace Assets.Scripts.Weapons
         public int BulletCountPerFire { set; get; }
         public int BarrageAngle { set; get; }
 
-        public WinchesterM1897(GameObject weaponObject, GameObject owner)
+        private Transform muzzleFixed;
+
+        public WinchesterM1897(GameObject weaponObject, GameObject owner,Transform muzzleFixedPosition)
         {
             Data = new WeaponData();
             Data.AimTime = 0f;
@@ -48,6 +50,7 @@ namespace Assets.Scripts.Weapons
             BarrageAngle = 30;
 
             WeaponObj = weaponObject;
+            muzzleFixed = muzzleFixedPosition;
 
             Animation = new TwoHandGunAnimation(weaponObject, owner.GetComponent<Animator>());
 
@@ -63,7 +66,7 @@ namespace Assets.Scripts.Weapons
 
         public override void OnFixedUpdate()
         {
-            Action.OnFixedupdateHandler();
+            Action.OnFixedupdateHandler(muzzleFixed.position.y);
         }
 
         public override void OnUpdate()

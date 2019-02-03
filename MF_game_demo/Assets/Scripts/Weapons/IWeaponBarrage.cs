@@ -10,7 +10,7 @@ namespace Assets.Scripts.Weapons
     public interface IWeaponBarrage
     {
         //发射弹幕，返回是否成功射出
-        bool FireBarrage(Vector3 muzzlePoint, Vector3 target);
+        bool FireBarrage(Vector3 muzzlePosition, Vector3 targetPosition);
     }
 
     //单发高速步枪弹幕（使用射线检测）
@@ -43,25 +43,25 @@ namespace Assets.Scripts.Weapons
         }
 
 
-        bool IWeaponBarrage.FireBarrage(Vector3 muzzlePoint, Vector3 targetPosition)
+        bool IWeaponBarrage.FireBarrage(Vector3 muzzlePosition, Vector3 targetPosition)
         {
             float spreadAngle = UnityEngine.Random.Range(-1f, 1f) * maxSpreadAngle;
 
             //射击方向是标准方向绕y轴旋转一个随机角度
-            Vector3 direction = (Quaternion.AngleAxis(spreadAngle, Vector3.up) * (targetPosition - muzzlePoint)).normalized;
+            Vector3 direction = (Quaternion.AngleAxis(spreadAngle, Vector3.up) * (targetPosition - muzzlePosition)).normalized;
 
             RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(muzzlePoint, direction, out hit))
+            if (Physics.Raycast(muzzlePosition, direction, out hit))
             {
-                Debug.DrawLine(muzzlePoint, hit.point, Color.red, 3);
+                Debug.DrawLine(muzzlePosition, hit.point, Color.red, 3);
                 //hitTime秒后子弹打击到物体
-                float hitTime = (hit.point - muzzlePoint).magnitude / speed;
+                float hitTime = (hit.point - muzzlePosition).magnitude / speed;
 
                 if (hit.collider != null)
                 {
                     MonoBehaviour.print("HitObj:" + hit.collider.gameObject);
                     GameObject bullet = GameObject.Instantiate(Resources.Load<GameObject>(bulletPath));
-                    bullet.transform.position = muzzlePoint;
+                    bullet.transform.position = muzzlePosition;
                     bullet.AddComponent<BulletBase>();
                     bullet.GetComponent<BulletBase>().Init(owner, damage, speed, hitTime, new NomalBulletHandler(direction, hit.point, hit.collider.gameObject, bulletImpactPath));
 

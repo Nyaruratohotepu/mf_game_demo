@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     [Tooltip("移动速度")]
     public float speed;
 
-    [Tooltip("旋转速度，0-1之间，1为完全跟随鼠标")]
+    [Tooltip("旋转速度")]
     public float rotate_speed;
 
     private CharacterController cc;
@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
                 //此处使用LookRotation方便插值
 
                 //transform.rotation = Quaternion.LookRotation(direction);//不插值
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotate_speed);
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rotate_speed*Time.deltaTime);
             }
         }
     }

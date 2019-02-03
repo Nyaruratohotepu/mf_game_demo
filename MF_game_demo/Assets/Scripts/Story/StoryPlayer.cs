@@ -27,7 +27,7 @@ public class StoryPlayer : MonoBehaviour
         storyManager = manager.storyManager;
         IsPlaying = false;
         nextCMDNum = 0;
-        canvasGroup = gameObject.GetComponent<CanvasGroup>();
+        canvasGroup = gameObject.GetComponentInParent<CanvasGroup>();
     }
 
     // Update is called once per frame
@@ -97,6 +97,8 @@ public class StoryPlayer : MonoBehaviour
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
+        Time.timeScale = 0f;
+        
     }
     //隐藏对话界面
     private void Hide()
@@ -104,6 +106,7 @@ public class StoryPlayer : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+        Time.timeScale = 1f;
     }
 
 

@@ -53,5 +53,4 @@ public class WeaponData
     //残弹余量
     public int BulletLeft { set; get; }
 
-
 }
