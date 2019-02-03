@@ -1,14 +1,4 @@
 {
-	"docs": [
-		"dopftjtc",
-		"ppu70",
-		"dopftjtc",
-		"ppu7f",
-		"dopftjtc",
-		"ppu7g",
-		"dopftjtc",
-		"ppu7o"
-	],
 	"hidden_packages": [],
 	"active_doc": [
 		"dopftjtc",
@@ -17,5 +7,23 @@
 	"expanded_nodes": [
 		"dopftjtc",
 		"/"
+	],
+	"docs": [
+		"dopftjtc",
+		"ppu70",
+		"dopftjtc",
+		"ppu7f",
+		"dopftjtc",
+		"ppu7g",
+		"dopftjtc",
+		"ppu7o",
+		"dopftjtc",
+		"xt25r",
+		"dopftjtc",
+		"xt25s",
+		"dopftjtc",
+		"xt25u",
+		"dopftjtc",
+		"xt25v"
 	]
 }
