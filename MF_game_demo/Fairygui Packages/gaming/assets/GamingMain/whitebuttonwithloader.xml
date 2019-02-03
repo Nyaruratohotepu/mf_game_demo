@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,100" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n0_xt25" name="buttonbase" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="100,100" alpha="0.55">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <loader id="n1_xt25" name="loader" xy="10,7" size="80,84"/>
+  </displayList>
+  <Button/>
+</component>

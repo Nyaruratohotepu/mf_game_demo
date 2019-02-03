@@ -22,6 +22,10 @@
     <component id="ppu7n" name="diziness.xml" path="/"/>
     <component id="ppu7o" name="ProgressBar1.xml" path="/"/>
     <image id="ppu7p" name="遮罩.png" path="/"/>
+    <component id="xt25r" name="whitebuttonwithloader.xml" path="/"/>
+    <component id="xt25s" name="whitebutton.xml" path="/"/>
+    <component id="xt25u" name="weaponbutton.xml" path="/"/>
+    <component id="xt25v" name="itembutton.xml" path="/"/>
   </resources>
   <publish name=""/>
 </packageDescription>

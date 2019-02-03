@@ -1,39 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n3_ppu7" name="playerheadbg" src="ppu7e" fileName="任务面板详情.png" xy="24,807" size="180,180" group="n11_ppu7" alpha="0.55"/>
-    <image id="n5_ppu7" name="playerlv" src="ppu7e" fileName="任务面板详情.png" xy="24,1005" size="180,51" group="n11_ppu7" alpha="0.55"/>
-    <image id="n8_ppu7" name="n8" src="ppu77" fileName="人物姓名文字背景.png" xy="260,806" size="263,75" group="n11_ppu7" alpha="0.55"/>
-    <text id="n9_ppu7" name="name" xy="307,816" size="195,45" group="n11_ppu7" fontSize="40" autoSize="none" text="MARUKO"/>
-    <image id="n10_ppu7" name="hpbg" src="ppu7e" fileName="任务面板详情.png" xy="257,878" size="271,58" group="n11_ppu7" alpha="0.55"/>
-    <component id="n7_ppu7" name="playerhpbar" src="ppu7o" fileName="ProgressBar1.xml" xy="261,882" group="n11_ppu7">
+    <component id="n48_xt25" name="playerheadbg" src="xt25r" fileName="whitebuttonwithloader.xml" xy="13,861" size="124,125" group="n11_ppu7">
+      <relation target="n11_ppu7" sidePair="center-center,middle-middle"/>
+    </component>
+    <image id="n8_ppu7" name="n8" src="ppu77" fileName="人物姓名文字背景.png" xy="150,857" size="225,51" group="n11_ppu7" alpha="0.55">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <text id="n9_ppu7" name="name" xy="178,861" size="163,46" group="n11_ppu7" fontSize="34" align="center" vAlign="middle" autoSize="none" text="MARUKO">
+      <relation target="n8_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <image id="n10_ppu7" name="hpbg" src="ppu7e" fileName="任务面板详情.png" xy="154,902" size="271,51" group="n11_ppu7" alpha="0.55">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </image>
+    <component id="n7_ppu7" name="playerhpbar" src="ppu7o" fileName="ProgressBar1.xml" xy="158,906" size="262,45" group="n11_ppu7">
+      <relation target="n10_ppu7" sidePair="center-center,middle-middle"/>
       <ProgressBar value="100" max="100"/>
     </component>
-    <text id="n12_ppu7" name="hp" xy="319,883" size="146,49" group="n11_ppu7" fontSize="40" text="100/100"/>
-    <group id="n11_ppu7" name="playerinformation" xy="24,805" size="504,250" advanced="true" collapsed="true"/>
-    <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="215,947" size="119,60" group="n26_ppu7"/>
-    <text id="n20_ppu7" name="n20" xy="233,953" size="84,49" group="n26_ppu7" fontSize="40" text="中毒"/>
-    <group id="n26_ppu7" name="poisoned" xy="215,947" size="119,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <component id="n14_ppu7" name="powered" src="ppu7m" fileName="powered.xml" xy="342,947" size="120,60" group="n27_ppu7"/>
-    <text id="n21_ppu7" name="n21" xy="355,947" size="84,49" group="n27_ppu7" fontSize="40" text="暴击"/>
-    <group id="n27_ppu7" name="powered" xy="342,947" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <component id="n15_ppu7" name="slowed" src="ppu7j" fileName="slowed.xml" xy="469,947" size="120,60" group="n28_ppu7"/>
-    <text id="n22_ppu7" name="n22" xy="482,948" size="84,49" group="n28_ppu7" fontSize="40" text="减速"/>
-    <group id="n28_ppu7" name="slowed" xy="468,947" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <component id="n16_ppu7" name="bleeding" src="ppu7f" fileName="bleeding.xml" xy="215,1014" size="113,60" group="n29_ppu7"/>
-    <text id="n23_ppu7" name="n23" xy="227,1013" size="84,49" group="n29_ppu7" fontSize="40" text="流血"/>
-    <group id="n29_ppu7" name="bleeding" xy="215,1013" size="113,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <component id="n17_ppu7" name="diziness" src="ppu7n" fileName="diziness.xml" xy="342,1013" size="120,60" group="n30_ppu7"/>
-    <text id="n24_ppu7" name="n24" xy="361,1015" size="84,49" group="n30_ppu7" fontSize="40" text="眩晕"/>
-    <group id="n30_ppu7" name="dizness" xy="342,1013" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <component id="n18_ppu7" name="speedup" src="ppu7k" fileName="speedup.xml" xy="468,1013" size="120,60" group="n31_ppu7"/>
-    <text id="n25_ppu7" name="n25" xy="483,1015" size="84,49" group="n31_ppu7" fontSize="40" text="加速"/>
-    <group id="n31_ppu7" name="speedup" xy="468,1013" size="120,60" group="n19_ppu7" advanced="true" collapsed="true"/>
-    <group id="n19_ppu7" name="playerstate" xy="215,947" size="373,126" advanced="true" collapsed="true"/>
-    <image id="n32_ppu7" name="n32" src="ppu7e" fileName="任务面板详情.png" xy="696,806" size="318,61" group="n34_ppu7" alpha="0.55"/>
-    <text id="n33_ppu7" name="n33" xy="818,808" size="84,49" group="n34_ppu7" fontSize="40" text="武器"/>
-    <image id="n35_ppu7" name="n35" src="ppu7e" fileName="任务面板详情.png" xy="700,884" size="131,125" group="n34_ppu7"/>
-    <image id="n36_ppu7" name="n36" src="ppu7e" fileName="任务面板详情.png" xy="882,883" size="131,125" group="n34_ppu7"/>
-    <group id="n34_ppu7" name="n34" xy="696,806" size="319,203"/>
+    <text id="n12_ppu7" name="hp" xy="216,904" size="148,49" group="n11_ppu7" fontSize="40" align="center" vAlign="middle" text="100/100">
+      <relation target="n7_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <component id="n37_xt25" name="playerlv" src="xt25s" fileName="whitebutton.xml" xy="17,1010" size="121,54" group="n39_xt25"/>
+    <text id="n38_xt25" name="playerlvtext" xy="36,1015" size="88,48" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="none" text="Lv.1">
+      <relation target="n37_xt25" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n39_xt25" name="playerlv" xy="17,1010" size="121,54" group="n11_ppu7" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <group id="n11_ppu7" name="playerinformation" xy="13,857" size="412,208" advanced="true" collapsed="true"/>
+    <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="143,958" size="119,60" group="n26_ppu7" alpha="0.55"/>
+    <text id="n20_ppu7" name="n20" xy="161,964" size="85,49" group="n26_ppu7" alpha="0.55" fontSize="40" text="中毒">
+      <relation target="n13_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n26_ppu7" name="poisoned" xy="143,958" size="119,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n14_ppu7" name="powered" src="ppu7m" fileName="powered.xml" xy="253,958" size="120,60" group="n27_ppu7" alpha="0.55"/>
+    <text id="n21_ppu7" name="n21" xy="266,958" size="85,49" group="n27_ppu7" alpha="0.55" fontSize="40" text="暴击">
+      <relation target="n14_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n27_ppu7" name="powered" xy="253,958" size="120,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n15_ppu7" name="slowed" src="ppu7j" fileName="slowed.xml" xy="364,958" size="120,60" group="n28_ppu7" alpha="0.55"/>
+    <text id="n22_ppu7" name="n22" xy="377,959" size="85,49" group="n28_ppu7" alpha="0.55" fontSize="40" text="减速">
+      <relation target="n15_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n28_ppu7" name="slowed" xy="363,958" size="120,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n16_ppu7" name="bleeding" src="ppu7f" fileName="bleeding.xml" xy="143,1025" size="113,60" group="n29_ppu7" alpha="0.55"/>
+    <text id="n23_ppu7" name="n23" xy="155,1024" size="85,49" group="n29_ppu7" alpha="0.55" fontSize="40" text="流血">
+      <relation target="n16_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n29_ppu7" name="bleeding" xy="143,1024" size="113,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n17_ppu7" name="diziness" src="ppu7n" fileName="diziness.xml" xy="253,1024" size="120,60" group="n30_ppu7" alpha="0.55"/>
+    <text id="n24_ppu7" name="n24" xy="272,1026" size="85,49" group="n30_ppu7" alpha="0.55" fontSize="40" text="眩晕">
+      <relation target="n17_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n30_ppu7" name="dizness" xy="253,1024" size="120,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n18_ppu7" name="speedup" src="ppu7k" fileName="speedup.xml" xy="363,1024" size="120,60" group="n31_ppu7" alpha="0.55"/>
+    <text id="n25_ppu7" name="n25" xy="378,1026" size="85,49" group="n31_ppu7" alpha="0.55" fontSize="40" text="加速">
+      <relation target="n18_ppu7" sidePair="center-center,middle-middle"/>
+    </text>
+    <group id="n31_ppu7" name="speedup" xy="363,1024" size="120,60" group="n19_ppu7" advanced="true" collapsed="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <group id="n19_ppu7" name="playerstate" xy="142,958" size="341,126" advanced="true" collapsed="true"/>
+    <image id="n32_ppu7" name="n32" src="ppu7e" fileName="任务面板详情.png" xy="498,852" size="222,46" group="n34_ppu7" alpha="0.55"/>
+    <text id="n33_ppu7" name="n33" xy="564,850" size="90,49" group="n34_ppu7" fontSize="40" autoSize="none" text="武器"/>
+    <component id="n40_xt25" name="weapon1" src="xt25u" fileName="weaponbutton.xml" xy="499,906" size="100,100" group="n44_xt25"/>
+    <image id="n42_xt25" name="n42" src="ppu7e" fileName="任务面板详情.png" xy="500,1020" size="100,50" group="n44_xt25" alpha="0.55"/>
+    <text id="n43_xt25" name="weapon1bullettext" xy="503,1020" size="97,54" group="n44_xt25" fontSize="25" align="center" vAlign="middle" autoSize="none" text="100/100"/>
+    <group id="n44_xt25" name="weapon1" xy="499,880" size="130,194" group="n34_ppu7" advanced="true"/>
+    <component id="n41_xt25" name="weapon2" src="xt25u" fileName="weaponbutton.xml" xy="618,907" size="100,100" group="n49_xt25"/>
+    <image id="n45_xt25" name="n45" src="ppu7e" fileName="任务面板详情.png" xy="620,1019" size="100,50" group="n49_xt25" alpha="0.55"/>
+    <text id="n46_xt25" name="weapon2bullettext" xy="622,1019" size="100,54" group="n49_xt25" fontSize="25" align="center" vAlign="middle" autoSize="none" text="100/100"/>
+    <group id="n49_xt25" name="weapon2" xy="618,907" size="103,166" group="n34_ppu7" advanced="true" collapsed="true"/>
+    <group id="n34_ppu7" name="weapon" xy="498,850" size="223,224" advanced="true" collapsed="true"/>
+    <image id="n50_xt25" name="n50" src="ppu7e" fileName="任务面板详情.png" xy="743,852" size="140,46" group="n57_xt25" alpha="0.55"/>
+    <text id="n51_xt25" name="n51" xy="751,851" size="127,49" group="n57_xt25" fontSize="40" align="center" vAlign="middle" text="主动技"/>
+    <component id="n52_xt25" name="skill" src="xt25u" fileName="weaponbutton.xml" xy="763,905" size="100,100" group="n57_xt25"/>
+    <image id="n53_xt25" name="n53" src="ppu7e" fileName="任务面板详情.png" xy="766,1020" size="100,50" group="n57_xt25" alpha="0.55"/>
+    <text id="n54_xt25" name="skillkey" xy="798,1020" size="30,51" group="n57_xt25" fontSize="41" align="center" vAlign="middle" text="F"/>
+    <group id="n57_xt25" name="skill" xy="743,851" size="140,220" advanced="true" collapsed="true"/>
+    <list id="n56_xt25" name="easyitems" xy="908,853" size="544,216" layout="flow_hz" overflow="scroll" lineGap="8" colGap="9" defaultItem="ui://dopftjtcxt25v">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n58_xt25" name="n58" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1482,896"/>
+    <component id="n59_xt25" name="n59" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1593,898"/>
+    <component id="n60_xt25" name="n60" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1703,898"/>
+    <component id="n61_xt25" name="n61" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1814,898"/>
   </displayList>
 </component>
