@@ -26,6 +26,10 @@
     <component id="xt25s" name="whitebutton.xml" path="/"/>
     <component id="xt25u" name="weaponbutton.xml" path="/"/>
     <component id="xt25v" name="itembutton.xml" path="/"/>
+    <image id="uty7w" name="bag.png" path="/"/>
+    <image id="uty7x" name="charactor.png" path="/"/>
+    <image id="uty7y" name="menu.png" path="/"/>
+    <image id="uty7z" name="mission.png" path="/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
