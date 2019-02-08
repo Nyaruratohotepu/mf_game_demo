@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="dopftjtc" jpegQuality="80" compressPNG="true">
   <resources>
-    <component id="ppu70" name="Main.xml" path="/"/>
+    <component id="ppu70" name="Main.xml" path="/" exported="true"/>
     <image id="ppu71" name="状态暴击.png" path="/"/>
     <image id="ppu72" name="状态加速.png" path="/"/>
     <image id="ppu73" name="状态减速.png" path="/"/>
@@ -10,7 +10,7 @@
     <image id="ppu76" name="状态-中毒.png" path="/"/>
     <image id="ppu77" name="人物姓名文字背景.png" path="/"/>
     <image id="ppu78" name="主动技案件文字背景.png" path="/"/>
-    <image id="ppu79" name="主技能.png" path="/"/>
+    <image id="ppu79" name="主技能.png" path="/" exported="true"/>
     <image id="ppu7a" name="血条.png" path="/"/>
     <image id="ppu7b" name="血条背景.png" path="/"/>
     <image id="ppu7e" name="任务面板详情.png" path="/"/>
@@ -21,15 +21,15 @@
     <component id="ppu7m" name="powered.xml" path="/"/>
     <component id="ppu7n" name="diziness.xml" path="/"/>
     <component id="ppu7o" name="ProgressBar1.xml" path="/"/>
-    <image id="ppu7p" name="遮罩.png" path="/"/>
+    <image id="ppu7p" name="遮罩.png" path="/" exported="true"/>
     <component id="xt25r" name="whitebuttonwithloader.xml" path="/"/>
     <component id="xt25s" name="whitebutton.xml" path="/"/>
     <component id="xt25u" name="weaponbutton.xml" path="/"/>
     <component id="xt25v" name="itembutton.xml" path="/"/>
-    <image id="uty7w" name="bag.png" path="/"/>
-    <image id="uty7x" name="charactor.png" path="/"/>
-    <image id="uty7y" name="menu.png" path="/"/>
-    <image id="uty7z" name="mission.png" path="/"/>
+    <image id="uty7w" name="bag.png" path="/" exported="true"/>
+    <image id="uty7x" name="charactor.png" path="/" exported="true"/>
+    <image id="uty7y" name="menu.png" path="/" exported="true"/>
+    <image id="uty7z" name="mission.png" path="/" exported="true"/>
   </resources>
-  <publish name=""/>
+  <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>

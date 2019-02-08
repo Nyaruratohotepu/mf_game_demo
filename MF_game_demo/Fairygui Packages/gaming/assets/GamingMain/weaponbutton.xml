@@ -6,7 +6,7 @@
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <loader id="n1_xt25" name="weaponpic" xy="8,6" size="84,85"/>
-    <loader id="n2_xt25" name="weaponstate" xy="8,6" size="84,85" alpha="0.8"/>
+    <loader id="n2_xt25" name="weaponstate" xy="8,6" size="84,85" alpha="0.8" fillMethod="radial360"/>
   </displayList>
   <Button/>
 </component>
