@@ -48,39 +48,52 @@ namespace Assets.Scripts.Story
             {
                 //玩家背包加物品
                 case "@ADDITEM":
-                    return addADDITEM(values);
+                    return ADDITEM(values);
                 //玩家背包扣物品
                 case "@RMVITEM":
+                    return RMVITEM(values);
                 //检查玩家背包有无某物品
                 case "@CHKITEM":
+                    return CHKITEM(values);
                 //检查玩家背包有无某物体（符合数量）
                 case "@CHKITEMRAG":
+                    return CHKITEMRAG(values);
                 //检查某FLAG值是否在范围内
                 case "@CHKFLAG":
+                    return CHKFLAG(values);
                 //设定某FLAG值
                 case "@SETGLAG":
+                    return SETFLAG(values);
                 //某FLAG值++
                 case "@INCFLAG":
+                    return INCFLAG(values);
                 //某FLAG值--
                 case "@DECFLAG":
+                    return DECFLAG(values);
                 //给正在对话的NPC背包加入某物体
                 case "@ADDITEMNPC":
+                    return ADDITEMNPC(values);
                 //给正在对话的NPC背包减去某物体
                 case "@RMVITEMNPC":
+                    return RMVITEMNPC(values);
                 //对话框显示文字
                 case "@SAY":
-                    return addSAY(values);
+                    return SAY(values);
                 //改变人物立绘
                 case "@CHGCHAIMG":
+                    return CHGCHAIMG(values);
                 //改变背景图片
                 case "@CHGBGIMG":
+                    return CHGBGIMG(values);
                 //分支开始
                 case "@OPTBEG":
+                    return OPTBEG(values);
                 //分支项
                 case "@OPTITEM":
+                    return OPTITEM(values);
                 //分支结束
                 case "@OPTEND":
-
+                    return OPTEND(values);
                 //无法解析的命令
                 default:
                     return false;
@@ -88,7 +101,7 @@ namespace Assets.Scripts.Story
         }
 
         //以下若干函数均用来从字符串中获取对应故事指令参数列表
-        private bool addADDITEM(string[] values)
+        private bool ADDITEM(string[] values)
         {
             //至少包含3个项（含命令+2个必要参数）
             if (values.Length < 3) return false;
@@ -96,34 +109,314 @@ namespace Assets.Scripts.Story
             int lineNum = storyCMDs.Count;
             int itemId, count, falseJumpOffset, trueJumpOffset;
 
+            if (!int.TryParse(values[1], out itemId)) return false;
+            if (!int.TryParse(values[2], out count)) return false;
+
             switch (values.Length)
             {
                 //两参数时
                 case 3:
-                    if (!int.TryParse(values[1], out itemId)) return false;
-                    if (!int.TryParse(values[2], out count)) return false;
                     storyCMDs.Add(lineNum, new AddItemCMD(lineNum, itemId, count));
                     return true;
 
                 //三参数时
                 case 4:
-                    if (!int.TryParse(values[1], out itemId)) return false;
-                    if (!int.TryParse(values[2], out count)) return false;
                     if (!int.TryParse(values[3], out falseJumpOffset)) return false;
                     storyCMDs.Add(lineNum, new AddItemCMD(lineNum, itemId, count, falseJumpOffset));
                     return true;
 
                 //四参数及更多时
                 default:
-                    if (!int.TryParse(values[1], out itemId)) return false;
-                    if (!int.TryParse(values[2], out count)) return false;
+
                     if (!int.TryParse(values[3], out falseJumpOffset)) return false;
                     if (!int.TryParse(values[4], out trueJumpOffset)) return false;
                     storyCMDs.Add(lineNum, new AddItemCMD(lineNum, itemId, count, falseJumpOffset, trueJumpOffset));
                     return true;
             }
         }
-        private bool addSAY(string[] values)
+        private bool RMVITEM(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            int itemId, count, falseJumpOffset, trueJumpOffset;
+
+            if (!int.TryParse(values[1], out itemId)) return false;
+            if (!int.TryParse(values[2], out count)) return false;
+
+            switch (values.Length)
+            {
+                //两参数时
+                case 3:
+
+                    storyCMDs.Add(lineNum, new RemoveItemCMD(lineNum, itemId, count));
+                    return true;
+
+                //三参数时
+                case 4:
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new RemoveItemCMD(lineNum, itemId, count, falseJumpOffset));
+                    return true;
+
+                //四参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[4], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new RemoveItemCMD(lineNum, itemId, count, falseJumpOffset, trueJumpOffset));
+                    return true;
+            }
+        }
+        private bool ADDITEMNPC(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            int itemId, count, falseJumpOffset, trueJumpOffset;
+
+            if (!int.TryParse(values[1], out itemId)) return false;
+            if (!int.TryParse(values[2], out count)) return false;
+
+            switch (values.Length)
+            {
+                //两参数时
+                case 3:
+
+                    storyCMDs.Add(lineNum, new AddItemNpcCMD(lineNum, itemId, count));
+                    return true;
+
+                //三参数时
+                case 4:
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new AddItemNpcCMD(lineNum, itemId, count, falseJumpOffset));
+                    return true;
+
+                //四参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[4], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new AddItemNpcCMD(lineNum, itemId, count, falseJumpOffset, trueJumpOffset));
+                    return true;
+            }
+        }
+        private bool RMVITEMNPC(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            int itemId, count, falseJumpOffset, trueJumpOffset;
+
+            if (!int.TryParse(values[1], out itemId)) return false;
+            if (!int.TryParse(values[2], out count)) return false;
+
+            switch (values.Length)
+            {
+                //两参数时
+                case 3:
+                    storyCMDs.Add(lineNum, new RemoveItemNpcCMD(lineNum, itemId, count));
+                    return true;
+
+                //三参数时
+                case 4:
+
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new RemoveItemNpcCMD(lineNum, itemId, count, falseJumpOffset));
+                    return true;
+
+                //四参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[4], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new RemoveItemNpcCMD(lineNum, itemId, count, falseJumpOffset, trueJumpOffset));
+                    return true;
+            }
+        }
+        private bool CHKITEM(string[] values)
+        {
+            //至少包含2个项（含命令+1个必要参数）
+            if (values.Length < 2) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            int itemId, falseJumpOffset, trueJumpOffset;
+
+            switch (values.Length)
+            {
+                //一参数时
+                case 2:
+                    if (!int.TryParse(values[1], out itemId)) return false;
+                    storyCMDs.Add(lineNum, new CheckItemCMD(lineNum, itemId));
+                    return true;
+
+                //二参数时
+                case 3:
+                    if (!int.TryParse(values[1], out itemId)) return false;
+                    if (!int.TryParse(values[2], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckItemCMD(lineNum, itemId, falseJumpOffset));
+                    return true;
+
+                //三参数及更多时
+                default:
+                    if (!int.TryParse(values[1], out itemId)) return false;
+                    if (!int.TryParse(values[2], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[3], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckItemCMD(lineNum, itemId, falseJumpOffset, trueJumpOffset));
+                    return true;
+
+            }
+        }
+        private bool CHKITEMRAG(string[] values)
+        {
+            //至少包含4个项（含命令+3个必要参数）
+            if (values.Length < 4) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            int itemId, min, max, falseJumpOffset, trueJumpOffset;
+
+            if (!int.TryParse(values[1], out itemId)) return false;
+            if (!int.TryParse(values[2], out min)) return false;
+            if (!int.TryParse(values[3], out max)) return false;
+
+            switch (values.Length)
+            {
+                //三参数时
+                case 4:
+                    storyCMDs.Add(lineNum, new CheckItemRangeCMD(lineNum, itemId, min, max));
+                    return true;
+
+                //四参数时
+                case 5:
+                    if (!int.TryParse(values[4], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckItemRangeCMD(lineNum, itemId, min, max, falseJumpOffset));
+                    return true;
+
+                //五参数及更多时
+                default:
+                    if (!int.TryParse(values[4], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[5], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckItemRangeCMD(lineNum, itemId, min, max, falseJumpOffset, trueJumpOffset));
+                    return true;
+
+            }
+        }
+        private bool CHKFLAG(string[] values)
+        {
+            //至少包含4个项（含命令+3个必要参数）
+            if (values.Length < 4) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            string flagName = values[1];
+            int min, max, falseJumpOffset, trueJumpOffset;
+
+            if (flagName.Length == 0) return false;
+            if (!int.TryParse(values[2], out min)) return false;
+            if (!int.TryParse(values[3], out max)) return false;
+
+            switch (values.Length)
+            {
+                //三参数时
+                case 4:
+                    storyCMDs.Add(lineNum, new CheckFlagCMD(lineNum, flagName, min, max));
+                    return true;
+
+                //四参数时
+                case 5:
+                    if (!int.TryParse(values[4], out falseJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckFlagCMD(lineNum, flagName, min, max, falseJumpOffset));
+                    return true;
+
+                //五参数及更多时
+                default:
+                    if (!int.TryParse(values[4], out falseJumpOffset)) return false;
+                    if (!int.TryParse(values[5], out trueJumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new CheckFlagCMD(lineNum, flagName, min, max, falseJumpOffset, trueJumpOffset));
+                    return true;
+
+            }
+        }
+        private bool SETFLAG(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            string flagName = values[1];
+            int value, jumpOffset;
+
+            if (flagName.Length == 0) return false;
+            if (!int.TryParse(values[2], out value)) return false;
+
+            switch (values.Length)
+            {
+                //二参数时
+                case 2:
+                    storyCMDs.Add(lineNum, new SetFlagCMD(lineNum, flagName, value));
+                    return true;
+
+                //三参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new SetFlagCMD(lineNum, flagName, value, jumpOffset));
+                    return true;
+
+            }
+        }
+        private bool INCFLAG(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            string flagName = values[1];
+            int value, jumpOffset;
+
+            if (flagName.Length == 0) return false;
+            if (!int.TryParse(values[2], out value)) return false;
+
+            switch (values.Length)
+            {
+                //二参数时
+                case 2:
+                    storyCMDs.Add(lineNum, new IncreaseFlagCMD(lineNum, flagName, value));
+                    return true;
+
+                //三参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new IncreaseFlagCMD(lineNum, flagName, value, jumpOffset));
+                    return true;
+
+            }
+        }
+        private bool DECFLAG(string[] values)
+        {
+            //至少包含3个项（含命令+2个必要参数）
+            if (values.Length < 3) return false;
+            //这次的行号
+            int lineNum = storyCMDs.Count;
+            string flagName = values[1];
+            int value, jumpOffset;
+
+            if (flagName.Length == 0) return false;
+            if (!int.TryParse(values[2], out value)) return false;
+
+            switch (values.Length)
+            {
+                //二参数时
+                case 2:
+                    storyCMDs.Add(lineNum, new DecreaseFlagCMD(lineNum, flagName, value));
+                    return true;
+
+                //三参数及更多时
+                default:
+                    if (!int.TryParse(values[3], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new DecreaseFlagCMD(lineNum, flagName, value, jumpOffset));
+                    return true;
+
+            }
+        }
+        private bool SAY(string[] values)
         {
             //至少2项（一个参数）
             if (values.Length < 2) return false;
@@ -159,6 +452,84 @@ namespace Assets.Scripts.Story
                     return true;
 
             }
+        }
+        private bool CHGCHAIMG(string[] values)
+        {
+            //至少包含2个项（含命令+1个必要参数）
+            if (values.Length < 2) return false;
+
+            int lineNum = storyCMDs.Count;
+            string imgPath = values[1];
+            bool isLeft;
+            int jumpOffset;
+
+            switch (values.Length)
+            {
+                case 2:
+                    storyCMDs.Add(lineNum, new ChangeCharacterImageCMD(lineNum, imgPath));
+                    return true;
+                case 3:
+                    if (!bool.TryParse(values[2], out isLeft)) return false;
+                    storyCMDs.Add(lineNum, new ChangeCharacterImageCMD(lineNum, imgPath, isLeft));
+                    return true;
+                default:
+                    if (!bool.TryParse(values[2], out isLeft)) return false;
+                    if (!int.TryParse(values[3], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new ChangeCharacterImageCMD(lineNum, imgPath, isLeft, jumpOffset));
+                    return true;
+            }
+        }
+        private bool CHGBGIMG(string[] values)
+        {
+            //至少包含2个项（含命令+1个必要参数）
+            if (values.Length < 2) return false;
+
+            int lineNum = storyCMDs.Count;
+            string imgPath = values[1];
+            int jumpOffset;
+
+            switch (values.Length)
+            {
+                case 2:
+                    storyCMDs.Add(lineNum, new ChangeBackgroundImageCMD(lineNum, imgPath));
+                    return true;
+                default:
+                    if (!int.TryParse(values[2], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new ChangeBackgroundImageCMD(lineNum, imgPath, jumpOffset));
+                    return true;
+            }
+        }
+        private bool OPTBEG(string[] values)
+        {
+            int lineNum = storyCMDs.Count;
+            storyCMDs.Add(lineNum, new OptionBeginCMD());
+            return true;
+        }
+        private bool OPTITEM(string[] values)
+        {
+            //至少包含2个项（含命令+1个必要参数）
+            if (values.Length < 2) return false;
+
+            int lineNum = storyCMDs.Count;
+            string text = values[1];
+            int jumpOffset;
+
+            switch (values.Length)
+            {
+                case 2:
+                    storyCMDs.Add(lineNum, new OptionItemCMD(lineNum, text));
+                    return true;
+                default:
+                    if (!int.TryParse(values[2], out jumpOffset)) return false;
+                    storyCMDs.Add(lineNum, new OptionItemCMD(lineNum, text, jumpOffset));
+                    return true;
+            }
+        }
+        private bool OPTEND(string[] values)
+        {
+            int lineNum = storyCMDs.Count;
+            storyCMDs.Add(lineNum, new OptionEndCMD());
+            return true;
         }
     }
 
@@ -230,7 +601,162 @@ namespace Assets.Scripts.Story
             TrueJumpToLine = trueJumpOffset + lineNum;
         }
     }
+    public class RemoveItemCMD : StoryCMD
+    {
+        public int ItemId { get; set; }
+        public int Count { get; set; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
 
+        public RemoveItemCMD(int lineNum, int itemId, int count, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            //lineNum传入但不存在类中，只用来构造跳转结果
+
+            Type = StoryItemType.RMVITEM;
+
+            ItemId = itemId;
+            Count = count;
+
+            //减少失败，向后跳转多少行，无效、缺省为跳一行
+            //相对值转绝对行号
+            FalseJumpToLine = falseJumpOffset + lineNum;
+
+            //减少成功，向后跳转多少行，无效、缺省为跳一行
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
+    public class CheckItemCMD : StoryCMD
+    {
+        public int ItemId { get; set; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
+        public CheckItemCMD(int lineNum, int itemId, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            Type = StoryItemType.CHKITEM;
+
+            ItemId = itemId;
+            FalseJumpToLine = falseJumpOffset + lineNum;
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
+    public class CheckItemRangeCMD : StoryCMD
+    {
+        public int ItemId { get; set; }
+        public int Min { get; set; }
+        public int Max { get; set; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
+        public CheckItemRangeCMD(int lineNum, int itemId, int min, int max, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            Type = StoryItemType.CHKITEMRAG;
+
+            ItemId = itemId;
+            Min = min;
+            Max = max;
+            FalseJumpToLine = falseJumpOffset + lineNum;
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
+    public class CheckFlagCMD : StoryCMD
+    {
+        public string FlagName { set; get; }
+        public int Min { set; get; }
+        public int Max { set; get; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
+        public CheckFlagCMD(int lineNum, string flagName, int min, int max, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            Type = StoryItemType.CHKFLAG;
+
+            FlagName = flagName;
+            Min = min;
+            Max = max;
+
+            FalseJumpToLine = falseJumpOffset + lineNum;
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
+    public class SetFlagCMD : StoryCMD
+    {
+        public string FlagName { set; get; }
+        public int Value { set; get; }
+        public int JumpToLine { get; set; }
+        public SetFlagCMD(int lineNum, string flagName, int value, int jumpOffset = 1)
+        {
+            Type = StoryItemType.SETFLAG;
+
+            FlagName = flagName;
+            Value = value;
+
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class IncreaseFlagCMD : StoryCMD
+    {
+        public string FlagName { set; get; }
+        public int Value { set; get; }
+        public int JumpToLine { get; set; }
+        public IncreaseFlagCMD(int lineNum, string flagName, int value, int jumpOffset = 1)
+        {
+            Type = StoryItemType.INCFLAG;
+
+            FlagName = flagName;
+            Value = value;
+
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class DecreaseFlagCMD : StoryCMD
+    {
+        public string FlagName { set; get; }
+        public int Value { set; get; }
+        public int JumpToLine { get; set; }
+        public DecreaseFlagCMD(int lineNum, string flagName, int value, int jumpOffset = 1)
+        {
+            Type = StoryItemType.DECFLAG;
+
+            FlagName = flagName;
+            Value = value;
+
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class AddItemNpcCMD : StoryCMD
+    {
+        public int ItemId { get; set; }
+        public int Count { get; set; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
+
+        public AddItemNpcCMD(int lineNum, int itemId, int count, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            Type = StoryItemType.ADDITEMNPC;
+
+            ItemId = itemId;
+            Count = count;
+
+            FalseJumpToLine = falseJumpOffset + lineNum;
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
+    public class RemoveItemNpcCMD : StoryCMD
+    {
+        public int ItemId { get; set; }
+        public int Count { get; set; }
+        public int FalseJumpToLine { get; set; }
+        public int TrueJumpToLine { get; set; }
+
+        public RemoveItemNpcCMD(int lineNum, int itemId, int count, int falseJumpOffset = 1, int trueJumpOffset = 1)
+        {
+            Type = StoryItemType.RMVITEMNPC;
+
+            ItemId = itemId;
+            Count = count;
+
+            FalseJumpToLine = falseJumpOffset + lineNum;
+            TrueJumpToLine = trueJumpOffset + lineNum;
+        }
+    }
     public class SayCMD : StoryCMD
     {
         //文本
@@ -245,6 +771,58 @@ namespace Assets.Scripts.Story
             Text = text;
             IsFromLeft = isFromLeft;
             JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class ChangeCharacterImageCMD : StoryCMD
+    {
+        public bool IsLeft { set; get; }
+        public string ImgPath { set; get; }
+        public int JumpToLine { set; get; }
+        public ChangeCharacterImageCMD(int lineNum, string imgPath, bool isLeft = true, int jumpOffset = 1)
+        {
+            Type = StoryItemType.CHGCHAIMG;
+
+            ImgPath = imgPath;
+            IsLeft = isLeft;
+
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class ChangeBackgroundImageCMD : StoryCMD
+    {
+        public string ImgPath { set; get; }
+        public int JumpToLine { set; get; }
+        public ChangeBackgroundImageCMD(int lineNum, string imgPath, int jumpOffset = 1)
+        {
+            Type = StoryItemType.CHGBGIMG;
+            ImgPath = imgPath;
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class OptionBeginCMD : StoryCMD
+    {
+        public OptionBeginCMD()
+        {
+            Type = StoryItemType.OPTBEG;
+        }
+    }
+    public class OptionItemCMD : StoryCMD
+    {
+        public string Text { set; get; }
+        public int JumpToLine { set; get; }
+        public OptionItemCMD(int lineNum, string text, int jumpOffset = 1)
+        {
+            Type = StoryItemType.OPTITEM;
+
+            Text = text;
+            JumpToLine = jumpOffset + lineNum;
+        }
+    }
+    public class OptionEndCMD : StoryCMD
+    {
+        public OptionEndCMD()
+        {
+            Type = StoryItemType.OPTEND;
         }
     }
 }
