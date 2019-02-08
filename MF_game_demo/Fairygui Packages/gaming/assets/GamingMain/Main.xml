@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <component id="n48_xt25" name="playerheadbg" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1,884" size="124,125" group="n11_ppu7">
+    <component id="n48_xt25" name="playerheadbg" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1,874" size="130,130" group="n11_ppu7">
       <relation target="n11_ppu7" sidePair="center-center,middle-middle"/>
     </component>
     <image id="n8_ppu7" name="n8" src="ppu77" fileName="人物姓名文字背景.png" xy="144,868" size="225,51" group="n11_ppu7" alpha="0.55">
@@ -17,33 +17,33 @@
       <relation target="n10_ppu7" sidePair="center-center,middle-middle"/>
       <ProgressBar value="100" max="100"/>
     </component>
-    <text id="n12_ppu7" name="hp" xy="210,915" size="163,56" group="n11_ppu7" fontSize="40" align="center" vAlign="middle" text="100/100">
+    <text id="n12_ppu7" name="hp" xy="210,919" size="146,51" group="n11_ppu7" fontSize="36" align="center" vAlign="middle" autoSize="none" text="100/100">
       <relation target="n7_ppu7" sidePair="center-center,middle-middle"/>
     </text>
-    <component id="n37_xt25" name="playerlv" src="xt25s" fileName="whitebutton.xml" xy="4,1022" size="121,54" group="n39_xt25"/>
-    <text id="n38_xt25" name="playerlvtext" xy="22,1027" size="88,48" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="none" text="Lv.1">
+    <component id="n37_xt25" name="playerlv" src="xt25s" fileName="whitebutton.xml" xy="3,1015" size="130,54" group="n39_xt25"/>
+    <text id="n38_xt25" name="playerlvtext" xy="17,1019" size="97,50" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="none" text="Lv.1">
       <relation target="n37_xt25" sidePair="center-center,middle-middle"/>
     </text>
-    <group id="n39_xt25" name="playerlv" xy="3,1022" size="121,54" group="n11_ppu7" advanced="true" collapsed="true">
+    <group id="n39_xt25" name="playerlv" xy="2,1015" size="130,54" group="n11_ppu7" advanced="true" collapsed="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
-    <group id="n11_ppu7" name="playerinformation" xy="1,868" size="418,208" advanced="true"/>
+    <group id="n11_ppu7" name="playerinformation" xy="1,868" size="418,201" advanced="true" collapsed="true"/>
     <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="144,964" size="100,60" group="n26_ppu7" alpha="0.3"/>
-    <text id="n20_ppu7" name="n20" xy="151,967" size="74,50" group="n26_ppu7" alpha="0.3" fontSize="35" text="中毒">
+    <text id="n20_ppu7" name="n20" xy="151,967" size="75,50" group="n26_ppu7" alpha="0.3" fontSize="35" text="中毒">
       <relation target="n13_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n26_ppu7" name="poisoned" xy="144,964" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n14_ppu7" name="powered" src="ppu7m" fileName="powered.xml" xy="240,964" size="100,60" group="n27_ppu7" alpha="0.3"/>
-    <text id="n21_ppu7" name="n21" xy="246,967" size="74,50" group="n27_ppu7" alpha="0.3" fontSize="35" text="暴击">
+    <text id="n21_ppu7" name="n21" xy="246,967" size="75,50" group="n27_ppu7" alpha="0.3" fontSize="35" text="暴击">
       <relation target="n14_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n27_ppu7" name="powered" xy="240,964" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n15_ppu7" name="slowed" src="ppu7j" fileName="slowed.xml" xy="334,962" size="100,60" group="n28_ppu7" alpha="0.3"/>
-    <text id="n22_ppu7" name="n22" xy="340,967" size="74,50" group="n28_ppu7" alpha="0.3" fontSize="35" text="减速">
+    <text id="n22_ppu7" name="n22" xy="340,967" size="75,50" group="n28_ppu7" alpha="0.3" fontSize="35" text="减速">
       <relation target="n15_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n28_ppu7" name="slowed" xy="334,962" size="100,60" group="n19_ppu7" advanced="true">
@@ -57,20 +57,20 @@
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n17_ppu7" name="diziness" src="ppu7n" fileName="diziness.xml" xy="250,1029" size="100,60" group="n30_ppu7" alpha="0.3"/>
-    <text id="n24_ppu7" name="n24" xy="256,1032" size="74,50" group="n30_ppu7" alpha="0.3" fontSize="35" text="眩晕">
+    <text id="n24_ppu7" name="n24" xy="256,1032" size="75,50" group="n30_ppu7" alpha="0.3" fontSize="35" text="眩晕">
       <relation target="n17_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n30_ppu7" name="dizness" xy="250,1029" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n18_ppu7" name="speedup" src="ppu7k" fileName="speedup.xml" xy="334,1028" size="100,60" group="n31_ppu7" alpha="0.3"/>
-    <text id="n25_ppu7" name="n25" xy="340,1032" size="74,50" group="n31_ppu7" alpha="0.3" fontSize="35" text="加速">
+    <text id="n25_ppu7" name="n25" xy="340,1032" size="75,50" group="n31_ppu7" alpha="0.3" fontSize="35" text="加速">
       <relation target="n18_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n31_ppu7" name="speedup" xy="334,1028" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
-    <group id="n19_ppu7" name="playerstate" xy="144,962" size="290,127" advanced="true"/>
+    <group id="n19_ppu7" name="playerstate" xy="144,962" size="290,127" advanced="true" collapsed="true"/>
     <image id="n32_ppu7" name="n32" src="ppu7e" fileName="任务面板详情.png" xy="440,864" size="222,41" group="n34_ppu7" alpha="0.55"/>
     <text id="n33_ppu7" name="n33" xy="506,864" size="90,49" group="n34_ppu7" fontSize="40" autoSize="none" text="武器"/>
     <component id="n40_xt25" name="weapon1" src="xt25u" fileName="weaponbutton.xml" xy="441,914" size="100,100" group="n62_uty7"/>
@@ -87,7 +87,7 @@
     <component id="n52_xt25" name="skill" src="xt25u" fileName="weaponbutton.xml" xy="713,916" size="100,100" group="n71_uty7"/>
     <image id="n53_xt25" name="n53" src="ppu7e" fileName="任务面板详情.png" xy="716,1031" size="100,50" group="n71_uty7" alpha="0.55"/>
     <text id="n54_xt25" name="skillkey" xy="747,1030" size="27,56" group="n71_uty7" fontSize="41" align="center" vAlign="middle" text="F"/>
-    <group id="n71_uty7" name="skill" xy="693,863" size="140,223" advanced="true" collapsed="true"/>
+    <group id="n71_uty7" name="skill" xy="693,863" size="140,223" advanced="true"/>
     <list id="n56_xt25" name="easyitems" xy="876,862" size="544,216" layout="flow_hz" overflow="scroll" lineGap="8" colGap="9" defaultItem="ui://dopftjtcxt25v">
       <item/>
       <item/>
@@ -100,18 +100,18 @@
       <item/>
       <item/>
     </list>
-    <component id="n58_xt25" name="charactor" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1475,900" group="n72_uty7"/>
-    <component id="n59_xt25" name="bag" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1585,900" group="n72_uty7"/>
-    <component id="n60_xt25" name="mission" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1695,900" group="n72_uty7"/>
-    <component id="n61_xt25" name="menu" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1805,900" group="n72_uty7"/>
+    <component id="n58_xt25" name="charactor" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1475,910" group="n72_uty7"/>
+    <component id="n59_xt25" name="bag" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1585,910" group="n72_uty7"/>
+    <component id="n60_xt25" name="mission" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1695,910" group="n72_uty7"/>
+    <component id="n61_xt25" name="menu" src="xt25r" fileName="whitebuttonwithloader.xml" xy="1805,910" group="n72_uty7"/>
     <image id="n63_uty7" name="n63" src="ppu7e" fileName="任务面板详情.png" xy="1475,1020" size="100,50" group="n72_uty7" alpha="0.55"/>
     <image id="n64_uty7" name="n64" src="ppu7e" fileName="任务面板详情.png" xy="1585,1020" size="100,50" group="n72_uty7" alpha="0.55"/>
     <image id="n65_uty7" name="n65" src="ppu7e" fileName="任务面板详情.png" xy="1695,1020" size="100,50" group="n72_uty7" alpha="0.55"/>
     <image id="n66_uty7" name="n66" src="ppu7e" fileName="任务面板详情.png" xy="1805,1020" size="100,50" group="n72_uty7" alpha="0.55"/>
-    <text id="n67_uty7" name="67" xy="1490,1020" size="74,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="角色"/>
-    <text id="n68_uty7" name="68" xy="1600,1020" size="74,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="背包"/>
-    <text id="n69_uty7" name="69" xy="1710,1020" size="74,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="任务"/>
-    <text id="n70_uty7" name="70" xy="1820,1020" size="74,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="菜单"/>
-    <group id="n72_uty7" name="n72" xy="1475,900" size="430,170"/>
+    <text id="n67_uty7" name="67" xy="1490,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="角色"/>
+    <text id="n68_uty7" name="68" xy="1600,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="背包"/>
+    <text id="n69_uty7" name="69" xy="1710,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="任务"/>
+    <text id="n70_uty7" name="70" xy="1820,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="菜单"/>
+    <group id="n72_uty7" name="n72" xy="1475,910" size="430,160" collapsed="true"/>
   </displayList>
 </component>
