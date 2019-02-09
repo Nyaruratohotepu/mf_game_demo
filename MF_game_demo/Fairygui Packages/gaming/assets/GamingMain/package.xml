@@ -30,6 +30,8 @@
     <image id="uty7x" name="charactor.png" path="/" exported="true"/>
     <image id="uty7y" name="menu.png" path="/" exported="true"/>
     <image id="uty7z" name="mission.png" path="/" exported="true"/>
+    <component id="mnik10" name="PlayerPhoto.xml" path="/"/>
+    <image id="mnik11" name="maruko.png" path="/" exported="true"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>
