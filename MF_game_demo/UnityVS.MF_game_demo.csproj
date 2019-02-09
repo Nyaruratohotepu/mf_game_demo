@@ -501,6 +501,7 @@
     <Compile Include="Assets\Scripts\Bullet_AKM.cs" />
     <Compile Include="Assets\Scripts\CameraAction.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
+    <Compile Include="Assets\Scripts\FGUI\GameingUIController.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
@@ -516,6 +517,7 @@
     <Compile Include="Assets\Scripts\Slime.cs" />
     <Compile Include="Assets\Scripts\SlimeScript.cs" />
     <Compile Include="Assets\Scripts\Story\DataAccess.cs" />
+    <Compile Include="Assets\Scripts\Story\Flag.cs" />
     <Compile Include="Assets\Scripts\Story\StoryManager.cs" />
     <Compile Include="Assets\Scripts\Story\StoryPlayer.cs" />
     <Compile Include="Assets\Scripts\Story\StorySection.cs" />
