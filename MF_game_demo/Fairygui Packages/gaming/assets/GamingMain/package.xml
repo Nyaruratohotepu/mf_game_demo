@@ -20,7 +20,6 @@
     <component id="ppu7k" name="speedup.xml" path="/"/>
     <component id="ppu7m" name="powered.xml" path="/"/>
     <component id="ppu7n" name="diziness.xml" path="/"/>
-    <component id="ppu7o" name="ProgressBar1.xml" path="/"/>
     <image id="ppu7p" name="遮罩.png" path="/" exported="true"/>
     <component id="xt25r" name="whitebuttonwithloader.xml" path="/"/>
     <component id="xt25s" name="whitebutton.xml" path="/"/>
@@ -32,6 +31,7 @@
     <image id="uty7z" name="mission.png" path="/" exported="true"/>
     <component id="mnik10" name="PlayerPhoto.xml" path="/"/>
     <image id="mnik11" name="maruko.png" path="/" exported="true"/>
+    <component id="bpe114" name="hpbar.xml" path="/"/>
   </resources>
-  <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
+  <publish name="GamingMain" path="D:\Code\GitRepository\mf_game_demo\MF_game_demo\Fairygui Packages"/>
 </packageDescription>

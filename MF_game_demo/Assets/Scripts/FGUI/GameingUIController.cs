@@ -4,7 +4,7 @@ using UnityEngine;
 using FairyGUI;
 
 public class GameingUIController : MonoBehaviour {
-    GComponent MainUI;
+    public GComponent MainUI;
 	// Use this for initialization
 	void Start () {
         MainUI = GetComponent<UIPanel>().ui;
