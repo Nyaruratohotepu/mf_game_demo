@@ -23,7 +23,7 @@ Using FairyGUI in Unity:
 3.3.0
 - NEW: Add textfield maxwidth feature.
 - NEW: Add API to query package dependencies.
-- IMPROVED: Graphics module refactor. Now it is more convenient to create various shapes(pie, lines, polygon etc) and do mesh deform. Memory usage on building mesh is also dropped. Also supports automatically setup uv for arbitrary quad to avoid seam between 2 triangles. All shaders are updated, dont't forget to replace shaders in your project.
+- IMPROVED: Graphics module refactor. Now it is more convenient to create various shapes(pie, lines, polygon etc) and do mesh deform. Memory usage on building mesh is also dropped. Also supports automatically setup uv for arbitrary quad to avoid seam between 2 triangles. All shaders are updated, don't forget to replace shaders in your project.
 - IMPROVED: Text-Brighter mechanism is removed, so FairyGUI-Text-Brighter.shader is removed. 
 - IMPROVED: Add support for shrinking multi-line text.
 - IMPROVED: Improve Lua support.

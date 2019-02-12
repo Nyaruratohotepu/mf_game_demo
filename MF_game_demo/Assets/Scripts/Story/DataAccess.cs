@@ -9,7 +9,7 @@ namespace Assets.Scripts.Story
 {
     public static class DataAccess
     {
-        public static string storyFolderPath = Application.dataPath;
+        public static string storyFolderPath = Application.dataPath+ "/Resources/Story/";
         //后缀
         public static string suffix = ".txt";
         public static Queue<string> GetStorySectionLines(string storySectionName)
