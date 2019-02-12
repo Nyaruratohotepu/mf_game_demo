@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1400,400">
+  <displayList>
+    <image id="n1_qovj" name="n1" src="ppu7e" fileName="任务面板详情.png" xy="-4,-2" size="1400,400" alpha="0.55"/>
+    <text id="n2_qovj" name="talker" xy="16,18" size="462,72" fontSize="55" autoSize="none" text="MARUKO"/>
+    <text id="n3_qovj" name="speechtext" xy="22,111" size="1337,261" fontSize="44" autoSize="none" text=""/>
+  </displayList>
+</component>

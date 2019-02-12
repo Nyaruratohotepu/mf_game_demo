@@ -497,6 +497,7 @@
     <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLList.cs" />
     <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLUtils.cs" />
     <Compile Include="Assets\FairyGUI\Scripts\Utils\ZipReader.cs" />
+    <Compile Include="Assets\FairyGUITest.cs" />
     <Compile Include="Assets\Scripts\AKM.cs" />
     <Compile Include="Assets\Scripts\Bullet_AKM.cs" />
     <Compile Include="Assets\Scripts\CameraAction.cs" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <component id="n0_qovj" name="back" src="qovj16" fileName="blackmask.xml" xy="0,0"/>
+    <loader id="n1_qovj" name="speakerl" xy="178,65" size="650,650" align="center" vAlign="middle" fill="scaleMatchHeight"/>
+    <loader id="n2_qovj" name="speakerr" xy="1093,65" size="650,650" align="center" vAlign="middle" fill="scaleMatchHeight"/>
+    <component id="n3_qovj" name="talktext" src="qovj17" fileName="talktext.xml" xy="254,674"/>
+  </displayList>
+</component>

@@ -13,7 +13,7 @@
     </image>
     <component id="n7_ppu7" name="playerhpbar" src="bpe114" fileName="hpbar.xml" xy="152,915" size="262,50" group="n11_ppu7">
       <relation target="n10_ppu7" sidePair="center-center,middle-middle"/>
-      <ProgressBar value="73" max="100"/>
+      <ProgressBar value="74" max="100"/>
     </component>
     <component id="n37_xt25" name="playerlv" src="xt25s" fileName="whitebutton.xml" xy="3,1015" size="130,54" group="n39_xt25"/>
     <text id="n38_xt25" name="playerlvtext" xy="17,1019" size="97,50" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="none" text="Lv.1">
@@ -71,12 +71,12 @@
     <component id="n40_xt25" name="weapon1" src="xt25u" fileName="weaponbutton.xml" xy="441,914" size="100,100" group="n62_uty7"/>
     <image id="n42_xt25" name="n42" src="ppu7e" fileName="任务面板详情.png" xy="442,1028" size="100,50" group="n62_uty7" alpha="0.55"/>
     <text id="n43_xt25" name="weapon1bullettext" xy="445,1027" size="97,54" group="n62_uty7" fontSize="20" align="center" vAlign="middle" autoSize="none" text="100/100"/>
-    <group id="n62_uty7" name="weapon1" xy="441,913" size="101,168" group="n34_ppu7" advanced="true" collapsed="true"/>
+    <group id="n62_uty7" name="weapon1" xy="441,913" size="101,168" group="n34_ppu7" advanced="true"/>
     <component id="n41_xt25" name="weapon2" src="xt25u" fileName="weaponbutton.xml" xy="560,915" size="100,100" group="n49_xt25"/>
     <image id="n45_xt25" name="n45" src="ppu7e" fileName="任务面板详情.png" xy="562,1027" size="100,50" group="n49_xt25" alpha="0.55"/>
-    <text id="n46_xt25" name="weapon2bullettext" xy="564,1026" size="100,54" group="n49_xt25" fontSize="25" align="center" vAlign="middle" autoSize="none" text="100/100"/>
-    <group id="n49_xt25" name="weapon2" xy="560,914" size="104,166" group="n34_ppu7" advanced="true" collapsed="true"/>
-    <group id="n34_ppu7" name="weapon" xy="440,864" size="224,217" advanced="true" collapsed="true"/>
+    <text id="n46_xt25" name="weapon2bullettext" xy="564,1026" size="100,54" group="n49_xt25" fontSize="20" align="center" vAlign="middle" autoSize="none" text="100/100"/>
+    <group id="n49_xt25" name="weapon2" xy="560,914" size="104,166" group="n34_ppu7" advanced="true"/>
+    <group id="n34_ppu7" name="weapon" xy="440,864" size="224,217" advanced="true"/>
     <image id="n50_xt25" name="n50" src="ppu7e" fileName="任务面板详情.png" xy="693,863" size="140,46" group="n71_uty7" alpha="0.55"/>
     <text id="n51_xt25" name="n51" xy="700,866" size="125,49" group="n71_uty7" fontSize="40" align="center" vAlign="middle" autoSize="none" text="主动技"/>
     <component id="n52_xt25" name="skill" src="xt25u" fileName="weaponbutton.xml" xy="713,916" size="100,100" group="n71_uty7"/>
@@ -108,5 +108,6 @@
     <text id="n69_uty7" name="69" xy="1710,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="任务"/>
     <text id="n70_uty7" name="70" xy="1820,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="菜单"/>
     <group id="n72_uty7" name="menu" xy="1475,910" size="430,160" advanced="true" collapsed="true"/>
+    <component id="n80_qovj" name="talkcomponent" src="qovj18" fileName="talkcomponent.xml" xy="0,0"/>
   </displayList>
 </component>
