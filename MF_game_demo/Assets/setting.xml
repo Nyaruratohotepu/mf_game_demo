@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Setting>
+  <PathSetting>
+    <Path>
+      <PathName>
+        StoryFolder
+      </PathName>
+      <Value>
+        /Resources/Story/
+      </Value>
+    </Path>
+    <Path>
+      <PathName>
+        FlagFile
+      </PathName>
+      <Value>
+        /Resources/Story/Flag.xml
+      </Value>
+    </Path>
+  </PathSetting>
+  <DisplaySetting>
+    <Display>
+      <Key>
+        text
+      </Key>
+      <Value>
+        text
+      </Value>
+    </Display>
+  </DisplaySetting>
+</Setting>
