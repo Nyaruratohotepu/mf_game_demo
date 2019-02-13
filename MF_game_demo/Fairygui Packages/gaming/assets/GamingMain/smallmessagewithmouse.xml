@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="300,40"/>
+<component size="300,40" pivot="0,1">
+  <displayList>
+    <image id="n0_myln" name="n0" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="300,40" alpha="0.55"/>
+    <text id="n1_myln" name="label" xy="0,0" size="300,40" fontSize="36" autoSize="shrink" text="-20hp/s"/>
+  </displayList>
+</component>
