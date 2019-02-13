@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Setting>
   <PathSetting>
+    <!--以下所有路径均在Asset目录下-->
     <Path>
       <PathName>
         StoryFolder
@@ -11,7 +12,7 @@
     </Path>
     <Path>
       <PathName>
-        FlagFile
+        flagFile
       </PathName>
       <Value>
         /Resources/Story/Flag.xml

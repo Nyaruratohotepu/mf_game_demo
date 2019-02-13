@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Flags>
   <Flag>
-    <FlagName></FlagName>
-    <Value></Value>
+    <FlagName>testFlagName1</FlagName>
+    <Value>20</Value>
+  </Flag>
+  <Flag>
+    <FlagName>testFlagName2</FlagName>
+    <Value>30</Value>
+  </Flag>
+  <Flag>
+    <FlagName>testFlagName3</FlagName>
+    <Value>12</Value>
   </Flag>
 </Flags>
