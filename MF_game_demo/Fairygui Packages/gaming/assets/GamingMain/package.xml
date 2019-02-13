@@ -37,6 +37,7 @@
     <component id="qovj18" name="talkcomponent.xml" path="/" exported="true"/>
     <image id="qovj19" name="1.jpg" path="/linshi/" exported="true"/>
     <image id="qovj1a" name="23.jpg" path="/linshi/" exported="true"/>
+    <component id="myln1b" name="smallmessagewithmouse.xml" path="/" exported="true"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>

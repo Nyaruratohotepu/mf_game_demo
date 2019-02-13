@@ -5,14 +5,18 @@ using FairyGUI;
 
 public class GameingUIController : MonoBehaviour {
     public GComponent MainUI,TalkUI;
+    public float[] StateDuringTimeRemain;
 	// Use this for initialization
 	void Start () {
         MainUI = GetComponent<UIPanel>().ui;
         StartUpUISettings();
+        ChangeHpBar(100, 500);
+        GetAState(5, 5);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        StateDuringTimeReduce();
         if (Input.GetKeyDown(KeyCode.Q))
         {
             TalkActive();
@@ -26,6 +30,7 @@ public class GameingUIController : MonoBehaviour {
 	}
     void StartUpUISettings()
     {
+        StateDuringTimeRemain = new float[6];
         MainUI.GetChild("playerhead").asCom.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "maruko");
         MainUI.GetChild("charactor").asButton.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "charactor");
         MainUI.GetChild("bag").asButton.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "bag");
@@ -33,11 +38,12 @@ public class GameingUIController : MonoBehaviour {
         MainUI.GetChild("menu").asButton.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "menu");
         TalkUI = MainUI.GetChild("talkcomponent").asCom;
         TalkUI.visible = false;
+        MainUI.GetChild("playerlv").asButton.onRollOver.Add(ShowNeedToLevelUp);
+        MainUI.GetChild("playerlv").asButton.onRollOut.Add(() => { ChangeLevel(10); });
     }
     public void TalkActive()
     {
-        TalkUI.visible = true; 
-        
+        TalkUI.visible = true;        
     }
     public void TalkDisable()
     {
@@ -76,5 +82,105 @@ public class GameingUIController : MonoBehaviour {
     {
         TalkUI.GetChild("speakerl").asLoader.url = UIPackage.GetItemURL("GamingMain",LeftSpeakerPicName);
         TalkUI.GetChild("speakerr").asLoader.url = UIPackage.GetItemURL("GamingMain", RightSpeakerPicName);
+    }
+    public void ChangeHpBar(int CurrentHp, int TotalHp)
+    {
+        MainUI.GetChild("playerhpbar").asProgress.max = TotalHp;
+        MainUI.GetChild("playerhpbar").asProgress.value = CurrentHp;
+    }
+    public void ChangeLevel(int level)
+    {
+        MainUI.GetChild("playerlvtext").asTextField.text = "Lv." + level;
+    }
+    void ShowNeedToLevelUp()
+    {
+        MainUI.GetChild("playerlvtext").asTextField.text = "200/500";
+    }
+    public void GetAState(int StateNum,float DuringTime)
+    {
+        if (StateNum == 1)
+        {
+            MainUI.GetChild("poisoned").asButton.alpha = 1;
+            MainUI.GetChild("n20").asTextField.alpha = 1;
+            StateDuringTimeRemain[0] = DuringTime;
+        }
+        else if (StateNum == 2)
+        {
+            MainUI.GetChild("powered").asButton.alpha = 1;
+            MainUI.GetChild("n21").asTextField.alpha = 1;
+            StateDuringTimeRemain[1] = DuringTime;
+        }
+        else if (StateNum == 3)
+        {
+            MainUI.GetChild("slowed").asButton.alpha = 1;
+            MainUI.GetChild("n22").asTextField.alpha = 1;
+            StateDuringTimeRemain[2] = DuringTime;
+        }
+        else if (StateNum == 4)
+        {
+            MainUI.GetChild("bleeding").asButton.alpha = 1;
+            MainUI.GetChild("n23").asTextField.alpha = 1;
+            StateDuringTimeRemain[3] = DuringTime;
+        }
+        else if (StateNum == 5)
+        {
+            MainUI.GetChild("diziness").asButton.alpha = 1;
+            MainUI.GetChild("n24").asTextField.alpha = 1;
+            StateDuringTimeRemain[4] = DuringTime;
+        }
+        else if (StateNum == 6)
+        {
+            MainUI.GetChild("speedup").asButton.alpha = 1;
+            MainUI.GetChild("n25").asTextField.alpha = 1;
+            StateDuringTimeRemain[5] = DuringTime;
+        }
+    }
+    public void EndState(int StateNum)
+    {
+        if (StateNum == 1)
+        {
+            MainUI.GetChild("poisoned").asButton.alpha = 0.3f;
+            MainUI.GetChild("n20").asTextField.alpha = 0.3f;          
+        }
+        else if (StateNum == 2)
+        {
+            MainUI.GetChild("powered").asButton.alpha = 0.3f;
+            MainUI.GetChild("n21").asTextField.alpha = 0.3f;           
+        }
+        else if (StateNum == 3)
+        {
+            MainUI.GetChild("slowed").asButton.alpha = 0.3f;
+            MainUI.GetChild("n22").asTextField.alpha = 0.3f;            
+        }
+        else if (StateNum == 4)
+        {
+            MainUI.GetChild("bleeding").asButton.alpha = 0.3f;
+            MainUI.GetChild("n23").asTextField.alpha = 0.3f;           
+        }
+        else if (StateNum == 5)
+        {
+            MainUI.GetChild("diziness").asButton.alpha = 0.3f;
+            MainUI.GetChild("n24").asTextField.alpha = 0.3f;            
+        }
+        else if (StateNum == 6)
+        {
+            MainUI.GetChild("speedup").asButton.alpha = 0.3f;
+            MainUI.GetChild("n25").asTextField.alpha = 0.3f;
+        }
+    }
+    void StateDuringTimeReduce()
+    {
+        int i = 0;
+        for (i = 0; i < 6; i++)
+        {
+            if (StateDuringTimeRemain[i] > 0)
+            {
+                StateDuringTimeRemain[i] -= Time.deltaTime;
+                if (StateDuringTimeRemain[i] <= 0)
+                {
+                    EndState(i + 1);
+                }
+            }
+        }
     }
 }

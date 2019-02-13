@@ -13,59 +13,59 @@
     </image>
     <component id="n7_ppu7" name="playerhpbar" src="bpe114" fileName="hpbar.xml" xy="152,915" size="262,50" group="n11_ppu7">
       <relation target="n10_ppu7" sidePair="center-center,middle-middle"/>
-      <ProgressBar value="74" max="100"/>
+      <ProgressBar value="77" max="100"/>
     </component>
     <component id="n37_xt25" name="playerlv" src="xt25s" fileName="whitebutton.xml" xy="3,1015" size="130,54" group="n39_xt25"/>
-    <text id="n38_xt25" name="playerlvtext" xy="17,1019" size="97,50" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="none" text="Lv.1">
+    <text id="n38_xt25" name="playerlvtext" xy="17,1019" size="97,50" group="n39_xt25" fontSize="35" align="center" vAlign="middle" autoSize="shrink" text="Lv.1">
       <relation target="n37_xt25" sidePair="center-center,middle-middle"/>
     </text>
-    <group id="n39_xt25" name="playerlv" xy="2,1015" size="130,54" group="n11_ppu7" advanced="true" collapsed="true">
+    <group id="n39_xt25" name="playerlv" xy="2,1015" size="130,54" group="n11_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <group id="n11_ppu7" name="playerinformation" xy="2,868" size="417,201" advanced="true"/>
-    <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="144,964" size="100,60" group="n26_ppu7" alpha="0.3"/>
-    <text id="n20_ppu7" name="n20" xy="158,971" size="65,43" group="n26_ppu7" alpha="0.3" fontSize="30" text="中毒">
+    <component id="n13_ppu7" name="poisoned" src="ppu7g" fileName="poisoned.xml" xy="144,963" size="100,60" group="n26_ppu7" alpha="0.3"/>
+    <text id="n20_ppu7" name="n20" xy="163,963" size="55,36" group="n26_ppu7" alpha="0.3" fontSize="25" text="中毒">
       <relation target="n13_ppu7" sidePair="center-center,middle-middle"/>
     </text>
-    <group id="n26_ppu7" name="poisoned" xy="144,964" size="100,60" group="n19_ppu7" advanced="true">
+    <group id="n26_ppu7" name="poisoned" xy="144,962" size="100,61" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n14_ppu7" name="powered" src="ppu7m" fileName="powered.xml" xy="240,964" size="100,60" group="n27_ppu7" alpha="0.3"/>
-    <text id="n21_ppu7" name="n21" xy="253,970" size="65,43" group="n27_ppu7" alpha="0.3" fontSize="30" text="暴击">
+    <text id="n21_ppu7" name="n21" xy="258,963" size="55,36" group="n27_ppu7" alpha="0.3" fontSize="25" text="暴击">
       <relation target="n14_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n27_ppu7" name="powered" xy="240,964" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n15_ppu7" name="slowed" src="ppu7j" fileName="slowed.xml" xy="334,962" size="100,60" group="n28_ppu7" alpha="0.3"/>
-    <text id="n22_ppu7" name="n22" xy="349,968" size="65,43" group="n28_ppu7" alpha="0.3" fontSize="30" text="减速">
+    <text id="n22_ppu7" name="n22" xy="354,963" size="55,36" group="n28_ppu7" alpha="0.3" fontSize="25" text="减速">
       <relation target="n15_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n28_ppu7" name="slowed" xy="334,962" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n16_ppu7" name="bleeding" src="ppu7f" fileName="bleeding.xml" xy="144,1029" size="100,60" group="n29_ppu7" alpha="0.3"/>
-    <text id="n23_ppu7" name="n23" xy="157,1035" size="70,49" group="n29_ppu7" alpha="0.3" fontSize="30" autoSize="none" text="流血">
+    <text id="n23_ppu7" name="n23" xy="157,1030" size="70,49" group="n29_ppu7" alpha="0.3" fontSize="25" autoSize="none" text="流血">
       <relation target="n16_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n29_ppu7" name="bleeding" xy="144,1029" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n17_ppu7" name="diziness" src="ppu7n" fileName="diziness.xml" xy="243,1028" size="100,60" group="n30_ppu7" alpha="0.3"/>
-    <text id="n24_ppu7" name="n24" xy="258,1034" size="65,43" group="n30_ppu7" alpha="0.3" fontSize="30" text="眩晕">
+    <text id="n24_ppu7" name="n24" xy="263,1033" size="55,36" group="n30_ppu7" alpha="0.3" fontSize="25" text="眩晕">
       <relation target="n17_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n30_ppu7" name="dizness" xy="243,1028" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n18_ppu7" name="speedup" src="ppu7k" fileName="speedup.xml" xy="334,1027" size="100,60" group="n31_ppu7" alpha="0.3"/>
-    <text id="n25_ppu7" name="n25" xy="349,1034" size="65,43" group="n31_ppu7" alpha="0.3" fontSize="30" text="加速">
+    <text id="n25_ppu7" name="n25" xy="354,1033" size="55,36" group="n31_ppu7" alpha="0.3" fontSize="25" text="加速">
       <relation target="n18_ppu7" sidePair="center-center,middle-middle"/>
     </text>
     <group id="n31_ppu7" name="speedup" xy="334,1027" size="100,60" group="n19_ppu7" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
-    <group id="n19_ppu7" name="playerstate" xy="144,962" size="290,127" advanced="true" collapsed="true"/>
+    <group id="n19_ppu7" name="playerstate" xy="144,962" size="290,127" advanced="true"/>
     <image id="n32_ppu7" name="n32" src="ppu7e" fileName="任务面板详情.png" xy="440,864" size="222,41" group="n34_ppu7" alpha="0.55"/>
     <text id="n33_ppu7" name="n33" xy="506,864" size="90,49" group="n34_ppu7" fontSize="40" autoSize="none" text="武器"/>
     <component id="n40_xt25" name="weapon1" src="xt25u" fileName="weaponbutton.xml" xy="441,914" size="100,100" group="n62_uty7"/>

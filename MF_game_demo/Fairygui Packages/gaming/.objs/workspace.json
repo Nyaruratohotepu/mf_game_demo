@@ -1,4 +1,13 @@
 {
+	"hidden_packages": [],
+	"active_doc": [
+		"dopftjtc",
+		"ppu70"
+	],
+	"expanded_nodes": [
+		"dopftjtc",
+		"/"
+	],
 	"docs": [
 		"dopftjtc",
 		"ppu70",
@@ -27,15 +36,8 @@
 		"dopftjtc",
 		"qovj17",
 		"dopftjtc",
-		"qovj18"
-	],
-	"hidden_packages": [],
-	"active_doc": [
+		"qovj18",
 		"dopftjtc",
-		"qovj17"
-	],
-	"expanded_nodes": [
-		"dopftjtc",
-		"/"
+		"myln1b"
 	]
 }
