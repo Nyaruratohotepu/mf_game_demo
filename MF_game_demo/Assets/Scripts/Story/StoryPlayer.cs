@@ -65,10 +65,16 @@ public class StoryPlayer : MonoBehaviour
                 case StoryItemType.CHGBGIMG:
                 case StoryItemType.CHGCHAIMG:
                 case StoryItemType.CHKFLAG:
+                    nextCMDNum = CheckFlag(cmd as CheckFlagCMD);
+                    break;
                 case StoryItemType.CHKITEM:
                 case StoryItemType.CHKITEMRAG:
                 case StoryItemType.DECFLAG:
+                    nextCMDNum = DecreaseFlag(cmd as DecreaseFlagCMD);
+                    break;
                 case StoryItemType.INCFLAG:
+                    nextCMDNum = IncreaseFlag(cmd as IncreaseFlagCMD);
+                    break;
                 case StoryItemType.OPTBEG:
                 case StoryItemType.OPTEND:
                 case StoryItemType.OPTITEM:
@@ -78,7 +84,10 @@ public class StoryPlayer : MonoBehaviour
                     nextCMDNum = Say(cmd as SayCMD);
                     break;
                 case StoryItemType.SETFLAG:
+                    nextCMDNum = SetFlag(cmd as SetFlagCMD);
+                    break;
                 default:
+                    nextCMDNum++;
                     break;
             }
         }
@@ -111,21 +120,40 @@ public class StoryPlayer : MonoBehaviour
 
 
     //以下为某类指令对应的处理机制，返回下一指令的序号
+    //对背包的处理放置到StoryManager中
+    //对Flag表直接处理
     private int AddItem(AddItemCMD cmd)
     {
-        if (cmd == null)
-            return nextCMDNum;
-
         if (storyManager.AddItemHandle(cmd.ItemId, cmd.Count))
             return cmd.TrueJumpToLine;
         else
             return cmd.FalseJumpToLine;
     }
+    private int CheckFlag(CheckFlagCMD cmd)
+    {
+        int value = Flag.GetValue(cmd.FlagName);
+        if ((value >= cmd.Min) && (value <= cmd.Max))
+            return cmd.TrueJumpToLine;
+        else
+            return cmd.FalseJumpToLine;
+    }
+    private int SetFlag(SetFlagCMD cmd)
+    {
+        Flag.SetValue(cmd.FlagName, cmd.Value);
+        return cmd.JumpToLine;
+    }
+    private int IncreaseFlag(IncreaseFlagCMD cmd)
+    {
+        Flag.IncreaseValue(cmd.FlagName, cmd.Value);
+        return cmd.JumpToLine;
+    }
+    private int DecreaseFlag(DecreaseFlagCMD cmd)
+    {
+        Flag.DecreaseValue(cmd.FlagName, cmd.Value);
+        return cmd.JumpToLine;
+    }
     private int Say(SayCMD cmd)
     {
-        if (cmd == null)
-            return nextCMDNum;
-
         if (cmd.IsFromLeft)
         {
             //淡化右边立绘
