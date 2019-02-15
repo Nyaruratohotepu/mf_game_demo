@@ -400,6 +400,7 @@
     <None Include="Assets\Resources\3D_model\Maruko\Extra\Readme(Rummy).txt" />
     <None Include="Assets\Resources\3D_model\MoreFunQ版II\Extra\ReadMe_KawaiiNeko28.txt" />
     <None Include="Assets\Resources\3D_model\MoreFunQ版II\Extra\Readme(Rummy).txt" />
+    <None Include="Assets\Resources\Story\Flag.xml" />
     <None Include="Assets\Resources\Story\demoStorySection.txt" />
     <None Include="Assets\SD_Project\README.txt" />
     <None Include="Assets\SD_Project\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
@@ -482,6 +483,7 @@
     <None Include="Assets\StylizedProjectilePack1\Tips &amp; Documentations.txt" />
     <None Include="Assets\StylizedProjectilePack1\shader\Mobile-Particle-Add-ZTestAlways.shader" />
     <None Include="Assets\StylizedProjectilePack1\shader\Mobile-Particle-AlphaBlended-ZTestAlways.shader" />
+    <None Include="Assets\setting.xml" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />
