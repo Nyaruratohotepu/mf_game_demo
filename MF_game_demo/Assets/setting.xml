@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Setting>
+  <PathSetting>
+    <!--以下所有路径均在Asset目录下-->
+    <Path>
+      <PathName>
+        StoryFolder
+      </PathName>
+      <Value>
+        /Resources/Story/
+      </Value>
+    </Path>
+    <Path>
+      <PathName>
+        flagFile
+      </PathName>
+      <Value>
+        /Resources/Story/Flag.xml
+      </Value>
+    </Path>
+  </PathSetting>
+  <DisplaySetting>
+    <Display>
+      <Key>
+        text
+      </Key>
+      <Value>
+        text
+      </Value>
+    </Display>
+  </DisplaySetting>
+</Setting>

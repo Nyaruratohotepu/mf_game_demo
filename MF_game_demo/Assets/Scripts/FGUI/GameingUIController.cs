@@ -51,29 +51,27 @@ public class GameingUIController : MonoBehaviour {
     }
     public void ContinueChat(int WhoIsTalking,string SpeakerName,string Speech)
     {
-        if (WhoIsTalking == 0)
+        switch (WhoIsTalking)
         {
-            TalkUI.GetChild("speakerl").asLoader.alpha = 0.5f;
-            TalkUI.GetChild("speakerr").asLoader.alpha = 0.5f;
-        }
-        else if (WhoIsTalking == 1)
-        {
-            TalkUI.GetChild("speakerl").asLoader.alpha = 1f;
-            TalkUI.GetChild("speakerr").asLoader.alpha = 0.5f;
-        }
-        else if (WhoIsTalking == 2)
-        {
-            TalkUI.GetChild("speakerl").asLoader.alpha = 0.5f;
-            TalkUI.GetChild("speakerr").asLoader.alpha = 1f;
-        }
-        else if (WhoIsTalking == 12)
-        {
-            TalkUI.GetChild("speakerl").asLoader.alpha = 1f;
-            TalkUI.GetChild("speakerr").asLoader.alpha = 1f;
-        }
-        else
-        {
-            Debug.LogError("只能是0,1,2,12");
+            case 0:
+                TalkUI.GetChild("speakerl").asLoader.alpha = 0.5f;
+                TalkUI.GetChild("speakerr").asLoader.alpha = 0.5f;
+                break;
+            case 1:
+                TalkUI.GetChild("speakerl").asLoader.alpha = 1f;
+                TalkUI.GetChild("speakerr").asLoader.alpha = 0.5f;
+                break;
+            case 2:
+                TalkUI.GetChild("speakerl").asLoader.alpha = 0.5f;
+                TalkUI.GetChild("speakerr").asLoader.alpha = 1f;
+                break;
+            case 12:
+                TalkUI.GetChild("speakerl").asLoader.alpha = 1f;
+                TalkUI.GetChild("speakerr").asLoader.alpha = 1f;
+                break;
+            default:
+                Debug.LogError("只能是0,1,2,12");
+                break;
         }
         TalkUI.GetChild("talktext").asCom.GetChild("talker").asTextField.text = SpeakerName;
         TalkUI.GetChild("talktext").asCom.GetChild("speechtext").asTextField.text = Speech;
@@ -98,74 +96,72 @@ public class GameingUIController : MonoBehaviour {
     }
     public void GetAState(int StateNum,float DuringTime)
     {
-        if (StateNum == 1)
+        switch (StateNum)
         {
-            MainUI.GetChild("poisoned").asButton.alpha = 1;
-            MainUI.GetChild("n20").asTextField.alpha = 1;
-            StateDuringTimeRemain[0] = DuringTime;
-        }
-        else if (StateNum == 2)
-        {
-            MainUI.GetChild("powered").asButton.alpha = 1;
-            MainUI.GetChild("n21").asTextField.alpha = 1;
-            StateDuringTimeRemain[1] = DuringTime;
-        }
-        else if (StateNum == 3)
-        {
-            MainUI.GetChild("slowed").asButton.alpha = 1;
-            MainUI.GetChild("n22").asTextField.alpha = 1;
-            StateDuringTimeRemain[2] = DuringTime;
-        }
-        else if (StateNum == 4)
-        {
-            MainUI.GetChild("bleeding").asButton.alpha = 1;
-            MainUI.GetChild("n23").asTextField.alpha = 1;
-            StateDuringTimeRemain[3] = DuringTime;
-        }
-        else if (StateNum == 5)
-        {
-            MainUI.GetChild("diziness").asButton.alpha = 1;
-            MainUI.GetChild("n24").asTextField.alpha = 1;
-            StateDuringTimeRemain[4] = DuringTime;
-        }
-        else if (StateNum == 6)
-        {
-            MainUI.GetChild("speedup").asButton.alpha = 1;
-            MainUI.GetChild("n25").asTextField.alpha = 1;
-            StateDuringTimeRemain[5] = DuringTime;
+            case 1:
+                MainUI.GetChild("poisoned").asButton.alpha = 1;
+                MainUI.GetChild("n20").asTextField.alpha = 1;
+                StateDuringTimeRemain[0] = DuringTime;
+                break;
+            case 2:
+                MainUI.GetChild("powered").asButton.alpha = 1;
+                MainUI.GetChild("n21").asTextField.alpha = 1;
+                StateDuringTimeRemain[1] = DuringTime;
+                break;
+            case 3:
+                MainUI.GetChild("slowed").asButton.alpha = 1;
+                MainUI.GetChild("n22").asTextField.alpha = 1;
+                StateDuringTimeRemain[2] = DuringTime;
+                break;
+            case 4:
+                MainUI.GetChild("bleeding").asButton.alpha = 1;
+                MainUI.GetChild("n23").asTextField.alpha = 1;
+                StateDuringTimeRemain[3] = DuringTime;
+                break;
+            case 5:
+                MainUI.GetChild("diziness").asButton.alpha = 1;
+                MainUI.GetChild("n24").asTextField.alpha = 1;
+                StateDuringTimeRemain[4] = DuringTime;
+                break;
+            case 6:
+                MainUI.GetChild("speedup").asButton.alpha = 1;
+                MainUI.GetChild("n25").asTextField.alpha = 1;
+                StateDuringTimeRemain[5] = DuringTime;
+                break;
+            default:
+                break;
         }
     }
     public void EndState(int StateNum)
     {
-        if (StateNum == 1)
+        switch (StateNum)
         {
-            MainUI.GetChild("poisoned").asButton.alpha = 0.3f;
-            MainUI.GetChild("n20").asTextField.alpha = 0.3f;          
-        }
-        else if (StateNum == 2)
-        {
-            MainUI.GetChild("powered").asButton.alpha = 0.3f;
-            MainUI.GetChild("n21").asTextField.alpha = 0.3f;           
-        }
-        else if (StateNum == 3)
-        {
-            MainUI.GetChild("slowed").asButton.alpha = 0.3f;
-            MainUI.GetChild("n22").asTextField.alpha = 0.3f;            
-        }
-        else if (StateNum == 4)
-        {
-            MainUI.GetChild("bleeding").asButton.alpha = 0.3f;
-            MainUI.GetChild("n23").asTextField.alpha = 0.3f;           
-        }
-        else if (StateNum == 5)
-        {
-            MainUI.GetChild("diziness").asButton.alpha = 0.3f;
-            MainUI.GetChild("n24").asTextField.alpha = 0.3f;            
-        }
-        else if (StateNum == 6)
-        {
-            MainUI.GetChild("speedup").asButton.alpha = 0.3f;
-            MainUI.GetChild("n25").asTextField.alpha = 0.3f;
+            case 1:
+                MainUI.GetChild("poisoned").asButton.alpha = 0.3f;
+                MainUI.GetChild("n20").asTextField.alpha = 0.3f;
+                break;
+            case 2:
+                MainUI.GetChild("powered").asButton.alpha = 0.3f;
+                MainUI.GetChild("n21").asTextField.alpha = 0.3f;
+                break;
+            case 3:
+                MainUI.GetChild("slowed").asButton.alpha = 0.3f;
+                MainUI.GetChild("n22").asTextField.alpha = 0.3f;
+                break;
+            case 4:
+                MainUI.GetChild("bleeding").asButton.alpha = 0.3f;
+                MainUI.GetChild("n23").asTextField.alpha = 0.3f;
+                break;
+            case 5:
+                MainUI.GetChild("diziness").asButton.alpha = 0.3f;
+                MainUI.GetChild("n24").asTextField.alpha = 0.3f;
+                break;
+            case 6:
+                MainUI.GetChild("speedup").asButton.alpha = 0.3f;
+                MainUI.GetChild("n25").asTextField.alpha = 0.3f;
+                break;
+            default:
+                break;
         }
     }
     void StateDuringTimeReduce()
