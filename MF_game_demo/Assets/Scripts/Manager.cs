@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    public GameingUIController uiController;
+
+
     //伤害管理器，只读
     private DamageManager damageManager;
     public DamageManager GetDamageManager()
@@ -34,19 +37,20 @@ public class Manager : MonoBehaviour
     {
         Object.DestroyImmediate(obj);
     }
-    public Manager()
-    {
-        damageManager = new DamageManager();
-        monsterManager = new MonsterManager();
-        storyManager = new StoryManager();
-    }
     public void Awake()
     {
+        damageManager = new DamageManager();
+
+
         //初始化后填参数
         damageManager.Player = GameObject.Find("maruko").GetComponent<PlayerHP>();
         damageManager.PlayerObject = GameObject.Find("maruko");
 
-        storyManager.StorySectionPlayer = GameObject.Find("SotryPlayer").GetComponent<StoryPlayer>();
+        monsterManager = new MonsterManager();
+
+
+        storyManager = new StoryManager(uiController);
+
 
     }
     // Use this for initialization

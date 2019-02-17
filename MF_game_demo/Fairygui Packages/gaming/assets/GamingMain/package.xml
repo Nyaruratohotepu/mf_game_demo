@@ -38,6 +38,37 @@
     <image id="qovj19" name="1.jpg" path="/linshi/" exported="true"/>
     <image id="qovj1a" name="23.jpg" path="/linshi/" exported="true"/>
     <component id="myln1b" name="smallmessagewithmouse.xml" path="/" exported="true"/>
+    <component id="ufl21c" name="HUD.xml" path="/"/>
+    <image id="fsu01d" name="b_liveback_002.png" path="/Story/Bg/"/>
+    <image id="fsu01e" name="b_liveback_003.png" path="/Story/Bg/"/>
+    <image id="fsu01f" name="b_liveback_004.png" path="/Story/Bg/"/>
+    <image id="fsu01g" name="b_liveback_005.png" path="/Story/Bg/"/>
+    <image id="fsu01h" name="b_liveback_006.png" path="/Story/Bg/"/>
+    <image id="fsu01i" name="b_liveback_007.png" path="/Story/Bg/"/>
+    <image id="fsu01j" name="b_liveback_008.png" path="/Story/Bg/"/>
+    <image id="fsu01k" name="b_liveback_009.png" path="/Story/Bg/"/>
+    <image id="fsu01l" name="b_liveback_010.png" path="/Story/Bg/"/>
+    <image id="fsu01m" name="b_liveback_011.png" path="/Story/Bg/"/>
+    <image id="fsu01n" name="b_st_000.png" path="/Story/Bg/"/>
+    <image id="fsu01o" name="b_st_001.png" path="/Story/Bg/"/>
+    <image id="fsu01p" name="b_st_002.png" path="/Story/Bg/"/>
+    <image id="fsu01q" name="b_st_003.png" path="/Story/Bg/"/>
+    <image id="fsu01r" name="b_st_004.png" path="/Story/Bg/"/>
+    <image id="fsu01s" name="b_st_005.png" path="/Story/Bg/"/>
+    <image id="fsu01t" name="b_st_006.png" path="/Story/Bg/"/>
+    <image id="fsu01u" name="b_st_007.png" path="/Story/Bg/"/>
+    <image id="fsu01v" name="b_st_008.png" path="/Story/Bg/"/>
+    <image id="fsu01w" name="b_st_009.png" path="/Story/Bg/"/>
+    <image id="fsu01x" name="ch_ms_001_001.png" path="/Story/Cha/"/>
+    <image id="fsu01y" name="ch_ms_001_002.png" path="/Story/Cha/"/>
+    <image id="fsu01z" name="ch_ms_002_001.png" path="/Story/Cha/"/>
+    <image id="fsu020" name="ch_ms_002_002.png" path="/Story/Cha/"/>
+    <image id="fsu021" name="ch_ms_003_001.png" path="/Story/Cha/"/>
+    <image id="fsu022" name="ch_ms_003_002.png" path="/Story/Cha/"/>
+    <image id="fsu023" name="ch_ms_002_001(1).png" path="/Story/Cha/"/>
+    <image id="fsu024" name="ch_ms_002_002(1).png" path="/Story/Cha/"/>
+    <image id="fsu025" name="ch_ms_004_001.png" path="/Story/Cha/"/>
+    <image id="fsu026" name="ch_ms_004_002.png" path="/Story/Cha/"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>

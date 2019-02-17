@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using FairyGUI;
 //概述：标有public的方法有可能在外部调用，需要查看注释，注释中标有*******表示函数需要补充，private函数只需部分补充，不需要外部调用-----看完的或是补完的可以自行在注释上打好标记，以后更新新的注释好区分
-public class GameingUIController : MonoBehaviour {
-    int CurrentLevel=1;
-    public GComponent MainUI,TalkUI;
+public class GameingUIController : MonoBehaviour
+{
+    int CurrentLevel = 1;
+    public GComponent MainUI, TalkUI;
     public float[] StateDuringTimeRemain;
-	// Use this for initialization
-	void Start () {
-        StartUpOutSide();
+    // Use this for initialization
+    void Start()
+    {
+
         StartUpUISettings();
+        StartUpOutSide();
         ChangeHpBar(100, 500);
         GetAState(5, 5);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         StateDuringTimeReduce();
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            TalkActive();
-            ChangeSpeakerPic("1", "23");
-            ContinueChat(2, "瑄", "我说");
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TalkDisable();
-        }
-	}
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    TalkActive();
+        //    ChangeSpeakerPic("1", "23");
+        //    ContinueChat(2, "瑄", "我说");
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    TalkDisable();
+        //}
+    }
     void StartUpUISettings()
     {
         MainUI = GetComponent<UIPanel>().ui;
@@ -48,17 +52,25 @@ public class GameingUIController : MonoBehaviour {
         //***************
         //初始化外部需要访问的东西，自行在开头添加需要的变量，在这个函数里初始化，以便后面补充部分需要
         //***************
+
+        //注册UI点击事件
+        TalkUI.GetChild("talktext").asCom.onClick.Add(StoryPlayer.GoOn);
+
     }
     public void TalkActive()//开始显示对话框时先调用这个
     {
-        TalkUI.visible = true;        
+        TalkUI.visible = true;
     }
     public void TalkDisable()//结束对话时调用这个关闭对话框
     {
-        TalkUI.visible = false; 
+        TalkUI.visible = false;
     }
-    public void ContinueChat(int WhoIsTalking,string SpeakerName,string Speech)//不改变立绘更新说话方或说话内容调用此函数；参数一：说话方是左边的人还是右边的人，或是画外音，不说话的人立绘会呈半透明，1代表左，2代表右，12代表都说，0代表都不说（画外音）
-                                                                               //参数二：说话者的名字   参数三：说话内容
+
+    //不改变立绘更新说话方或说话内容调用此函数；
+    //参数一：说话方是左边的人还是右边的人，或是画外音，不说话的人立绘会呈半透明，1代表左，2代表右，12代表都说，0代表都不说（画外音）
+    //参数二：说话者的名字 
+    //参数三：说话内容
+    public void ContinueChat(int WhoIsTalking, string SpeakerName, string Speech)
     {
         switch (WhoIsTalking)
         {
@@ -87,8 +99,10 @@ public class GameingUIController : MonoBehaviour {
     }
     public void ChangeSpeakerPic(string LeftSpeakerPicName, string RightSpeakerPicName) //改变立绘，参数为左边角色和右边角色立绘名（在fgui中，命名规则后续进行规范）
     {
-        TalkUI.GetChild("speakerl").asLoader.url = UIPackage.GetItemURL("GamingMain",LeftSpeakerPicName);
-        TalkUI.GetChild("speakerr").asLoader.url = UIPackage.GetItemURL("GamingMain", RightSpeakerPicName);
+        if (LeftSpeakerPicName != null)
+            TalkUI.GetChild("speakerl").asLoader.url = UIPackage.GetItemURL("GamingMain", LeftSpeakerPicName);
+        if (RightSpeakerPicName != null)
+            TalkUI.GetChild("speakerr").asLoader.url = UIPackage.GetItemURL("GamingMain", RightSpeakerPicName);
     }
     public void ChangeBackGround(string Name)//改变背景图片，参数为背景图片名（在fgui中，命名规则后续进行规范）
     {
@@ -111,7 +125,7 @@ public class GameingUIController : MonoBehaviour {
         //*****************
         MainUI.GetChild("playerlvtext").asTextField.text = "200/500";
     }
-    public void GetAState(int StateNum,float DuringTime)//获取异常状态时调用此函数，参数一表示状态编号，对应ui上的横向两行1-6，参数二是持续时间，若有类似净化效果，可调用此函数，参数二传0
+    public void GetAState(int StateNum, float DuringTime)//获取异常状态时调用此函数，参数一表示状态编号，对应ui上的横向两行1-6，参数二是持续时间，若有类似净化效果，可调用此函数，参数二传0
     {
         switch (StateNum)
         {
@@ -149,7 +163,7 @@ public class GameingUIController : MonoBehaviour {
                 break;
         }
     }
-      void EndState(int StateNum)
+    void EndState(int StateNum)
     {
         switch (StateNum)
         {

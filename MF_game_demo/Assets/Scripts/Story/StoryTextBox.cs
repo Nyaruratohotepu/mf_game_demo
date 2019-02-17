@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 
 public class StoryTextBox : MonoBehaviour,IPointerClickHandler
 {
-    public StoryPlayer storyPlayer;
+    
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
-        storyPlayer.GoOn();
+        StoryPlayer.GoOn();
     }
 
     // Use this for initialization

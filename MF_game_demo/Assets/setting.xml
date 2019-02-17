@@ -18,6 +18,14 @@
         /Resources/Story/Flag.xml
       </Value>
     </Path>
+    <Path>
+      <PathName>
+        uiBgPath
+      </PathName>
+      <Value>
+        /Resources/Story/Flag.xml
+      </Value>
+    </Path>
   </PathSetting>
   <DisplaySetting>
     <Display>

@@ -11,23 +11,18 @@ namespace Assets.Scripts.Story
         //key:故事名 
         private Dictionary<string, StorySection> storySections;
 
-
-
-        // StorySectionPlayer由Manager在Awake中填写
-        public StoryPlayer StorySectionPlayer { set; get; }
-
-        public StoryManager()
+        public StoryManager(GameingUIController uiController)
         {
             storySections = new Dictionary<string, StorySection>();
-            // StorySectionPlayer由Manager在Awake中填写
+            StoryPlayer.Init(uiController, this);
         }
 
-        public StorySection GetStorySection(string storySectionName)
+        public StorySection GetStorySection(string storySectionName, string leftName, string rightName)
         {
             //首次加载
             if (!storySections.ContainsKey(storySectionName))
             {
-                StorySection storySection = new StorySection(storySectionName);
+                StorySection storySection = new StorySection(storySectionName, leftName, rightName);
                 storySections.Add(storySectionName, storySection);
                 return storySection;
 
@@ -39,7 +34,7 @@ namespace Assets.Scripts.Story
         //触发剧情对话时候被调用（如碰撞npc时被npc调用），调用UI组件播放对话
         public void StartStory(StorySection storySection)
         {
-            StorySectionPlayer.Play(storySection);
+            StoryPlayer.Play(storySection);
         }
 
         //处理剧情指令
