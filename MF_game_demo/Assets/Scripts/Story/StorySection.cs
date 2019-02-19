@@ -13,11 +13,15 @@ namespace Assets.Scripts.Story
 
         //指令(包含对话和操作)，从0开始计算序号
         private Dictionary<int, StoryCMD> storyCMDs;
-
+        public string LeftName { get; set; }
+        public string RightName { get; set; }
 
         //构造过程是字符串队列中的每一行转成一个故事指令
-        public StorySection(string storySectionName)
+        public StorySection(string storySectionName, string leftName, string rightName)
         {
+            LeftName = leftName;
+            RightName = rightName;
+
             Queue<string> storyLines = DataAccess.GetStorySectionLines(storySectionName);
             storyCMDs = new Dictionary<int, StoryCMD>();
 

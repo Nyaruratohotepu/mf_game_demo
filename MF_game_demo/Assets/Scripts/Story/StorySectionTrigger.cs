@@ -11,13 +11,15 @@ public class StorySectionTrigger : MonoBehaviour
     private StorySection storySection;
     //准备好后，出现操作提示触发剧情
     public bool isReady { get; set; }
+    public string LeftName = "Player";
+    public string RightName = "Other";
     // Use this for initialization
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<Manager>();
         storyManager = gameManager.GetStoryManager();
 
-        storySection = storyManager.GetStorySection(StoryName);
+        storySection = storyManager.GetStorySection(StoryName, LeftName, RightName);
         isReady = false;
     }
 
@@ -27,9 +29,9 @@ public class StorySectionTrigger : MonoBehaviour
         //触发剧情
         if (isReady && Input.GetButtonDown("Interact"))
         {
-            MonoBehaviour.print("对话!" + StoryName+storySection);
+            MonoBehaviour.print("对话!" + StoryName + storySection);
             storyManager.StartStory(storySection);
-            
+
         }
 
     }
