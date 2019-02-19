@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,100" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n4_hv7w" name="n4" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="800,100" alpha="0.55"/>
+    <text id="n3_hv7w" name="text" xy="12,9" size="779,82" fontSize="40" vAlign="middle" autoSize="shrink" bold="true" text=""/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue="0.90"/>
+</component>

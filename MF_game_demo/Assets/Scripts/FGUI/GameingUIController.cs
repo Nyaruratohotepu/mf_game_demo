@@ -6,7 +6,7 @@ using FairyGUI;
 public class GameingUIController : MonoBehaviour
 {
     int CurrentLevel = 1;
-    public GComponent MainUI, TalkUI;
+    public GComponent MainUI, TalkUI,Choices;
     public float[] StateDuringTimeRemain;
     // Use this for initialization
     void Start()
@@ -32,9 +32,26 @@ public class GameingUIController : MonoBehaviour
         //{
         //    TalkDisable();
         //}
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            List<string> a = new List<string>();
+            a.Add("hqwiodj");
+            a.Add("你好");
+            a.Add("再见");
+            GiveChoices(a);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            List<string> a = new List<string>();
+            a.Add("你说什么");
+            a.Add("好的");
+            GiveChoices(a);
+        }
+        
     }
     void StartUpUISettings()
     {
+        UIPackage.AddPackage("FGUI/GameMainUI/GamingMain");
         MainUI = GetComponent<UIPanel>().ui;
         StateDuringTimeRemain = new float[6];
         MainUI.GetChild("playerhead").asCom.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "maruko");
@@ -44,8 +61,10 @@ public class GameingUIController : MonoBehaviour
         MainUI.GetChild("menu").asButton.GetChild("icon").asLoader.url = UIPackage.GetItemURL("GamingMain", "menu");
         TalkUI = MainUI.GetChild("talkcomponent").asCom;
         TalkUI.visible = false;
+        Choices = MainUI.GetChild("speakchoice").asCom;
+        Choices.visible = false;
         MainUI.GetChild("playerlv").asButton.onRollOver.Add(ShowNeedToLevelUp);
-        MainUI.GetChild("playerlv").asButton.onRollOut.Add(() => { ChangeLevel(10); });
+        MainUI.GetChild("playerlv").asButton.onRollOut.Add(() => { ChangeLevel(10); });//待修改
     }
     private void StartUpOutSide()
     {
@@ -125,7 +144,7 @@ public class GameingUIController : MonoBehaviour
         //*****************
         MainUI.GetChild("playerlvtext").asTextField.text = "200/500";
     }
-    public void GetAState(int StateNum, float DuringTime)//获取异常状态时调用此函数，参数一表示状态编号，对应ui上的横向两行1-6，参数二是持续时间，若有类似净化效果，可调用此函数，参数二传0
+    public void GetAState(int StateNum, float DuringTime)//获取异常状态时调用此函数，参数一表示状态编号，对应ui上的横向两行1-6，参数二是持续时间，若有类似净化效果，可调用此函数，参数二传0.1f
     {
         switch (StateNum)
         {
@@ -209,5 +228,21 @@ public class GameingUIController : MonoBehaviour
                 }
             }
         }
+    }
+    public List<GButton> GiveChoices(List<string> list)//传入选择内容的list来打开选择，返回对应的gbutton list
+    {
+        List<GButton> ReturnList = new List<GButton>();
+        ReturnList.Clear();
+        Choices.visible=true;
+        GList ChoiceList= Choices.GetChild("list").asList;
+        int i ;
+        for (i = 0; i < list.Count; i++)
+        {
+            GButton a = ChoiceList.AddChild(UIPackage.CreateObject("GamingMain", "choice").asCom).asButton;
+            a.GetChild("text").asTextField.text = list[i];
+            a.onClick.Add(() => { Choices.visible = false; ChoiceList.RemoveChildren(); });
+            ReturnList.Add(a);
+        }
+        return ReturnList;
     }
 }

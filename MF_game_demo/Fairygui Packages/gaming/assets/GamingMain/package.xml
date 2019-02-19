@@ -69,6 +69,8 @@
     <image id="fsu024" name="ch_ms_002_002(1).png" path="/Story/Cha/"/>
     <image id="fsu025" name="ch_ms_004_001.png" path="/Story/Cha/"/>
     <image id="fsu026" name="ch_ms_004_002.png" path="/Story/Cha/"/>
+    <component id="hv7w27" name="speakchoice.xml" path="/"/>
+    <component id="hv7w28" name="choice.xml" path="/" exported="true"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>

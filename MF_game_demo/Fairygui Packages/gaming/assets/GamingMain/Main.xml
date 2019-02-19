@@ -109,5 +109,6 @@
     <text id="n70_uty7" name="70" xy="1820,1020" size="75,50" group="n72_uty7" fontSize="35" align="center" vAlign="middle" text="菜单"/>
     <group id="n72_uty7" name="menu" xy="1475,910" size="430,160" advanced="true" collapsed="true"/>
     <component id="n80_qovj" name="talkcomponent" src="qovj18" fileName="talkcomponent.xml" xy="0,0"/>
+    <component id="n81_hv7w" name="speakchoice" src="hv7w27" fileName="speakchoice.xml" xy="0,0"/>
   </displayList>
 </component>
