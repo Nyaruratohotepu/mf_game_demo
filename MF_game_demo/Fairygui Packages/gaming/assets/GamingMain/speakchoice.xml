@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <graph id="n0_hv7w" name="n0" xy="0,0" size="1920,1080"/>
+    <list id="n1_hv7w" name="list" xy="520,160" size="900,600" selectionMode="none" lineGap="50" defaultItem="ui://dopftjtchv7w28" autoItemSize="false" align="center" vAlign="middle"/>
+  </displayList>
+</component>
