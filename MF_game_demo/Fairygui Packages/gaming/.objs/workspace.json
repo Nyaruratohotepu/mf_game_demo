@@ -1,4 +1,9 @@
 {
+	"hidden_packages": [],
+	"active_doc": [
+		"dopftjtc",
+		"ppu70"
+	],
 	"expanded_nodes": [
 		"dopftjtc",
 		"/"
@@ -54,10 +59,5 @@
 		"m61c2f",
 		"dopftjtc",
 		"m61c2e"
-	],
-	"hidden_packages": [],
-	"active_doc": [
-		"dopftjtc",
-		"m61c2a"
 	]
 }
