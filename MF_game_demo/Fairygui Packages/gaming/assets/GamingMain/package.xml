@@ -2,29 +2,29 @@
 <packageDescription id="dopftjtc" jpegQuality="80" compressPNG="true">
   <resources>
     <component id="ppu70" name="Main.xml" path="/" exported="true"/>
-    <image id="ppu71" name="状态暴击.png" path="/"/>
-    <image id="ppu72" name="状态加速.png" path="/"/>
-    <image id="ppu73" name="状态减速.png" path="/"/>
-    <image id="ppu74" name="状态-流血.png" path="/"/>
-    <image id="ppu75" name="状态-眩晕.png" path="/"/>
-    <image id="ppu76" name="状态-中毒.png" path="/"/>
+    <image id="ppu71" name="状态暴击.png" path="/states/"/>
+    <image id="ppu72" name="状态加速.png" path="/states/"/>
+    <image id="ppu73" name="状态减速.png" path="/states/"/>
+    <image id="ppu74" name="状态-流血.png" path="/states/"/>
+    <image id="ppu75" name="状态-眩晕.png" path="/states/"/>
+    <image id="ppu76" name="状态-中毒.png" path="/states/"/>
     <image id="ppu77" name="人物姓名文字背景.png" path="/"/>
     <image id="ppu78" name="主动技案件文字背景.png" path="/"/>
     <image id="ppu79" name="主技能.png" path="/" exported="true"/>
     <image id="ppu7a" name="血条.png" path="/"/>
     <image id="ppu7b" name="血条背景.png" path="/"/>
     <image id="ppu7e" name="任务面板详情.png" path="/"/>
-    <component id="ppu7f" name="bleeding.xml" path="/"/>
-    <component id="ppu7g" name="poisoned.xml" path="/"/>
-    <component id="ppu7j" name="slowed.xml" path="/"/>
-    <component id="ppu7k" name="speedup.xml" path="/"/>
-    <component id="ppu7m" name="powered.xml" path="/"/>
-    <component id="ppu7n" name="diziness.xml" path="/"/>
+    <component id="ppu7f" name="bleeding.xml" path="/states/"/>
+    <component id="ppu7g" name="poisoned.xml" path="/states/"/>
+    <component id="ppu7j" name="slowed.xml" path="/states/"/>
+    <component id="ppu7k" name="speedup.xml" path="/states/"/>
+    <component id="ppu7m" name="powered.xml" path="/states/"/>
+    <component id="ppu7n" name="diziness.xml" path="/states/"/>
     <image id="ppu7p" name="遮罩.png" path="/" exported="true"/>
-    <component id="xt25r" name="whitebuttonwithloader.xml" path="/"/>
-    <component id="xt25s" name="whitebutton.xml" path="/"/>
-    <component id="xt25u" name="weaponbutton.xml" path="/"/>
-    <component id="xt25v" name="itembutton.xml" path="/"/>
+    <component id="xt25r" name="whitebuttonwithloader.xml" path="/commonbutton/"/>
+    <component id="xt25s" name="whitebutton.xml" path="/commonbutton/"/>
+    <component id="xt25u" name="weaponbutton.xml" path="/commonbutton/"/>
+    <component id="xt25v" name="itembutton.xml" path="/commonbutton/"/>
     <image id="uty7w" name="bag.png" path="/" exported="true"/>
     <image id="uty7x" name="charactor.png" path="/" exported="true"/>
     <image id="uty7y" name="menu.png" path="/" exported="true"/>
@@ -32,7 +32,7 @@
     <component id="mnik10" name="PlayerPhoto.xml" path="/"/>
     <image id="mnik11" name="maruko.png" path="/" exported="true"/>
     <component id="bpe114" name="hpbar.xml" path="/"/>
-    <component id="qovj16" name="blackmask.xml" path="/"/>
+    <component id="qovj16" name="blackmask.xml" path="/commonbutton/"/>
     <component id="qovj17" name="talktext.xml" path="/"/>
     <component id="qovj18" name="talkcomponent.xml" path="/" exported="true"/>
     <image id="qovj19" name="1.jpg" path="/linshi/" exported="true"/>
@@ -71,6 +71,13 @@
     <image id="fsu026" name="ch_ms_004_002.png" path="/Story/Cha/"/>
     <component id="hv7w27" name="speakchoice.xml" path="/"/>
     <component id="hv7w28" name="choice.xml" path="/" exported="true"/>
+    <component id="m61c29" name="bagmain.xml" path="/bag/" exported="true"/>
+    <component id="m61c2a" name="bagframe.xml" path="/bag/"/>
+    <image id="m61c2b" name="x.png" path="/"/>
+    <component id="m61c2c" name="closebutton.xml" path="/"/>
+    <component id="m61c2d" name="bagitem.xml" path="/commonbutton/"/>
+    <component id="m61c2e" name="scrollbar_grip.xml" path="/commonbutton/"/>
+    <component id="m61c2f" name="scrollbar.xml" path="/commonbutton/" exported="true"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>

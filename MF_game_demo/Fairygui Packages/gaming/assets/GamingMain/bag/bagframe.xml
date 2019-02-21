@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1400,900">
+  <displayList>
+    <image id="n0_m61c" name="n0" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="1400,900"/>
+    <graph id="n1_m61c" name="dragArea" xy="30,18" size="1238,63"/>
+    <component id="n5_m61c" name="closeButton" src="m61c2c" fileName="closebutton.xml" xy="1289,25" size="50,50"/>
+  </displayList>
+</component>
