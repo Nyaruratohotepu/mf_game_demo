@@ -8,6 +8,7 @@ public class GameingUIController : MonoBehaviour
     int CurrentLevel = 1;
     public GComponent MainUI, TalkUI,Choices;
     public float[] StateDuringTimeRemain;
+    public Bag PlayerBag;
     // Use this for initialization
     void Start()
     {
@@ -48,6 +49,7 @@ public class GameingUIController : MonoBehaviour
             GiveChoices(a);
         }
         
+        
     }
     void StartUpUISettings()
     {
@@ -65,6 +67,8 @@ public class GameingUIController : MonoBehaviour
         Choices.visible = false;
         MainUI.GetChild("playerlv").asButton.onRollOver.Add(ShowNeedToLevelUp);
         MainUI.GetChild("playerlv").asButton.onRollOut.Add(() => { ChangeLevel(10); });//待修改
+        PlayerBag = new Bag();
+        MainUI.GetChild("bag").asButton.onClick.Add(() => { PlayerBag.Show(); });
     }
     private void StartUpOutSide()
     {

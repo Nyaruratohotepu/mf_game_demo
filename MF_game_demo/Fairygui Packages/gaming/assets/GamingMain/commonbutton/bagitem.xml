@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,100" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n3_m61c" name="bg" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="100,100" color="#999999"/>
+    <loader id="n4_m61c" name="icon" xy="8,8" size="85,85" align="center" vAlign="middle"/>
+    <text id="n5_m61c" name="n5" xy="67,70" size="33,30" fontSize="20" align="center" vAlign="middle" autoSize="none" text=""/>
+  </displayList>
+  <Button/>
+</component>

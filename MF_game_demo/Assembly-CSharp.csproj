@@ -257,6 +257,7 @@
      <Compile Include="Assets\Scripts\Bullet_AKM.cs" />
      <Compile Include="Assets\Scripts\CameraAction.cs" />
      <Compile Include="Assets\Scripts\DamageManager.cs" />
+     <Compile Include="Assets\Scripts\FGUI\Bag.cs" />
      <Compile Include="Assets\Scripts\FGUI\GameingUIController.cs" />
      <Compile Include="Assets\Scripts\Gun.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
