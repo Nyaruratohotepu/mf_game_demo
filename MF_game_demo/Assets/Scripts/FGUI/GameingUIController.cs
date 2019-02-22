@@ -31,6 +31,12 @@ public class GameingUIController : MonoBehaviour
         //}
         //if (Input.GetKeyDown(KeyCode.E))
         //{
+            
+        //    ChangeSpeakerPic("1");
+        //    ContinueChat(2, "瑄", "我说");
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
         //    TalkDisable();
         //}
         if (Input.GetKeyDown(KeyCode.J))
@@ -68,7 +74,8 @@ public class GameingUIController : MonoBehaviour
         MainUI.GetChild("playerlv").asButton.onRollOver.Add(ShowNeedToLevelUp);
         MainUI.GetChild("playerlv").asButton.onRollOut.Add(() => { ChangeLevel(10); });//待修改
         PlayerBag = new Bag();
-        MainUI.GetChild("bag").asButton.onClick.Add(() => { PlayerBag.Show(); });
+        PlayerBag.SetXY(250, 110);
+        MainUI.GetChild("bag").asButton.onClick.Add(() => { PlayerBag.Show();});
     }
     private void StartUpOutSide()
     {
@@ -93,6 +100,7 @@ public class GameingUIController : MonoBehaviour
     //参数一：说话方是左边的人还是右边的人，或是画外音，不说话的人立绘会呈半透明，1代表左，2代表右，12代表都说，0代表都不说（画外音）
     //参数二：说话者的名字 
     //参数三：说话内容
+    //新增：单人居中说话时参数一可以随意
     public void ContinueChat(int WhoIsTalking, string SpeakerName, string Speech)
     {
         switch (WhoIsTalking)
@@ -120,12 +128,19 @@ public class GameingUIController : MonoBehaviour
         TalkUI.GetChild("talktext").asCom.GetChild("talker").asTextField.text = SpeakerName;
         TalkUI.GetChild("talktext").asCom.GetChild("speechtext").asTextField.text = Speech;
     }
-    public void ChangeSpeakerPic(string LeftSpeakerPicName, string RightSpeakerPicName) //改变立绘，参数为左边角色和右边角色立绘名（在fgui中，命名规则后续进行规范）
+    public void ChangeSpeakerPic(string LeftSpeakerPicName, string RightSpeakerPicName) //改变立绘，参数为左边角色和右边角色立绘名（在fgui中，命名规则后续进行规范）,若需要单独立绘居中，则使用单参数重载，使用双参数时中间图片会自动置空，反之亦然
     {
+        TalkUI.GetChild("speakerm").asLoader.url = null;
         if (LeftSpeakerPicName != null)
             TalkUI.GetChild("speakerl").asLoader.url = UIPackage.GetItemURL("GamingMain", LeftSpeakerPicName);
         if (RightSpeakerPicName != null)
-            TalkUI.GetChild("speakerr").asLoader.url = UIPackage.GetItemURL("GamingMain", RightSpeakerPicName);
+            TalkUI.GetChild("speakerr").asLoader.url = UIPackage.GetItemURL("GamingMain", RightSpeakerPicName);        
+    }
+    public void ChangeSpeakerPic(string MiddleSpeakerName)
+    {
+        TalkUI.GetChild("speakerl").asLoader.url = null;
+        TalkUI.GetChild("speakerr").asLoader.url = null;
+        TalkUI.GetChild("speakerm").asLoader.url = UIPackage.GetItemURL("GamingMain", MiddleSpeakerName);
     }
     public void ChangeBackGround(string Name)//改变背景图片，参数为背景图片名（在fgui中，命名规则后续进行规范）
     {

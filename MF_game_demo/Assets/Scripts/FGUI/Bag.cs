@@ -4,7 +4,7 @@ using UnityEngine;
 using FairyGUI;
 
 public class Bag :BagWindow {
-
+    GList ItemList;
 	public Bag()
     {
 
@@ -12,6 +12,10 @@ public class Bag :BagWindow {
     protected override void OnInit()
     {
         this.contentPane = UIPackage.CreateObject("GamingMain", "bagmain").asCom;
+        ItemList = this.contentPane.GetChild("baglist").asList;
+        
+
     }
+    
 	
 }

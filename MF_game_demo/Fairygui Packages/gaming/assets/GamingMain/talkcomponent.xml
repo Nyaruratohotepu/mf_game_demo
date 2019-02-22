@@ -4,6 +4,7 @@
     <loader id="n4_picu" name="background" xy="0,0" size="1920,1080" align="center" vAlign="middle" fill="scaleFree"/>
     <loader id="n1_qovj" name="speakerl" xy="178,220" size="650,650" align="center" vAlign="middle" fill="scaleMatchHeight"/>
     <loader id="n2_qovj" name="speakerr" xy="1093,220" size="650,650" align="center" vAlign="middle" fill="scaleMatchHeight"/>
+    <loader id="n5_m4jf" name="speakerm" xy="625,220" size="650,650" align="center" vAlign="middle" fill="scaleMatchHeight"/>
     <component id="n3_qovj" name="talktext" src="qovj17" fileName="talktext.xml" xy="254,674"/>
   </displayList>
 </component>
