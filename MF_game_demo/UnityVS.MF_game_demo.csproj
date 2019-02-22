@@ -502,8 +502,11 @@
     <Compile Include="Assets\Scripts\Bullet_AKM.cs" />
     <Compile Include="Assets\Scripts\CameraAction.cs" />
     <Compile Include="Assets\Scripts\DamageManager.cs" />
+    <Compile Include="Assets\Scripts\FGUI\Bag.cs" />
     <Compile Include="Assets\Scripts\FGUI\GameingUIController.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\Inventory\IInventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\IInventoryItem.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\MeleeMonster.cs" />

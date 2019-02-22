@@ -44,16 +44,18 @@
       <item/>
       <item/>
     </list>
-    <image id="n3_m61c" name="n3" src="fsu01z" fileName="Story/Cha/ch_ms_002_001.png" xy="48,125" size="393,418"/>
+    <image id="n3_m61c" name="n3" src="fsu01z" fileName="Story/Cha/ch_ms_002_001.png" xy="50,91" size="393,418"/>
     <component id="n5_m61c" name="n5" src="m61c2d" fileName="commonbutton/bagitem.xml" xy="450,250"/>
     <component id="n6_m61c" name="n6" src="m61c2d" fileName="commonbutton/bagitem.xml" xy="450,400"/>
     <text id="n7_m61c" name="n7" xy="450,200" size="100,50" fontSize="30" align="center" vAlign="middle" autoSize="none" text="主武器"/>
     <text id="n8_m61c" name="n8" xy="450,350" size="100,50" fontSize="30" align="center" vAlign="middle" autoSize="none" text="副武器"/>
-    <text id="n9_m61c" name="n9" xy="100,600" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
-    <text id="n10_m61c" name="n10" xy="330,760" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
-    <text id="n11_m61c" name="n11" xy="100,760" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
-    <text id="n12_m61c" name="n12" xy="100,680" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
-    <text id="n13_m61c" name="n13" xy="330,680" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
-    <text id="n14_m61c" name="n14" xy="330,600" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n9_m61c" name="n9" xy="100,550" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n10_m61c" name="n10" xy="330,710" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n11_m61c" name="n11" xy="100,710" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n12_m61c" name="n12" xy="100,630" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n13_m61c" name="n13" xy="330,630" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n14_m61c" name="n14" xy="330,550" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n15_m4jf" name="n15" xy="330,790" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
+    <text id="n16_m4jf" name="n16" xy="100,790" size="195,43" fontSize="30" align="center" vAlign="middle" autoSize="shrink" text="生命：100"/>
   </displayList>
 </component>
