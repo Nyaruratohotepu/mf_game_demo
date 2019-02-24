@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="128,42" extention="Button">
+  <Button mode="Radio"/>
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver"/>
+  <displayList>
+    <image id="n0_qq3y" src="ppu77" name="n0" xy="0,0">
+      <relation target="" sidePair="width,height"/>
+    </image>
+    <text id="n1_qq3y" name="title" xy="0,0" size="128,42" fontSize="12" autoSize="none" align="center" vAlign="middle" singleLine="true">
+      <relation target="" sidePair="width,height"/>
+    </text>
+  </displayList>
+  <controller name="checked" pages="0,no,1,yes"/>
+</component>
