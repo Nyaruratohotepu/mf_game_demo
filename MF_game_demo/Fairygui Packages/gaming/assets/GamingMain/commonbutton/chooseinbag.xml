@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="636,311">
+  <displayList>
+    <image id="n0_qq3y" name="n0" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="636,311">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <list id="n1_qq3y" name="list" xy="0,0" size="636,311" defaultItem="ui://dopftjtcqq3y2g">
+      <relation target="" sidePair="width-width"/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+  </displayList>
+  <relation target="n1_qq3y" sidePair="height-height"/>
+</component>

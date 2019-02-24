@@ -17,6 +17,7 @@ public class GameingUIController : MonoBehaviour
         StartUpOutSide();
         ChangeHpBar(100, 500);
         GetAState(5, 5);
+       // PlayerBag.AddItem(1, "1", 1,1);
     }
 
     // Update is called once per frame
@@ -39,6 +40,10 @@ public class GameingUIController : MonoBehaviour
         //{
         //    TalkDisable();
         //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerBag.AddItem(1, "1", 1, 1);
+        }
         if (Input.GetKeyDown(KeyCode.J))
         {
             List<string> a = new List<string>();
@@ -76,6 +81,8 @@ public class GameingUIController : MonoBehaviour
         PlayerBag = new Bag();
         PlayerBag.SetXY(250, 110);
         MainUI.GetChild("bag").asButton.onClick.Add(() => { PlayerBag.Show();});
+        PlayerBag.contentPane = UIPackage.CreateObject("GamingMain", "bagmain").asCom;
+        PlayerBag.ItemList = PlayerBag.contentPane.GetChild("baglist").asList;
     }
     private void StartUpOutSide()
     {
