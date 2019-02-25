@@ -2,7 +2,7 @@
 <component size="1400,900">
   <displayList>
     <component id="n0_m61c" name="frame" src="m61c2a" fileName="bag/bagframe.xml" xy="0,0"/>
-    <list id="n1_m61c" name="baglist" xy="762,161" size="559,641" layout="flow_hz" overflow="scroll" lineGap="14" colGap="14" defaultItem="ui://dopftjtcm61c2d">
+    <list id="n1_m61c" name="baglist" xy="760,160" size="559,641" layout="flow_hz" overflow="scroll" lineGap="14" colGap="14" defaultItem="ui://dopftjtcm61c2d">
       <item/>
       <item/>
       <item/>

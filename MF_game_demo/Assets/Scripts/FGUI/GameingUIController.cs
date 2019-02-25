@@ -42,7 +42,7 @@ public class GameingUIController : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayerBag.AddItem(1, "1", 1, 1);
+            PlayerBag.AddItem(1, "1", 1, 3,"weapon");
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
@@ -83,6 +83,7 @@ public class GameingUIController : MonoBehaviour
         MainUI.GetChild("bag").asButton.onClick.Add(() => { PlayerBag.Show();});
         PlayerBag.contentPane = UIPackage.CreateObject("GamingMain", "bagmain").asCom;
         PlayerBag.ItemList = PlayerBag.contentPane.GetChild("baglist").asList;
+        PlayerBag.UICamera = GameObject.Find("Stage Camera").GetComponent<Camera>() ;
     }
     private void StartUpOutSide()
     {
