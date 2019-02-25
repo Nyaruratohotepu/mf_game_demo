@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="350,450">
+  <displayList>
+    <image id="n0_gy42" name="n0" src="ppu7e" fileName="任务面板详情.png" xy="0,0" size="350,450" alpha="0.8"/>
+    <loader id="n1_gy42" name="pic" xy="16,10" size="100,100"/>
+    <text id="n2_gy42" name="name" xy="138,12" size="200,44" fontSize="30" align="right" vAlign="middle" ubb="true" autoSize="shrink" bold="true" text="实力作死弓"/>
+    <text id="n3_gy42" name="n3" xy="261,64" size="70,28" fontSize="17" align="right" vAlign="middle" autoSize="shrink" bold="true" text="攻击力"/>
+    <text id="n4_gy42" name="atk" xy="197,103" size="133,38" fontSize="23" align="right" vAlign="middle" ubb="true" autoSize="shrink" bold="true" text="100~200"/>
+    <text id="n5_gy42" name="levelandrarity" xy="11,151" size="190,50" fontSize="15" vAlign="middle" ubb="true" autoSize="shrink" text="等级要求：10级&#xA;弓·稀有"/>
+    <text id="n6_gy42" name="ability" xy="13,212" size="317,180" fontSize="22" ubb="true" autoSize="none" text="攻击加20&#xA;血量加100"/>
+    <text id="n7_gy42" name="egg" xy="13,403" size="317,34" fontSize="11" vAlign="middle" autoSize="none" text="实力作死&#xA;                               ----秀吉"/>
+  </displayList>
+</component>
