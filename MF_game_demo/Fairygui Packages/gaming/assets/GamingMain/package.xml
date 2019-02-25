@@ -80,6 +80,7 @@
     <component id="m61c2f" name="scrollbar.xml" path="/commonbutton/" exported="true"/>
     <component id="qq3y2g" name="chooseinbag_item.xml" path="/commonbutton/"/>
     <component id="qq3y2h" name="chooseinbag.xml" path="/commonbutton/" exported="true"/>
+    <component id="gy422i" name="bagweaponitemdescribe.xml" path="/" exported="true"/>
   </resources>
   <publish name="GamingMain" path="E:\project-xuan\mf_game_demo\MF_game_demo\Assets\Resources\FGUI\GameMainUI"/>
 </packageDescription>
