@@ -73,3 +73,29 @@ public static class IOTool
             return false;
     }
 }
+public static class InventoryEnum
+{
+    public enum ItemType
+    {
+        /// <summary>
+        /// 武器
+        /// </summary>
+        Weapon,
+        /// <summary>
+        /// 投掷物
+        /// </summary>
+        Grenade,
+        /// <summary>
+        /// 弹药
+        /// </summary>
+        Ammo,
+        /// <summary>
+        /// 剧情物体
+        /// </summary>
+        StoryItem,
+        /// <summary>
+        /// 可使用道具，药剂等
+        /// </summary>
+        PropertItem
+    }
+}

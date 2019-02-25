@@ -17,6 +17,11 @@ namespace Assets.Scripts.Inventory
         int InventoryID { set; get; }
 
         /// <summary>
+        /// 物体类型
+        /// </summary>
+        InventoryEnum.ItemType Type { set; get; }
+
+        /// <summary>
         /// 在背包中显示的名称
         /// </summary>
         string InventoryName { set; get; }
@@ -26,10 +31,10 @@ namespace Assets.Scripts.Inventory
         /// </summary>
         string InventoryImgDefault { set; get; }
 
-        /// <summary>
-        /// 能否堆叠
-        /// </summary>
-        bool IsStackable { set; get; }
+        ///// <summary>
+        ///// 能否堆叠
+        ///// </summary>
+        //bool IsStackable { set; get; }
 
         /// <summary>
         /// 最多一堆多少个
