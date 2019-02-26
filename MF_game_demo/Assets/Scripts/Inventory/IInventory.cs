@@ -13,7 +13,7 @@ namespace Assets.Scripts.Inventory
         /// <summary>
         /// 物品列表，存储物品和数量，每条键值对均占背包中的一格
         /// </summary>
-        Dictionary<IInventoryItem, int> Item { set; get; }
+        Dictionary<IInventoryItem, int> Items { get; }
         /// <summary>
         /// 最大容量（格子数）
         /// </summary>
