@@ -21,11 +21,13 @@ public class Manager : MonoBehaviour
         return monsterManager;
     }
     //故事和对话管理器，只读
-    public StoryManager storyManager;
+    private StoryManager storyManager;
     public StoryManager GetStoryManager()
     {
         return storyManager;
     }
+
+
 
     //在timeLeft秒后摧毁该物体
     public void Destory(GameObject obj, float timeLeft)
