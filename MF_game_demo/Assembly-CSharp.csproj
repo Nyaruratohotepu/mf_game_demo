@@ -272,6 +272,8 @@
     <Compile Include="Assets\Scripts\Inventory\IInventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryBlock.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ShopInventory.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ShopTrigger.cs" />
     <Compile Include="Assets\Scripts\ItemManager.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />

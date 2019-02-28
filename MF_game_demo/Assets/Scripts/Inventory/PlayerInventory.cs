@@ -8,8 +8,8 @@ namespace Assets.Scripts.Inventory
     public class PlayerInventory : IInventory
     {
 
-        private Dictionary<IInventoryItem, int> items;
-        Dictionary<IInventoryItem, int> IInventory.Items
+        private List<IInventoryItem> items;
+        List<IInventoryItem> IInventory.Items
         {
             get
             {
@@ -37,11 +37,6 @@ namespace Assets.Scripts.Inventory
             {
                 return capacityUsed;
             }
-            set
-            {
-                if (value >= 0)
-                    capacityUsed = value;
-            }
         }
 
         private int cash=0;
@@ -58,7 +53,7 @@ namespace Assets.Scripts.Inventory
             }
         }
 
-        int IInventory.AddItem(IInventoryItem item)
+        int IInventory.AddItem(IInventoryItem item,int count)
         {
             if (item == null)
                 return 0;
@@ -76,17 +71,11 @@ namespace Assets.Scripts.Inventory
                     return 0;
                 else
                 {
-                    items.Add(item, 1);
-                    capacityUsed++;
+                    items.Add(item);
                     return 1;
                 }
             }
                 
-        }
-
-        int IInventory.AddItemByID(int itemId, int count)
-        {
-            throw new NotImplementedException();
         }
 
         int IInventory.DelAllItemByID(int itemId)
@@ -94,10 +83,6 @@ namespace Assets.Scripts.Inventory
             throw new NotImplementedException();
         }
 
-        int IInventory.DelItem(IInventoryItem item)
-        {
-            throw new NotImplementedException();
-        }
 
         int IInventory.DelItemByID(int itemId, int count)
         {
@@ -114,24 +99,20 @@ namespace Assets.Scripts.Inventory
             throw new NotImplementedException();
         }
 
-        int IInventory.ItemCount(IInventoryItem item)
-        {
-            throw new NotImplementedException();
-        }
 
         int IInventory.SetItemCount(int itemId)
         {
             throw new NotImplementedException();
         }
 
-        bool IInventory.TryBuy(IInventory shop, IInventoryItem item)
+        int IInventory.DelItem(IInventoryItem item)
         {
             throw new NotImplementedException();
         }
 
         public PlayerInventory()
         {
-            items = new Dictionary<IInventoryItem, int>();
+            items = new List<IInventoryItem>();
             
         }
     }

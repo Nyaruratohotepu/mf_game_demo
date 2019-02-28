@@ -42,6 +42,11 @@ namespace Assets.Scripts.Inventory
         int StackMaxCount { set; get; }
 
         /// <summary>
+        /// 当前堆叠数量
+        /// </summary>
+        int StackCount { set; get; }
+
+        /// <summary>
         /// 能否交易
         /// </summary>
         bool IsTradable { set; get; }
@@ -51,5 +56,10 @@ namespace Assets.Scripts.Inventory
         /// </summary>
         int Price { set; get; }
 
+        /// <summary>
+        /// 复制当前实例
+        /// </summary>
+        /// <returns>新实例的引用</returns>
+        IInventoryItem Duplicate();
     }
 }
