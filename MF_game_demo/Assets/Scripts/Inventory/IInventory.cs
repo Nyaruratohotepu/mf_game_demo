@@ -38,7 +38,16 @@ namespace Assets.Scripts.Inventory
         /// <param name="item">待加入背包物</param>
         /// <param name="count">数量</param>
         /// <returns>成功加入数量</returns>
-        int AddItem(IInventoryItem item,int count);
+        int AddItem(IInventoryItem item, int count);
+
+        /// <summary>
+        /// 根据id添加物体
+        /// </summary>
+        /// <param name="itemId">物体id</param>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
+        int AddItem(int itemId, int count);
+
 
         /// <summary>
         /// 删除一整格指定物体

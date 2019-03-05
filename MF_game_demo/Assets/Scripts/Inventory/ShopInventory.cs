@@ -48,10 +48,10 @@ namespace Assets.Scripts.Inventory
         }
 
         /// <summary>
-        /// 
+        /// 向商店背包添加物体
         /// </summary>
-        /// <param name="item"></param>
-        /// <param name="count"></param>
+        /// <param name="item">物体</param>
+        /// <param name="count">数量</param>
         /// <returns></returns>
         int IInventory.AddItem(IInventoryItem item, int count)
         {

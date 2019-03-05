@@ -42,11 +42,6 @@ namespace Assets.Scripts.Inventory
         int StackMaxCount { set; get; }
 
         /// <summary>
-        /// 当前堆叠数量
-        /// </summary>
-        int StackCount { set; get; }
-
-        /// <summary>
         /// 能否交易
         /// </summary>
         bool IsTradable { set; get; }

@@ -268,9 +268,10 @@
     <Compile Include="Assets\Scripts\FGUI\Bag.cs" />
     <Compile Include="Assets\Scripts\FGUI\GameingUIController.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\Inventory\EmptyItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\IInventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\IInventoryItem.cs" />
-    <Compile Include="Assets\Scripts\Inventory\InventoryBlock.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemFactory.cs" />
     <Compile Include="Assets\Scripts\Inventory\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\ShopInventory.cs" />
     <Compile Include="Assets\Scripts\Inventory\ShopTrigger.cs" />
