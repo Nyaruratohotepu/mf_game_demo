@@ -13,22 +13,22 @@ namespace Assets.Scripts.Inventory
         /// <summary>
         /// 物品列表，存储物品（堆），每条记录占背包（仓库）一格
         /// </summary>
-        List<IInventoryItem> Items { get; }
+        List<InventoryBlock> Blocks { get; }
 
         /// <summary>
-        /// 最大容量（格子数）
+        /// 最大格子数
         /// </summary>
-        int CapacityMax { set; get; }
+        int Capacity { set; get; }
 
         /// <summary>
-        /// 已占用的容量（格子数）
+        /// 已占用的格子数
         /// </summary>
         int CapacityUsed { get; }
 
         /// <summary>
-        /// 钱数
+        /// 可用格子数
         /// </summary>
-        int Cash { set; get; }
+        int CapacityLeft { get; }
 
         /// <summary>
         /// 加入物体
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Inventory
         /// <param name="item">待加入背包物</param>
         /// <param name="count">数量</param>
         /// <returns>成功加入数量</returns>
-        int AddItem(IInventoryItem item, int count);
+        int AddItem(IInventoryItem item, int count=1);
 
         /// <summary>
         /// 根据id添加物体
@@ -46,37 +46,59 @@ namespace Assets.Scripts.Inventory
         /// <param name="itemId">物体id</param>
         /// <param name="count">数量</param>
         /// <returns></returns>
-        int AddItem(int itemId, int count);
-
+        int AddItem(int itemId, int count=1);
 
         /// <summary>
-        /// 删除一整格指定物体
+        /// 添加一格物体，可能会拆包优先填满未填满的格子
+        /// </summary>
+        /// <param name="block">加入的格子</param>
+        /// <returns>加入的数量</returns>
+        int AddItem(InventoryBlock block);
+
+        /// <summary>
+        /// 删除物体，不会超过剩余数量，优先删除数量最少的
         /// </summary>
         /// <param name="item">待删除背包物</param>
-        /// <returns>删除数量，若指定的物体不在仓库中，则返回0</returns>
-        int DelItem(IInventoryItem item);
+        /// <param name="count">数量</param>
+        /// <returns>成功删除物体数</returns>
+        int DelItem(IInventoryItem item,int count=1);
 
         /// <summary>
-        /// 删除指定数量的物体
+        /// 删除物体，不会超过剩余数量，优先删除数量最少的
         /// </summary>
         /// <param name="itemId">待删除背包物id</param>
-        /// <param name="count">数量，默认是1</param>
-        /// <returns>受影响的物品数；若指定数量超过存量，则删除存量的物体，返回删除了的物体个数</returns>
-        int DelItemByID(int itemId, int count = 1);
+        /// <param name="count">数量</param>
+        /// <returns>成功删除物体数</returns>
+        int DelItem(int itemId, int count = 1);
+
+        /// <summary>
+        /// 删除仓库中的某格物体，若block不在本仓库中则失败
+        /// </summary>
+        /// <param name="block">待删除格子</param>
+        /// <returns>成功删除物体数</returns>
+        int DelItem(InventoryBlock block);
+
 
         /// <summary>
         /// 清空指定ID的所有物体（可能不止一格）
         /// </summary>
         /// <param name="itemId">待删除背包物id</param>
         /// <returns>受影响的物品数</returns>
-        int DelAllItemByID(int itemId);
+        int DelAllItem(int itemId);
 
         /// <summary>
-        /// 将某项物体的数量修改为指定值（只对可堆叠物体有效）
+        /// 将某项物体的数量修改为指定值
         /// </summary>
         /// <param name="itemId">物品ID</param>
+        /// <param name="newCount">新的数量</param>
         /// <returns>新增的物体数（减少之后是负数）</returns>
-        int SetItemCount(int itemId);
+        int SetItemCount(int itemId,int newCount);
+
+        /// <summary>
+        /// </summary>
+        /// <param name="itemId">物品ID</param>
+        /// <returns>仓库中指定ID的物体数量，没有则返回0</returns>
+        int GetItemCount(int itemId);
 
         /// <summary>
         /// </summary>
@@ -85,10 +107,16 @@ namespace Assets.Scripts.Inventory
         bool HasItem(int itemId);
 
         /// <summary>
+        /// 按Id升序，同Id格子数量升序排序
         /// </summary>
-        /// <param name="itemId">物品ID</param>
-        /// <returns>仓库中指定ID的物体数量，没有则返回0</returns>
-        int ItemCount(int itemId);
+        void Sort();
+
+        /// <summary>
+        /// 返回指定Id的未堆满格子，若全部堆满则返回下标最后的一格
+        /// </summary>
+        /// <param name="itemId">物品Id</param>
+        /// <returns>指定Id的最后一格物体</returns>
+        InventoryBlock GetTailBlock(int itemId);
 
     }
 }

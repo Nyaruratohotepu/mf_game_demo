@@ -14,47 +14,41 @@ namespace Assets.Scripts.Inventory
         /// <summary>
         /// 物体ID
         /// </summary>
-        int InventoryID { set; get; }
+        int InventoryID { get; }
 
         /// <summary>
         /// 物体类型
         /// </summary>
-        InventoryEnum.ItemType Type { set; get; }
+        InventoryEnum.ItemType Type { get; }
 
         /// <summary>
         /// 在背包中显示的名称
         /// </summary>
-        string InventoryName { set; get; }
+        string InventoryName { get; }
 
         /// <summary>
         /// 背包中显示的图标
         /// </summary>
-        string InventoryImgDefault { set; get; }
+        string InventoryImgDefault { get; }
 
-        ///// <summary>
-        ///// 能否堆叠
-        ///// </summary>
-        //bool IsStackable { set; get; }
+        /// <summary>
+        /// 能否堆叠
+        /// </summary>
+        bool IsStackable { get; }
 
         /// <summary>
         /// 最多一堆多少个
         /// </summary>
-        int StackMaxCount { set; get; }
+        int StackMaxCount { get; }
 
         /// <summary>
         /// 能否交易
         /// </summary>
-        bool IsTradable { set; get; }
+        bool IsTradable { get; }
 
         /// <summary>
         /// 交易价格
         /// </summary>
-        int Price { set; get; }
-
-        /// <summary>
-        /// 复制当前实例
-        /// </summary>
-        /// <returns>新实例的引用</returns>
-        IInventoryItem Duplicate();
+        int Price { get; }
     }
 }

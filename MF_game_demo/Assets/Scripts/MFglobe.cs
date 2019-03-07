@@ -96,6 +96,10 @@ public static class InventoryEnum
         /// <summary>
         /// 可使用道具，药剂等
         /// </summary>
-        PropertItem
+        PropertItem,
+        /// <summary>
+        /// 其他物体，如测试用
+        /// </summary>
+        Other
     }
 }

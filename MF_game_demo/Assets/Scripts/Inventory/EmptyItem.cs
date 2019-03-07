@@ -12,25 +12,65 @@ namespace Assets.Scripts.Inventory
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return 0;
             }
         }
 
-        InventoryEnum.ItemType IInventoryItem.Type { get; set; }
-        string IInventoryItem.InventoryName { get; set; }
-        string IInventoryItem.InventoryImgDefault { get; set; }
-        int IInventoryItem.StackMaxCount { get; set; }
-        bool IInventoryItem.IsTradable { get; set; }
-        int IInventoryItem.Price { get; set; }
-
-        IInventoryItem IInventoryItem.Duplicate()
+        InventoryEnum.ItemType IInventoryItem.Type
         {
-            throw new NotImplementedException();
+            get
+            {
+                return InventoryEnum.ItemType.Other;
+            }
+        }
+
+        string IInventoryItem.InventoryName
+        {
+            get
+            {
+                return "测试物体";
+            }
+        }
+
+        string IInventoryItem.InventoryImgDefault
+        {
+            get
+            {
+                return "";
+            }
+        }
+
+
+        bool IInventoryItem.IsStackable
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        int IInventoryItem.StackMaxCount
+        {
+            get
+            {
+                return 10;
+            }
+        }
+
+        bool IInventoryItem.IsTradable
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        int IInventoryItem.Price
+        {
+            get
+            {
+                return 1;
+            }
         }
     }
 }
