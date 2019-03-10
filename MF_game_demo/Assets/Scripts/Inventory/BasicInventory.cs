@@ -224,46 +224,155 @@ namespace Assets.Scripts.Inventory
             return deltaCount;
         }
 
+        /// <summary>
+        /// 清空指定ID的所有物体（可能不止一格）
+        /// </summary>
+        /// <param name="itemId">待删除背包物id</param>
+        /// <returns>受影响的物品数</returns>
         int IInventory.DelAllItem(int itemId)
         {
-            throw new NotImplementedException();
+            int delCount = 0;
+            for (int i = blocks.Count - 1; i >= 0; i--)
+            {
+                if (itemId == blocks[i].ItemId)
+                {
+                    delCount += blocks[i].Count;
+                    blocks.RemoveAt(i);
+                }
+            }
+
+            return delCount;
         }
 
         int IInventory.DelItem(IInventoryItem item, int count)
         {
-            throw new NotImplementedException();
+            if (item == null) return 0;
+            if (count <= 0) return 0;
+            int delCount = 0;
+            int id = item.InventoryID;
+
+            for (int i = blocks.Count - 1; i >= 0; i--)
+            {
+                if (delCount >= count) break;
+                if (id == blocks[i].ItemId)
+                {
+                    int countNeed = count - delCount;
+                    if (countNeed >= blocks[i].Count)
+                    {
+                        //删一整格
+                        delCount += blocks[i].Count;
+                        blocks.RemoveAt(i);
+                    }
+                    else
+                    {
+                        delCount += countNeed;
+                        blocks[i].Count -= countNeed;
+                    }
+                }
+            }
+            return delCount;
         }
 
+        /// <summary>
+        /// 删除物体，不会超过剩余数量，优先删除数量最少的
+        /// </summary>
+        /// <param name="itemId">待删除背包物id</param>
+        /// <param name="count">数量</param>
+        /// <returns>成功删除物体数</returns>
         int IInventory.DelItem(int itemId, int count)
         {
-            throw new NotImplementedException();
+            if (itemId <= 0) return 0;
+            if (count <= 0) return 0;
+            int delCount = 0;
+
+            for (int i = blocks.Count - 1; i >= 0; i--)
+            {
+                if (delCount >= count) break;
+                if (itemId == blocks[i].ItemId)
+                {
+                    int countNeed = count - delCount;
+                    if (countNeed >= blocks[i].Count)
+                    {
+                        //删一整格
+                        delCount += blocks[i].Count;
+                        blocks.RemoveAt(i);
+                    }
+                    else
+                    {
+                        delCount += countNeed;
+                        blocks[i].Count -= countNeed;
+                    }
+                }
+            }
+            return delCount;
         }
 
+        /// <summary>
+        /// 删除仓库中的某格物体，若block不在本仓库中则失败
+        /// </summary>
+        /// <param name="block">待删除格子</param>
+        /// <returns>成功删除物体数</returns>
         int IInventory.DelItem(InventoryBlock block)
         {
-            throw new NotImplementedException();
+            return blocks.Remove(block) ? 1 : 0;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="itemId">物品ID</param>
+        /// <returns>仓库中指定ID的物体数量，没有则返回0</returns>
         int IInventory.GetItemCount(int itemId)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            foreach (InventoryBlock block in blocks)
+            {
+                if (itemId == block.ItemId)
+                    count += block.Count;
+            }
+            return count;
         }
 
+        /// <summary>
+        /// 返回指定Id的未堆满格子，若全部堆满则返回下标最后的一格
+        /// </summary>
+        /// <param name="itemId">物品Id</param>
+        /// <returns>指定Id的最后一格物体</returns>
         InventoryBlock IInventory.GetTailBlock(int itemId)
         {
-            throw new NotImplementedException();
+            int index = 0;
+            for (int i = 0; i < blocks.Count; i++)
+            {
+                if (blocks[i].ItemId == itemId)
+                {
+                    index = i;
+                    //没存满，一定是散格
+                    if (blocks[i].CountLeft > 0) break;
+                }
+            }
+            return blocks[index];
         }
 
+        /// <summary>
+        /// </summary>
+        /// <param name="itemId">物品ID</param>
+        /// <returns>是否包含某种物体</returns>
         bool IInventory.HasItem(int itemId)
         {
-            throw new NotImplementedException();
+            bool has = false;
+            foreach(InventoryBlock block in blocks)
+            {
+                if (block.ItemId == itemId)
+                {
+                    has = true;
+                    break;
+                }
+            }
+            return has;
         }
 
-        int IInventory.SetItemCount(int itemId, int newCount)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// 按Id升序，同Id格子数量升序排序
+        /// </summary>
         void IInventory.Sort()
         {
             blocks.Sort();

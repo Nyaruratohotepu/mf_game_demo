@@ -87,14 +87,6 @@ namespace Assets.Scripts.Inventory
         int DelAllItem(int itemId);
 
         /// <summary>
-        /// 将某项物体的数量修改为指定值
-        /// </summary>
-        /// <param name="itemId">物品ID</param>
-        /// <param name="newCount">新的数量</param>
-        /// <returns>新增的物体数（减少之后是负数）</returns>
-        int SetItemCount(int itemId,int newCount);
-
-        /// <summary>
         /// </summary>
         /// <param name="itemId">物品ID</param>
         /// <returns>仓库中指定ID的物体数量，没有则返回0</returns>
