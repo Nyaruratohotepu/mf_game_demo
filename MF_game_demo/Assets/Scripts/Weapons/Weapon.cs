@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Inventory;
 
-public abstract class Weapon
+public abstract class Weapon:IInventoryItem
 {
     //枪械基本数据
     public abstract WeaponData Data { set; get; }
@@ -13,8 +13,18 @@ public abstract class Weapon
     public abstract GameObject Owner { set; get; }
     public abstract IWeaponAnimation Animation { set; get; }
 
+    public abstract int AmmoItemId { get; }
+
     public abstract IWeaponBarrage Barrage { set; get; }
     public abstract IWeaponAction Action { set; get; }
+    public abstract int InventoryID { get; }
+    public abstract InventoryEnum.ItemType Type { get; }
+    public abstract string InventoryName { get; }
+    public abstract string InventoryImgDefault { get; }
+    public abstract bool IsStackable { get; }
+    public abstract int StackMaxCount { get; }
+    public abstract bool IsTradable { get; }
+    public abstract int Price { get; }
 
     public abstract void OnFixedUpdate();
     public abstract void OnUpdate();

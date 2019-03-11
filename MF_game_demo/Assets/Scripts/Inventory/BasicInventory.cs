@@ -7,6 +7,19 @@ namespace Assets.Scripts.Inventory
 {
     public class BasicInventory : IInventory
     {
+        public BasicInventory(List<InventoryBlock> blocks)
+        {
+            //由ItemManager调用，传入blocks，可能从文件中存取
+            if (blocks != null)
+                this.blocks = blocks;
+            else
+            {
+                //默认情况只有一个空物体
+                this.blocks = new List<InventoryBlock>();
+                blocks.Add(new InventoryBlock(0));
+            }
+        }
+
         protected List<InventoryBlock> blocks;
 
         /// <summary>
@@ -314,7 +327,8 @@ namespace Assets.Scripts.Inventory
         /// <returns>成功删除物体数</returns>
         int IInventory.DelItem(InventoryBlock block)
         {
-            return blocks.Remove(block) ? 1 : 0;
+            int count = block.Count;
+            return blocks.Remove(block) ? count : 0;
         }
 
         /// <summary>
@@ -359,7 +373,7 @@ namespace Assets.Scripts.Inventory
         bool IInventory.HasItem(int itemId)
         {
             bool has = false;
-            foreach(InventoryBlock block in blocks)
+            foreach (InventoryBlock block in blocks)
             {
                 if (block.ItemId == itemId)
                 {

@@ -19,9 +19,42 @@ namespace Assets.Scripts.Weapons
         public float SpearAngleMax { set; get; }
         public string BulletPath { set; get; }
         public string BulletImpactPath { set; get; }
+
+        //自身id为1
+        public override int InventoryID
+        {
+            get
+            {
+                return 1;
+            }
+        }
+
+        public override InventoryEnum.ItemType Type { get { return InventoryEnum.ItemType.Weapon; } }
+
+        public override string InventoryName { get { return "AK47"; } }
+
+        public override string InventoryImgDefault { get { return ""; } }
+
+        public override bool IsStackable { get { return false; } }
+
+        public override int StackMaxCount { get { return 1; } }
+
+        public override bool IsTradable { get { return true; } }
+
+        public override int Price { get { return 100; } }
+
+        //使用弹药的物品id是10
+        public override int AmmoItemId
+        {
+            get
+            {
+                return 10;
+            }
+        }
+
         private Transform muzzleFixed;
 
-        public AK47(GameObject weaponObject, GameObject owner,Transform muzzleFixedPosition)
+        public AK47(GameObject weaponObject, GameObject owner, Transform muzzleFixedPosition)
         {
             Data = new WeaponData();
             Data.AimTime = 0.1f;

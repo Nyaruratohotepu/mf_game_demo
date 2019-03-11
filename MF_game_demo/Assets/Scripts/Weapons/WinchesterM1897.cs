@@ -24,9 +24,41 @@ namespace Assets.Scripts.Weapons
         public int BulletCountPerFire { set; get; }
         public int BarrageAngle { set; get; }
 
+        //自身ID为2
+        public override int InventoryID
+        {
+            get
+            {
+                return 2;
+            }
+        }
+
+        public override InventoryEnum.ItemType Type { get { return InventoryEnum.ItemType.Weapon; } }
+
+        public override string InventoryName { get { return "WinchesterM1897"; } }
+
+        public override string InventoryImgDefault { get { return ""; } }
+
+        public override bool IsStackable { get { return false; } }
+
+        public override int StackMaxCount { get { return 1; } }
+
+        public override bool IsTradable { get { return true; } }
+
+        public override int Price { get { return 100; } }
+
+        //使用弹药ID为11
+        public override int AmmoItemId
+        {
+            get
+            {
+                return 11;
+            }
+        }
+
         private Transform muzzleFixed;
 
-        public WinchesterM1897(GameObject weaponObject, GameObject owner,Transform muzzleFixedPosition)
+        public WinchesterM1897(GameObject weaponObject, GameObject owner, Transform muzzleFixedPosition)
         {
             Data = new WeaponData();
             Data.AimTime = 0f;
